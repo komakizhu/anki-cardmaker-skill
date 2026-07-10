@@ -82,6 +82,19 @@ When importing raw vocabulary lists (without examples or translations):
 - Format the target word into a Cloze deletion, like `{{c1::vocabulary_word::Chinese_translation}}`.
 - Under the Back Extra field, list at least two common collocations and a mnemonic hook.
 
+### 8. External App Export Upgrader (扇贝/百词斩/CSV)
+When processing exported word files or CSV/TXT tables from other flashcard applications (like Shanbay, Baicizhan, or Quizlet):
+- Map fields (e.g., word, phonetic, definition, raw sentence) to the QA or Cloze template.
+- **Perform Quality Upgrades**: If the original app provides mechanical dictionary definitions or unnatural translations, replace them with concise, natural translations.
+- **Generate Memory Aids**: Automatically attach high-frequency collocation structures and a mnemonic hook (jokes, homophones, analogies) to the back of the card, which are usually missing in standard app exports.
+
+### 9. Polysemy (一词多义) & Rare Meanings (熟词僻义) Strategy
+To avoid generating cards with incorrect definitions when processing polysemous words:
+- **Prioritize Context**: If the input includes a context sentence, paragraph, or book chapter, the agent **MUST** bind the word's meaning to that specific context.
+- **Avoid Ambiguous Fusion**: Never merge different parts of speech or distinct meanings into a single card front.
+- **Split into Separate Cards**: If a raw word is imported without context and has multiple high-frequency meanings (e.g., *fine* as "excellent" vs. "monetary penalty"; *subject* as "topic" vs. "vulnerable to"), generate **separate cards** for each major meaning. Clearly distinguish the part of speech and definition on the front/back.
+- **Target Rare Meanings (熟词僻义)**: For exam-prep targets (like 考研/IELTS), prioritize generating cards for the "rare meaning of common words" (e.g., *harbor* as a verb "to hold a thought/feeling"; *court* as a verb "to seek favor or invite danger"). Mark these cards clearly with a `[熟词僻义]` tag.
+
 ----
 
 ## JSON Card Schema
