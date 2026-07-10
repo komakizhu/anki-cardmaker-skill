@@ -1,29 +1,32 @@
-# Anki Intelligent Card Maker (anki-cardmaker)
+# AI-Agent Anki Intelligent Card Maker
 
-An Antigravity custom skill designed to automatically extract, atomize, and generate high-yield study cards from multiple input formats and import them directly to local Anki without manual file exports.
+A system instruction (prompt) and syncing engine designed for **any AI Agent** (such as Claude Code, Cursor, ChatGPT, or Antigravity) to automatically extract, atomize, and generate high-yield study cards from multiple input formats and import them directly to local Anki without manual file exports.
 
 ## Core Features
 
-- **Multi-source Processing**: Supports card creation from text inputs, OCR/screenshots, Markdown files, or PDF study materials.
-- **Auto Context Generation**: Generates high-quality context sentences, translations, and common collocation lists for raw vocabulary words.
-- **Sleek Formatting**: Output cards are cleanly structured in HTML with responsive styles for both Desktop and Mobile Anki readers.
-- **Zero-Dependency Syncing**: Includes a Python script `anki_sync.py` that utilizes only standard library modules to interact with local Anki via AnkiConnect.
+- **Multi-source Processing**: Auto-generates card sets from text, PDF, Markdown files, or screenshots/OCR images.
+- **Context-Aware Cloze & QA**: Atomizes dense paragraphs into minimal information cards. Automatically designs context sentences and collocations for raw vocabulary words.
+- **Mnemonic Hooks**: Employs creative analogies and mnemonic jokes, with support for image generation prompts.
+- **Zero-Dependency Syncing**: Includes a Python script `anki_sync.py` that uses only standard Python libraries to interact with local Anki via AnkiConnect.
 
 ---
 
-## Installation
+## How it Works & Installation
 
-To import this skill to your Antigravity setup:
+You can use this with any AI Agent in two steps:
 
-1. Clone this repository into your global custom skills folder:
-   ```bash
-   git clone https://github.com/<your-username>/anki-cardmaker-skill.git ~/.gemini/config/skills/anki-cardmaker
-   ```
+### 1. Give the Instructions to your AI Agent
+Provide the contents of [SKILL.md](SKILL.md) to your AI Agent as part of its system prompt, custom instructions, or reference files. This teaches the agent how to:
+- Classify inputs into Cloze, Choice, and QA card schemas.
+- Atomize text according to the Minimal Information Principle.
+- Format card outputs as a JSON array.
 
-2. Make sure the local python helper script is executable:
-   ```bash
-   chmod +x ~/.gemini/config/skills/anki-cardmaker/scripts/anki_sync.py
-   ```
+### 2. Make the Sync Script Executable
+Clone this repository locally and ensure the Python helper script is executable:
+```bash
+git clone https://github.com/komakizhu/anki-cardmaker-skill.git
+chmod +x anki-cardmaker-skill/scripts/anki_sync.py
+```
 
 ---
 
@@ -38,7 +41,12 @@ To import this skill to your Antigravity setup:
 
 ## How to Invoke the Agent
 
-Simply ask your agent in Antigravity to make cards using `anki-cardmaker`. For example:
-- *"Extract study cards from this textbook PDF/Markdown note"*
+Simply ask your AI Agent to generate cards. For example:
+- *"Extract study cards from this PDF/Markdown note"*
 - *"Create choice questions from this political exam screenshot"*
 - *"Import these words to Anki with contexts: scrutinize, ambiguity, anomaly"*
+
+For terminal-based agents (e.g. Claude Code or Antigravity), they can automatically write the cards list to `cards.json` and execute the sync script in one step:
+```bash
+python3 scripts/anki_sync.py --file cards.json --deck "MyDeck"
+```

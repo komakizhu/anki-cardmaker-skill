@@ -62,7 +62,7 @@ Format multiple-choice questions cleanly. The front should present the question 
 AI must automatically attach a "memory hook" on the back of each card:
 - A vivid analogy.
 - A humorous joke, homophone (谐音梗), or story.
-- If highly abstract, write a prompt to invoke `generate_image` and link the local path under `mnemonic_image_path`.
+- If highly abstract, write a prompt to invoke an image generation tool (such as `generate_image`, DALL-E, or Midjourney) and link the local path under `mnemonic_image_path`.
 
 ### 5. Markdown (MD) Notes Parser
 When generating cards from Markdown documents:
@@ -138,10 +138,10 @@ Generate cards in the following JSON format:
    - Split complex materials into independent QA, Cloze, or Choice templates using the Minimal Information Principle.
 3. **Mnemonic Design**:
    - For difficult concepts or raw words, generate mnemonic hooks.
-   - Optional: Use the `generate_image` tool to create visual cards for highly abstract terms and save the graphic to `<appDataDir>/brain/<conversation-id>/scratch/mnemonic_X.png`.
-4. **Export JSON**: Output the final cards list as a JSON array to a temporary `cards.json` file in the scratch directory.
-5. **Sync to Anki**: Sync using the python script:
+   - Optional: Use an image generation tool to create visual cards for highly abstract terms and save the graphic to a local directory, setting the path in `mnemonic_image_path`.
+4. **Export JSON**: Output the final cards list as a JSON array to a temporary `cards.json` file.
+5. **Sync to Anki**: Run the python script to import:
    ```bash
-   python3 /Users/mac/.gemini/config/skills/anki-cardmaker/scripts/anki_sync.py --file /Users/mac/.gemini/antigravity/brain/<conversation-id>/scratch/cards.json --deck "MyDeckName"
+   python3 scripts/anki_sync.py --file cards.json --deck "MyDeckName"
    ```
    *Note: Ensure the local Anki app is open and running with AnkiConnect active.*
