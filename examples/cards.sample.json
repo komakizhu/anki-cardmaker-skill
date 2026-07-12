@@ -1,0 +1,55 @@
+[
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "front": "What staining method is positive for Mycobacterium tuberculosis?",
+    "back": "Acid-fast staining (抗酸染色)",
+    "back_zh": "抗酸染色",
+    "explanation": "Mycobacterium tuberculosis has lipid-rich cell walls that resist decolorization by acid-alcohol.",
+    "explanation_zh": "结核分枝杆菌的细胞壁富含脂质，能够抵抗酸酒精脱色。",
+    "mnemonic_hook": "Acid-fast -> acid eats color, but tuberculosis holds fast.",
+    "mnemonic_hook_zh": "acid-fast：酸会褪色，但结核菌“握得很紧”，颜色留住了。",
+    "tags": ["medical", "microbiology"],
+    "source": {
+      "title": "Microbiology Notes",
+      "chapter": "Bacteria"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "type": "Cloze",
+    "front": "Analyzing real exam readings, the researcher must {{c1::scrutinize::v. 仔细检查}} every sentence.",
+    "back": "",
+    "back_zh": "",
+    "explanation": "scrutinize means to examine or inspect closely and thoroughly.",
+    "explanation_zh": "scrutinize 表示仔细、彻底地检查或审视。",
+    "mnemonic_hook": "Scrutinize sounds like 'screw tiny eyes'.",
+    "mnemonic_hook_zh": "scrutinize 听起来像“把小眼睛拧紧”，表示仔细看。",
+    "tags": ["ielts", "vocabulary"],
+    "source": {
+      "title": "Vocabulary List",
+      "chapter": "Academic Words"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "type": "Choice",
+    "front": "下列关于宪法修正案的说法，正确的是哪一项？",
+    "options": [
+      "修正案须由全国人大主席团公布",
+      "修正案须由全国人大代表三分之二以上多数通过",
+      "修正案草案的提议权属于五分之一以上的全国人大代表",
+      "修正案草案须经全国人大常委会全体委员过半数通过"
+    ],
+    "correct_answer": "C",
+    "explanation": "我国宪法修改由全国人大常委会或者五分之一以上的全国人大代表提议，并由全国人民代表大会以全体代表的三分之二以上的多数通过。",
+    "explanation_zh": "我国宪法修改由全国人大常委会或五分之一以上代表提议，并由全国人大以全体代表三分之二以上多数通过。",
+    "mnemonic_hook": "五提三通：1/5提议，2/3通过。",
+    "mnemonic_hook_zh": "五提三通：五分之一提议，三分之二通过。",
+    "tags": ["law", "constitution"],
+    "source": {
+      "title": "Constitution Law Notes",
+      "chapter": "Article 64"
+    }
+  }
+]

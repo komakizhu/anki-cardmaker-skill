@@ -1,0 +1,129 @@
+[
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "front": "光合作用的主要场所是什么？",
+    "back": "The chloroplast",
+    "back_zh": "叶绿体",
+    "explanation": "Chloroplasts contain chlorophyll and are the main organelles where photosynthesis occurs.",
+    "explanation_zh": "叶绿体含有叶绿素，是进行光合作用的主要细胞器。",
+    "mnemonic_hook": "Chloroplasts are the cell's solar panels.",
+    "mnemonic_hook_zh": "叶绿体就像细胞里的太阳能板。",
+    "tags": ["biology", "chinese-qa", "v1.0.0-test"]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "Choice",
+    "front": "Which action best reduces confirmation bias?",
+    "options": [
+      "Seeking only evidence that supports your view",
+      "Actively looking for credible counterevidence",
+      "Ignoring evidence that is difficult to interpret",
+      "Trusting your first impression"
+    ],
+    "correct_answer": "B",
+    "explanation": "Confirmation bias is reduced when people deliberately examine evidence that could challenge their existing beliefs.",
+    "explanation_zh": "主动寻找可能挑战已有观点的证据，有助于减少确认偏误。",
+    "mnemonic_hook": "Confirm less by checking the opposite side.",
+    "mnemonic_hook_zh": "少一点确认，多看另一面。",
+    "tags": ["psychology", "choice", "v1.0.0-test"]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "Cloze",
+    "front": "The manager remained {{c1::resilient::adj. 坚韧的}} despite repeated setbacks.",
+    "back": "",
+    "explanation": "Resilient describes someone or something that recovers quickly after difficulty or change.",
+    "explanation_zh": "resilient 形容人或事物在困难或变化后能够迅速恢复。",
+    "mnemonic_hook": "Resilient things spring back instead of staying bent.",
+    "mnemonic_hook_zh": "有韧性的东西会弹回来，而不是一直弯着。",
+    "word": "resilient",
+    "part_of_speech": "adj.",
+    "phonetic": "/rɪˈzɪliənt/",
+    "definition_zh": "有韧性的；能迅速恢复的",
+    "word_level": "CET-6 / IELTS",
+    "oxford_definition": "able to recover quickly after difficulties or a shock",
+    "oxford_definition_zh": "经历困难或冲击后能够迅速恢复。",
+    "collins_definition": "able to withstand or recover quickly from difficult conditions",
+    "collins_definition_zh": "能够承受困难状况并迅速恢复。",
+    "synonyms": ["tough adj. 坚韧的", "adaptable adj. 适应性强的"],
+    "antonyms": ["fragile adj. 脆弱的"],
+    "near_synonyms": ["hardy adj. 强健的; 耐劳的"],
+    "confusable_words": ["resistant adj. 抵抗的", "reliant adj. 依赖的"],
+    "collocations": ["resilient community 韧性社区", "highly resilient 高度坚韧"],
+    "word_root": "resil-（跳回; 反弹）",
+    "word_affixes": "-ent（表示具有某种性质）",
+    "example_sentences": [
+      "Children can be remarkably resilient after a difficult experience.",
+      "The city built a resilient power grid to withstand storms.",
+      "Her resilient attitude helped the team recover from failure."
+    ],
+    "example_sentences_zh": [
+      "经历困难后，孩子们有时会表现出惊人的恢复力。",
+      "这座城市建设了能够抵御暴风雨的韧性电网。",
+      "她坚韧的态度帮助团队从失败中恢复过来。"
+    ],
+    "example_targets_zh": ["恢复力", "韧性", "坚韧"],
+    "other_meanings": ["n. resilience 的形容词形式；强调恢复能力"],
+    "other_meanings_examples": ["A resilient material can return to its original shape after being stretched."],
+    "tags": ["vocabulary", "cloze", "ielts", "v1.0.0-test"]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "front": "What is the definition of 'ambiguous' in the sentence 'The contract contains an ambiguous clause'?",
+    "back": "Open to more than one interpretation",
+    "back_zh": "有不止一种解释的；含义不明确的",
+    "explanation": "Ambiguous means unclear because it can reasonably be understood in more than one way.",
+    "explanation_zh": "ambiguous 指由于可以有不止一种合理理解而含义不清。",
+    "explanation_target_zh": "含义不明确",
+    "mnemonic_hook": "An ambiguous sign points in two directions at once.",
+    "mnemonic_hook_zh": "ambiguous 像一个同时指向两个方向的标志。",
+    "mnemonic_target_zh": "两个方向",
+    "word": "ambiguous",
+    "part_of_speech": "adj.",
+    "phonetic": "/æmˈbɪɡjuəs/",
+    "definition_zh": "模棱两可的；含义不明确的",
+    "word_level": "CET-6 / IELTS",
+    "oxford_definition": "that can be understood in more than one possible way",
+    "oxford_definition_zh": "可以有不止一种可能理解方式的。",
+    "collins_definition": "unclear or confusing because it can have more than one meaning",
+    "collins_definition_zh": "因有不止一种含义而不清楚或令人困惑的。",
+    "synonyms": ["unclear adj. 不清楚的", "equivocal adj. 模棱两可的"],
+    "antonyms": ["explicit adj. 明确的", "unambiguous adj. 清楚明确的"],
+    "near_synonyms": ["vague adj. 含糊的"],
+    "confusable_words": ["ambitious adj. 有抱负的", "ambiguity n. 歧义; 模棱两可"],
+    "collocations": ["ambiguous statement 含糊的陈述", "ambiguous wording 模棱两可的措辞"],
+    "word_root": "ambigu-（徘徊; 不确定）",
+    "word_affixes": "-ous（表示具有某种性质）",
+    "example_sentences": [
+      "The witness gave an ambiguous answer during the interview.",
+      "The law uses ambiguous wording that could invite litigation.",
+      "His ambiguous smile made it hard to tell whether he agreed."
+    ],
+    "example_sentences_zh": [
+      "证人在面试中给出了含糊的回答。",
+      "这部法律使用了可能引发诉讼的模棱两可措辞。",
+      "他模棱两可的微笑让人难以判断他是否同意。"
+    ],
+    "example_targets_zh": ["含糊", "模棱两可", "模棱两可"],
+    "other_meanings": ["adj. 指边界或性质不明确的", "adj. 指人的态度或意图不确定的"],
+    "other_meanings_examples": [
+      "The photograph has an ambiguous boundary between light and shadow.",
+      "She remained ambiguous about whether she would accept the offer."
+    ],
+    "tags": ["vocabulary", "english", "polysemy", "v1.0.0-test"]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "front": "为什么法律文本需要明确的定义？",
+    "back": "To reduce disputes over interpretation",
+    "back_zh": "减少对法律文本解释的争议",
+    "explanation": "Clear definitions limit ambiguity and make rules easier to apply consistently.",
+    "explanation_zh": "明确的定义可以减少歧义，使规则更容易被一致地适用。",
+    "mnemonic_hook": "Clear words create clear boundaries.",
+    "mnemonic_hook_zh": "词语清楚，边界才清楚。",
+    "tags": ["law", "chinese-qa", "v1.0.0-test"]
+  }
+]
