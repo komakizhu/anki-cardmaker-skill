@@ -5,6 +5,50 @@ import re
 
 DEFAULT_TAGS = ["anki-agent"]
 SUPPORTED_TYPES = {"QA", "Cloze", "Choice"}
+SUPPORTED_QUESTION_TYPES = {
+    "vocabulary_meaning",
+    "cloze",
+    "single_choice",
+    "multiple_choice",
+    "true_false",
+    "short_answer",
+}
+QUESTION_TYPE_LABELS = {
+    "vocabulary_meaning": "词义题",
+    "cloze": "填空题",
+    "single_choice": "单选题",
+    "multiple_choice": "多选题",
+    "true_false": "判断题",
+    "short_answer": "简答题",
+}
+QUESTION_TYPE_ALIASES = {
+    "vocabulary_meaning": "vocabulary_meaning",
+    "vocabulary-meaning": "vocabulary_meaning",
+    "meaning": "vocabulary_meaning",
+    "definition": "vocabulary_meaning",
+    "词义题": "vocabulary_meaning",
+    "单词题": "vocabulary_meaning",
+    "cloze": "cloze",
+    "fill_blank": "cloze",
+    "fill-in-the-blank": "cloze",
+    "填空题": "cloze",
+    "single_choice": "single_choice",
+    "single-choice": "single_choice",
+    "单选题": "single_choice",
+    "multiple_choice": "multiple_choice",
+    "multiple-choice": "multiple_choice",
+    "多选题": "multiple_choice",
+    "true_false": "true_false",
+    "true-false": "true_false",
+    "判断题": "true_false",
+    "判断": "true_false",
+    "short_answer": "short_answer",
+    "short-answer": "short_answer",
+    "qa": "short_answer",
+    "question_answer": "short_answer",
+    "问答题": "short_answer",
+    "简答题": "short_answer",
+}
 VOCABULARY_TAGS = {"vocabulary", "english", "ielts", "polysemy", "熟词僻义", "词汇"}
 POS_PATTERN = re.compile(r"(?:^|\s)(?:n|v|adj|adv|prep|pron|conj|det|aux|modal|phr\. v)\.", re.IGNORECASE)
 CLOZE_PATTERN = re.compile(r"\{\{c\d+::([^{}:]+)(?::[^{}]*)?\}\}", re.IGNORECASE)
@@ -19,6 +63,8 @@ def load_cards(path):
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    if isinstance(data, dict) and isinstance(data.get("cards"), list):
+        return data["cards"]
     if isinstance(data, dict):
         return [data]
     if isinstance(data, list):
@@ -36,6 +82,28 @@ def normalize_card_type(card_type):
     }
     raw = str(card_type or "QA").strip().lower()
     return mapping.get(raw, str(card_type or "QA").strip())
+
+
+def normalize_question_type(question_type):
+    raw = str(question_type or "").strip().lower()
+    return QUESTION_TYPE_ALIASES.get(raw, str(question_type or "").strip())
+
+
+def infer_question_type(card):
+    explicit = normalize_question_type(card.get("question_type"))
+    if explicit in SUPPORTED_QUESTION_TYPES:
+        return explicit
+
+    card_type = normalize_card_type(card.get("type"))
+    if card_type == "Cloze":
+        return "cloze"
+    if card_type == "Choice":
+        answer = str(card.get("correct_answer", "") or "").strip()
+        choices = re.findall(r"[A-Za-z]", answer)
+        return "multiple_choice" if len(set(choices)) > 1 else "single_choice"
+    if MEANING_QUESTION_PATTERN.search(str(card.get("front", "") or "")):
+        return "vocabulary_meaning"
+    return "short_answer"
 
 
 def normalize_tags(tags):
@@ -73,6 +141,8 @@ def extract_cloze_targets(front):
 
 def is_vocabulary_card(card):
     card_type = normalize_card_type(card.get("type"))
+    if infer_question_type(card) == "vocabulary_meaning":
+        return True
     word = str(card.get("word", "") or "").strip()
     if word:
         return True
@@ -149,8 +219,24 @@ def validate_card(card, index):
         errors.append(f"{prefix}: 'schema_version' must be a string")
 
     card_type = normalize_card_type(card.get("type"))
+    question_type = normalize_question_type(card.get("question_type"))
     if card_type not in SUPPORTED_TYPES:
         errors.append(f"{prefix}: unsupported type '{card.get('type')}'")
+    if question_type and question_type not in SUPPORTED_QUESTION_TYPES:
+        errors.append(f"{prefix}: unsupported question_type '{card.get('question_type')}'")
+
+    if question_type in {"cloze", "single_choice", "multiple_choice", "true_false"}:
+        expected_type = {"cloze": "Cloze", "single_choice": "Choice", "multiple_choice": "Choice", "true_false": "Choice"}[question_type]
+        if card_type != expected_type:
+            errors.append(f"{prefix}: question_type '{question_type}' requires card type '{expected_type}'")
+    if question_type == "true_false":
+        options = card.get("options")
+        if not isinstance(options, list) or len(options) != 2:
+            errors.append(f"{prefix}: true_false cards require exactly two options: true and false")
+    if question_type == "vocabulary_meaning" and card_type != "QA":
+        errors.append(f"{prefix}: vocabulary_meaning requires card type 'QA'")
+    if question_type == "short_answer" and card_type not in {"QA", "Basic"}:
+        errors.append(f"{prefix}: short_answer requires card type 'QA' or 'Basic'")
 
     front = card.get("front")
     if not isinstance(front, str) or not front.strip():

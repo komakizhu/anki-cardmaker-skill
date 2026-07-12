@@ -12,7 +12,7 @@ import time
 import urllib.error
 import urllib.request
 
-from card_validation import normalize_card_type, normalize_tags, validate_cards
+from card_validation import infer_question_type, normalize_card_type, normalize_tags, validate_cards
 
 DEFAULT_ANKI_CONNECT_URLS = ("http://127.0.0.1:8765", "http://localhost:8765")
 DEFAULT_CLOZE_EXTRA_FIELD = "Back Extra"
@@ -454,6 +454,17 @@ def resolve_choice_answer(card):
         idx = ord(answer.upper()) - 65
         if 0 <= idx < len(options):
             return options[idx]
+    if isinstance(answer, str):
+        normalized = answer.upper().strip()
+        if re.fullmatch(r"[A-Z](?:\s*[,/&]\s*[A-Z])+|[A-Z]{2,}", normalized):
+            letters = re.findall(r"[A-Z]", normalized)
+            resolved = []
+            for letter in letters:
+                idx = ord(letter) - 65
+                if idx >= len(options):
+                    return answer
+                resolved.append(f"{letter}. {options[idx]}")
+            return "; ".join(resolved)
     return answer
 
 
@@ -474,6 +485,8 @@ def extract_dictionary_word(card):
 
 def is_vocabulary_card(card):
     card_type = normalize_card_type(card.get("type", "QA"))
+    if infer_question_type(card) == "vocabulary_meaning":
+        return True
     word = extract_dictionary_word(card)
     if not word:
         return False
@@ -557,14 +570,18 @@ def extract_vocabulary_sentence(card):
 
 
 def question_type_label(card):
-    card_type = normalize_card_type(card.get("type", "QA"))
-    if card_type == "Cloze":
+    question_type = infer_question_type(card)
+    if question_type == "cloze":
         return "填空题"
-    if card_type == "Choice":
-        answer = str(card.get("correct_answer", "") or "").strip()
-        choices = re.findall(r"[A-Za-z]", answer)
-        return "多选题" if len(set(choices)) > 1 else "单选题"
-    return "问答题"
+    if question_type == "vocabulary_meaning":
+        return "词义题"
+    if question_type == "multiple_choice":
+        return "多选题"
+    if question_type == "single_choice":
+        return "单选题"
+    if question_type == "true_false":
+        return "判断题"
+    return "简答题"
 
 
 def guess_word_kind(target, card):
@@ -862,7 +879,7 @@ def format_links_and_images(card, media_mapping):
     source_summary = get_source_summary(card.get("source"))
     tags = normalize_text_items(card.get("tags"))
     chinese_qa = card_type == "QA" and contains_cjk(card.get("front", "")) and not is_vocabulary_card(card)
-    meaning_question = bool(is_vocabulary_card(card) and extract_vocabulary_sentence(card))
+    meaning_question = infer_question_type(card) == "vocabulary_meaning" and bool(extract_vocabulary_sentence(card))
     vocabulary_cloze = card_type == "Cloze" and is_vocabulary_card(card)
     compact_vocabulary_card = meaning_question or vocabulary_cloze
 
@@ -1199,7 +1216,11 @@ def sync_cards(
 def main():
     parser = argparse.ArgumentParser(description="Sync generated cards to local Anki.")
     parser.add_argument("--file", help="Path to JSON file containing cards.")
-    parser.add_argument("--deck", default="AnkiCardmaker", help="Target deck name in Anki.")
+    parser.add_argument(
+        "--deck",
+        default=None,
+        help="Target deck name in Anki. Overrides a top-level JSON 'deck' value.",
+    )
     parser.add_argument(
         "--anki-url",
         action="append",
@@ -1209,11 +1230,12 @@ def main():
     parser.add_argument(
         "--cloze-extra-field",
         default=DEFAULT_CLOZE_EXTRA_FIELD,
-        help="Field name used for Cloze supplemental content (defaults to Anki's standard Extra field).",
+        help="Field name used for Cloze supplemental content (defaults to Anki's standard Back Extra field).",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print plans without importing to Anki.")
     args = parser.parse_args()
 
+    deck_from_file = None
     if args.file:
         if not os.path.exists(args.file):
             print(f"Error: File not found: {args.file}", file=sys.stderr)
@@ -1228,7 +1250,10 @@ def main():
             print(f"Error reading JSON from stdin: {e}", file=sys.stderr)
             sys.exit(1)
 
-    if not isinstance(cards_data, list):
+    if isinstance(cards_data, dict) and isinstance(cards_data.get("cards"), list):
+        deck_from_file = cards_data.get("deck")
+        cards_data = cards_data["cards"]
+    elif not isinstance(cards_data, list):
         if isinstance(cards_data, dict):
             cards_data = [cards_data]
         else:
@@ -1236,9 +1261,10 @@ def main():
             sys.exit(1)
 
     anki_urls = tuple(args.anki_urls) if args.anki_urls else DEFAULT_ANKI_CONNECT_URLS
+    target_deck = args.deck or (str(deck_from_file).strip() if deck_from_file else "") or "AnkiCardmaker"
     sync_cards(
         cards_data,
-        args.deck,
+        target_deck,
         dry_run=args.dry_run,
         cloze_extra_field=args.cloze_extra_field,
         anki_urls=anki_urls,

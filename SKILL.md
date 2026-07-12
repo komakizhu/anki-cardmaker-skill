@@ -118,6 +118,50 @@ Use the first rule that applies. Do not mix lower-priority behavior into a card 
 - Keep `explanation_zh` concise and literal enough to support recall, not a long essay.
 - For answer text and mnemonic hooks, use `back_zh` and `mnemonic_hook_zh` when a Chinese rendering is needed.
 
+### Card Type Catalog
+
+Use `question_type` to make the intended learning interaction explicit. The legacy `type` field remains the Anki note model and is still supported.
+
+| `question_type` | Chinese label | Anki `type` | Use for |
+| --- | --- | --- | --- |
+| `vocabulary_meaning` | 词义题 | `QA` | Meaning of a target word in a sentence or phrase |
+| `cloze` | 填空题 | `Cloze` | Recall a missing word, phrase, or fact in context |
+| `single_choice` | 单选题 | `Choice` | Exactly one correct option |
+| `multiple_choice` | 多选题 | `Choice` | More than one correct option |
+| `true_false` | 判断题 | `Choice` | Decide whether one statement is true or false |
+| `short_answer` | 简答题 | `QA` | Chinese or English free-response recall |
+
+Accepted aliases include `词义题`, `填空题`, `单选题`, `多选题`, `判断题`, `简答题`, `单词题`, `meaning`, `definition`, `fill_blank`, `single-choice`, `multiple-choice`, and `true-false`. If `question_type` is omitted, it is inferred from the legacy `type` and card content.
+
+### Natural-Language Type Routing
+
+When the user asks to organize or convert material, infer the requested `question_type` from their wording and apply it to the whole batch unless they specify exceptions:
+
+| User wording | Use |
+| --- | --- |
+| “整理成词义题”, “做成单词题”, “按词义考”, “考这个词在句中的意思” | `vocabulary_meaning` |
+| “整理成填空题”, “挖空”, “做 Cloze” | `cloze` |
+| “整理成单选题”, “只有一个正确答案” | `single_choice` |
+| “整理成多选题”, “有多个正确答案” | `multiple_choice` |
+| “整理成判断题”, “判断正误”, “对错题” | `true_false` |
+| “整理成简答题”, “问答题”, “让用户自己回答” | `short_answer` |
+
+“单词题” means `vocabulary_meaning` when the target is a word used in a sentence; it does not mean a bare translation list. A vocabulary meaning card must preserve the sentence context and include the configured dictionary fields.
+
+For `true_false`, generate exactly two options, normally `正确` and `错误`, and set `correct_answer` to `A` or `B`:
+
+```json
+{
+  "type": "Choice",
+  "question_type": "true_false",
+  "front": "线粒体是细胞进行光合作用的主要场所。",
+  "options": ["正确", "错误"],
+  "correct_answer": "B",
+  "explanation": "Photosynthesis mainly occurs in chloroplasts, not mitochondria.",
+  "explanation_zh": "光合作用主要发生在叶绿体中，而不是线粒体中。"
+}
+```
+
 ### 12. Automatic UI Logic
 - Show the front as the only question space.
 - Show the back as the only support space: answer, explanation, and mnemonic.
@@ -197,6 +241,19 @@ Generate cards in the following JSON format:
    ```
    *Note: Ensure the local Anki app is open and running with AnkiConnect active. Cloze notes use the standard `Back Extra` field by default, but the field name can be overridden with `--cloze-extra-field` if the user uses a custom Cloze note type.*
 
+To choose a deck, pass `--deck "My Deck"`. A JSON bundle can also set the deck once for the whole import:
+
+```json
+{
+  "deck": "English Vocabulary",
+  "cards": [
+    {"question_type": "cloze", "type": "Cloze", "front": "The {{c1::resilient}} team recovered quickly."}
+  ]
+}
+```
+
+The command-line `--deck` value takes precedence over the bundle's `deck`; if neither is provided, the default is `AnkiCardmaker`.
+
 ## Validation Assets
 
 - `schemas/anki_card.schema.json`: formal schema for QA, Cloze, and Choice cards.
@@ -209,6 +266,7 @@ The shared validator enforces the mechanical rules before preview or sync: suppo
 
 ## Card Fields
 
+- `question_type`: explicit learning interaction; use `vocabulary_meaning`, `cloze`, `single_choice`, `multiple_choice`, `true_false`, or `short_answer`.
 - `front`: question or cloze text shown on the front.
 - `back`: answer text for QA cards.
 - `explanation`: English explanation or rationale.

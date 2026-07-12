@@ -13,6 +13,10 @@
           "type": "string",
           "default": "1.0"
         },
+        "question_type": {
+          "type": "string",
+          "enum": ["vocabulary_meaning", "cloze", "single_choice", "multiple_choice", "true_false", "short_answer", "词义题", "填空题", "单选题", "多选题", "判断题", "简答题"]
+        },
         "type": {
           "type": "string",
           "enum": ["QA", "Basic", "qa", "basic"]
@@ -150,6 +154,10 @@
         "schema_version": {
           "type": "string",
           "default": "1.0"
+        },
+        "question_type": {
+          "type": "string",
+          "enum": ["vocabulary_meaning", "cloze", "single_choice", "multiple_choice", "true_false", "short_answer", "词义题", "填空题", "单选题", "多选题", "判断题", "简答题"]
         },
         "type": {
           "type": "string",
@@ -293,6 +301,10 @@
         "schema_version": {
           "type": "string",
           "default": "1.0"
+        },
+        "question_type": {
+          "type": "string",
+          "enum": ["vocabulary_meaning", "cloze", "single_choice", "multiple_choice", "true_false", "short_answer", "词义题", "填空题", "单选题", "多选题", "判断题", "简答题"]
         },
         "type": {
           "type": "string",
