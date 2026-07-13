@@ -6,7 +6,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from anki_sync import extract_dictionary_word, format_links_and_images, generate_word_audio
+from anki_sync import build_mathjax_block, extract_dictionary_word, format_links_and_images, generate_word_audio
 from card_validation import load_cards, normalize_card_type, normalize_tags, validate_cards
 
 
@@ -15,7 +15,7 @@ def render_preview(cards, media_mapping=None):
     rows = []
 
     for idx, card in enumerate(cards):
-        front_html, back_html = format_links_and_images(card, media_mapping)
+        front_html, back_html = format_links_and_images(card, media_mapping, include_mathjax=False)
         card_type = normalize_card_type(card.get("type"))
         tags = ", ".join(normalize_tags(card.get("tags")))
         source = card.get("source", {})
@@ -60,6 +60,7 @@ def render_preview(cards, media_mapping=None):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anki Card Preview</title>
+  {build_mathjax_block()}
   <style>
     :root {{
       color-scheme: light;

@@ -76,6 +76,14 @@ def format_multiline_text(value):
     return escape_text(value).replace("\n", "<br>")
 
 
+def build_mathjax_block():
+    """Load MathJax for LaTeX found in card text and formula fields."""
+    return (
+        r'<script>window.MathJax = {tex: {inlineMath: [["\\(","\\)"],["$","$"]], displayMath: [["\\[","\\]"],["$$","$$"]], processEscapes: true}, svg: {fontCache: "global"}};</script>'
+        '<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>'
+    )
+
+
 def build_style_block():
     return (
         '<style>'
@@ -831,7 +839,7 @@ def generate_word_audio(word):
     return mp3_path if os.path.exists(mp3_path) else None
 
 
-def format_links_and_images(card, media_mapping):
+def format_links_and_images(card, media_mapping, include_mathjax=True):
     """
     Format image references and construct a minimal card layout.
     """
@@ -902,6 +910,7 @@ def format_links_and_images(card, media_mapping):
         return answer_content + build_audio_control_html(extract_dictionary_word(card))
 
     style_block = build_style_block()
+    mathjax_block = build_mathjax_block() if include_mathjax else ""
 
     def build_answer_html():
         if meaning_question:
@@ -1080,7 +1089,7 @@ def format_links_and_images(card, media_mapping):
     def build_metadata_html():
         return ""
 
-    prompt_parts = [style_block, '<div class="anki-card-container"><div class="anki-shell">']
+    prompt_parts = [style_block + mathjax_block, '<div class="anki-card-container"><div class="anki-shell">']
     prompt_text = card.get("front", "")
     vocab_sentence = extract_vocabulary_sentence(card) if is_vocabulary_card(card) else ""
     if vocab_sentence:
@@ -1105,7 +1114,7 @@ def format_links_and_images(card, media_mapping):
     prompt_parts.append('</div></div>')
 
     answer_parts = [
-        style_block,
+        style_block + mathjax_block,
         '<div class="anki-card-container"><div class="anki-shell"><div class="anki-support">',
         build_answer_html(),
         build_dictionary_html(),

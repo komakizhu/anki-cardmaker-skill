@@ -184,6 +184,14 @@ For `true_false`, generate exactly two options, normally `正确` and `错误`, 
 - Render Chinese follow-up lines as plain text without a `中文：` prefix.
 - For cloze cards, keep the card content focused on the cloze and the answer; do not add extra visual chrome.
 
+### Formula Rendering
+
+- Preserve LaTeX formulas instead of flattening them into plain text.
+- Use `\(...\)` for inline formulas and `\[...\]` for display formulas. `$...$` and `$$...$$` are also supported.
+- The standalone HTML preview and generated Anki card sides load the same MathJax configuration.
+- Do not escape, translate, or rewrite backslashes inside formulas during card generation.
+- If the user needs fully offline review, package a local MathJax asset instead of relying on the CDN; otherwise the default CDN-backed renderer is used.
+
 ### Mandatory Two-Stage Import Gate
 
 Every card-making operation must stop after Stage 1 until the user explicitly approves the import.
