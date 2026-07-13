@@ -10,7 +10,7 @@ Generate high-yield, memory-optimized Anki cards (Cloze, Choice, and QA) from an
 
 ## When to Use
 - **Exam Preparation**: Studying for dense exams like Postgraduate Entrance Exam (考研), National Judiciary Exam (法考), Medical Licensure (执业医), or Civil Service Exams (考公/考编).
-- **Language Acquisition**: Importing lists of raw vocabulary words and auto-generating contextual cloze tests with collocations and sentence contexts.
+- **Language Acquisition**: Importing lists of raw vocabulary words and generating vocabulary meaning cards with collocations and sentence contexts; use Cloze only when explicitly requested or clearly present in the source.
 - **Markdown & PDF Study Notes**: Directly parsing Markdown files or PDF study materials (converting PDF sections to Markdown first) to generate memory-optimized cards.
 
 ## Core Patterns
@@ -42,6 +42,8 @@ Instead of translating vocabulary words in isolation, embed them in realistic se
 - Bold the word.
 - Identify common collocations.
 - Put definitions, idioms, or usage notes in the Extra field.
+- Use Cloze only when the user explicitly asks for blank-filling / cloze practice or the source contains a real passage with a meaningful blank.
+- An isolated word list is not a Cloze source; it must use the vocabulary meaning workflow by default.
 
 ```markdown
 Front:
@@ -79,12 +81,13 @@ When studying PDF textbooks or slides:
 ### 7. Vocabulary Importing & Context Generation
 When importing raw vocabulary lists (without examples or translations):
 - For each word, generate a natural, exam-standard sentence (e.g., TOEFL/IELTS/SAT/CET-6 difficulty) showing the word in context.
-- Format the target word into a Cloze deletion, like `{{c1::vocabulary_word::Chinese_translation}}`.
-- Under the Extra field, list at least two common collocations and a mnemonic hook.
+- Create one `vocabulary_meaning` card per word by default. The front should show the generated sentence with the target word emphasized, and the back should lead with the word, part of speech, Chinese meaning, level, phonetic, and audio.
+- Do not turn the generated sentence into a Cloze automatically. Only switch to `cloze` when the user explicitly requests it or the original material is a passage/exercise with a meaningful blank.
+- Under the vocabulary support area, list the configured dictionary definitions, bilingual examples, vocabulary relations, other meanings, and mnemonic support.
 
 ### 8. External App Export Upgrader (扇贝/百词斩/CSV)
 When processing exported word files or CSV/TXT tables from other flashcard applications (like Shanbay, Baicizhan, or Quizlet):
-- Map fields (e.g., word, phonetic, definition, raw sentence) to the QA or Cloze template.
+- Map isolated word fields (e.g., word, phonetic, definition) to the vocabulary meaning template; map an included passage or explicit blank exercise to Cloze only when the source supports it.
 - **Perform Quality Upgrades**: If the original app provides mechanical dictionary definitions or unnatural translations, replace them with concise, natural translations.
 - **Generate Memory Aids**: Automatically attach high-frequency collocation structures and a mnemonic hook (jokes, homophones, analogies) to the back of the card, which are usually missing in standard app exports.
 
@@ -114,9 +117,10 @@ Use the first rule that applies. Do not mix lower-priority behavior into a card 
 - Keep `source` metadata when the input came from a file, page, chapter, URL, or screenshot.
 - Never emit cards with empty required fields.
 - Validate before previewing or syncing.
-- When explaining a card, include both `explanation` in English and `explanation_zh` in Chinese.
-- Keep `explanation_zh` concise and literal enough to support recall, not a long essay.
-- For answer text and mnemonic hooks, use `back_zh` and `mnemonic_hook_zh` when a Chinese rendering is needed.
+- For English-learning cards, keep the configured bilingual layout and provide both English and Chinese support where the card type requires it.
+- For non-English professional or subject-matter cards, keep the question, answer, explanation, and mnemonic in Chinese whenever possible. Do not translate the explanation or mnemonic into English merely to fill a field; preserve unavoidable technical names, formulas, abbreviations, and original quotations only when they are needed for accuracy.
+- For Chinese subject cards, prefer `back_zh`, `explanation_zh`, and `mnemonic_hook_zh` as the rendered Chinese content fields. Do not add an English parallel line unless the user explicitly requests bilingual output.
+- Keep Chinese explanations concise and literal enough to support recall, not a long essay.
 
 ### Card Type Catalog
 
@@ -148,6 +152,17 @@ When the user asks to organize or convert material, infer the requested `questio
 
 “单词题” means `vocabulary_meaning` when the target is a word used in a sentence; it does not mean a bare translation list. A vocabulary meaning card must preserve the sentence context and include the configured dictionary fields.
 
+### Input-Shape Priority
+
+When the requested type is not explicit, classify the source before generating cards. Use the first matching rule below:
+
+1. **Explicit user request wins**: “填空题”, “完形填空”, “Cloze”, or “挖空” selects `cloze`; “词义题”, “单词题”, or “解释这些词” selects `vocabulary_meaning`.
+2. **Real blank structure selects Cloze**: a passage or exercise contains visible blanks, answer slots, `{{c1::...}}` markup, or an obvious missing word/phrase task. Preserve that context.
+3. **Isolated vocabulary list selects vocabulary meaning**: a screenshot, spreadsheet, or list containing one English word per row and no sentence context is a word list, not a Cloze exercise. Generate one vocabulary meaning card per word.
+4. **Mixed input is split by shape**: keep passage blanks as Cloze and convert isolated words to vocabulary meaning cards; do not force the entire batch into one type.
+
+Never infer Cloze merely because a generated example sentence is available. A generated sentence supplies context for a vocabulary meaning card; it is not evidence that the user requested a blank-filling exercise.
+
 For `true_false`, generate exactly two options, normally `正确` and `错误`, and set `correct_answer` to `A` or `B`:
 
 ```json
@@ -168,6 +183,15 @@ For `true_false`, generate exactly two options, normally `正确` and `错误`, 
 - Keep the back visually minimal with no decorative badges, source breadcrumbs, or helper panels.
 - Render Chinese follow-up lines as plain text without a `中文：` prefix.
 - For cloze cards, keep the card content focused on the cloze and the answer; do not add extra visual chrome.
+
+### Mandatory Two-Stage Import Gate
+
+Every card-making operation must stop after Stage 1 until the user explicitly approves the import.
+
+1. **Build and show**: generate the cards, validate them, render an HTML preview or equivalent front/back sample, and propose a deck name. If the user did not provide a deck name, suggest one based on the subject and ask for approval.
+2. **Import after approval**: only after an explicit confirmation such as “同意导入”, “确认”, “导入这个牌组” or “sync it” may the skill call AnkiConnect or run the sync command. Use the approved deck name and report the import result.
+
+Never silently import immediately after generating cards. “生成”, “整理”, “做成卡片” or “给我看看” means Stage 1 only; it is not permission to write to Anki.
 
 ----
 
@@ -227,15 +251,15 @@ Generate cards in the following JSON format:
    - For difficult concepts or raw words, generate mnemonic hooks.
    - Optional: Use an image generation tool to create visual cards for highly abstract terms and save the graphic to a local directory, setting the path in `mnemonic_image_path`.
 4. **Export JSON**: Output the final cards list as a JSON array to a temporary `cards.json` file.
-5. **Validate First**: Run the validator before import:
+5. **Validate First**: Run the validator before showing the preview:
    ```bash
    python3 scripts/validate_cards.py --file cards.json
    ```
-6. **Preview Before Sync**: Render a standalone HTML preview when you want to inspect front/back layout:
+6. **Stage 1 Preview and Deck Proposal**: Render a standalone HTML preview, show the result, and propose the target deck. Do not sync yet:
    ```bash
    python3 scripts/preview_cards.py --file cards.json --output preview.html
    ```
-7. **Sync to Anki**: Run the python script to import:
+7. **Stage 2 Sync After Explicit Approval**: Only after the user confirms the preview and deck, run the import command:
    ```bash
    python3 scripts/anki_sync.py --file cards.json --deck "MyDeckName"
    ```
