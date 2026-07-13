@@ -1,0 +1,1224 @@
+[
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "generalize",
+    "front": "Researchers should not **generalize** from a single unusual case.",
+    "back": "generalize v. 概括；归纳；推广",
+    "part_of_speech": "v.",
+    "definition_zh": "概括；归纳；推广",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/ˈdʒenərəlaɪz/",
+    "oxford_definition": "to make a general statement from particular cases",
+    "oxford_definition_zh": "从个别情况归纳出一般性结论。",
+    "collins_definition": "to form a general principle from particular examples",
+    "collins_definition_zh": "根据具体例子形成一般原则。",
+    "synonyms": [
+      "summarize v. 总结",
+      "infer v. 推断"
+    ],
+    "antonyms": [
+      "specify v. 具体说明"
+    ],
+    "near_synonyms": [
+      "extrapolate v. 推断；外推"
+    ],
+    "confusable_words": [
+      "general adj. 一般的",
+      "generation n. 一代；产生"
+    ],
+    "collocations": [
+      "generalize from evidence 从证据归纳",
+      "generalize a result 概括结果"
+    ],
+    "word_root": "gener-（产生；一般）",
+    "example_sentences": [
+      "It is risky to generalize from one experiment.",
+      "The report generalizes the findings across age groups.",
+      "Children often generalize a rule too quickly."
+    ],
+    "example_sentences_zh": [
+      "根据一次实验就下结论是有风险的。",
+      "报告将研究结果概括到各年龄组。",
+      "孩子们常常过快地把规则普遍化。"
+    ],
+    "example_targets_zh": [
+      "归纳",
+      "概括",
+      "普遍化"
+    ],
+    "other_meanings": [
+      "v. 使变得普遍；推广"
+    ],
+    "other_meanings_examples": [
+      "The campaign aims to generalize access to clean water."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "biodiversity",
+    "front": "Protecting **biodiversity** is essential to the health of the ecosystem.",
+    "back": "biodiversity n. 生物多样性",
+    "part_of_speech": "n.",
+    "definition_zh": "生物多样性",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/ˌbaɪəʊdaɪˈvɜːsəti/",
+    "oxford_definition": "the existence of a large number of different kinds of animals and plants",
+    "oxford_definition_zh": "大量不同种类动植物的存在。",
+    "collins_definition": "the variety of plant and animal life in a particular habitat",
+    "collins_definition_zh": "特定栖息地中动植物生命的多样性。",
+    "synonyms": [
+      "biological variety n. 生物多样性"
+    ],
+    "antonyms": [
+      "uniformity n. 单一性"
+    ],
+    "near_synonyms": [
+      "ecosystem diversity n. 生态系统多样性"
+    ],
+    "confusable_words": [
+      "biomass n. 生物量",
+      "biography n. 传记"
+    ],
+    "collocations": [
+      "protect biodiversity 保护生物多样性",
+      "loss of biodiversity 生物多样性丧失"
+    ],
+    "word_root": "bio-（生命）+ diversity（多样性）",
+    "example_sentences": [
+      "Wetlands support rich biodiversity.",
+      "Climate change threatens marine biodiversity.",
+      "The reserve was created to preserve biodiversity."
+    ],
+    "example_sentences_zh": [
+      "湿地支持丰富的生物多样性。",
+      "气候变化威胁海洋生物多样性。",
+      "建立保护区是为了保存生物多样性。"
+    ],
+    "example_targets_zh": [
+      "生物多样性",
+      "生物多样性",
+      "生物多样性"
+    ],
+    "other_meanings": [
+      "n. 某一地区或生态系统中的物种多样性"
+    ],
+    "other_meanings_examples": [
+      "The island's biodiversity includes several rare birds."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "shedder",
+    "front": "The snake is a seasonal **shedder** that leaves its old skin behind.",
+    "back": "shedder n. 脱落者；蜕皮动物",
+    "part_of_speech": "n.",
+    "definition_zh": "脱落者；蜕皮动物",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/ˈʃedə(r)/",
+    "oxford_definition": "an animal or person that sheds something",
+    "oxford_definition_zh": "脱落某物的动物或人。",
+    "collins_definition": "one that sheds, especially an animal that sheds its skin",
+    "collins_definition_zh": "脱落某物者，尤其指会蜕皮的动物。",
+    "synonyms": [
+      "molter n. 蜕皮动物"
+    ],
+    "antonyms": [
+      "retainer n. 保留者"
+    ],
+    "near_synonyms": [
+      "脱皮者 n. 脱皮的动物"
+    ],
+    "confusable_words": [
+      "shredder n. 碎纸机；切碎机",
+      "shed v. 脱落"
+    ],
+    "collocations": [
+      "seasonal shedder 季节性蜕皮动物",
+      "heavy shedder 大量脱毛的动物"
+    ],
+    "word_root": "shed（脱落）+ -er（表示执行者）",
+    "example_sentences": [
+      "The lizard is a regular shedder.",
+      "A heavy shedder may require frequent grooming.",
+      "The snake's skin was found after the shedder moved away."
+    ],
+    "example_sentences_zh": [
+      "这种蜥蜴会定期蜕皮。",
+      "大量脱毛的动物可能需要经常梳理。",
+      "蜕皮动物离开后留下了它的皮。"
+    ],
+    "example_targets_zh": [
+      "蜕皮",
+      "脱毛",
+      "蜕皮动物"
+    ],
+    "other_meanings": [
+      "n. 会脱落某种物质的人或物"
+    ],
+    "other_meanings_examples": [
+      "The machine is a dust shedder during operation."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "swathe",
+    "front": "A broad **swathe** of forest was cleared for the new road.",
+    "back": "swathe n. 一大片；长条；v. 包裹；覆盖",
+    "part_of_speech": "n.; v.",
+    "definition_zh": "一大片；长条；包裹；覆盖",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/sweɪð/",
+    "oxford_definition": "a long strip or large area of land",
+    "oxford_definition_zh": "一条长带或一大片土地。",
+    "collins_definition": "a large area of land or a wide strip of material",
+    "collins_definition_zh": "一大片土地或一条宽阔的材料。",
+    "synonyms": [
+      "stretch n. 一片；一段",
+      "wrap v. 包裹"
+    ],
+    "antonyms": [
+      "uncover v. 揭开"
+    ],
+    "near_synonyms": [
+      "tract n. 一大片土地"
+    ],
+    "confusable_words": [
+      "swath n. 一长条；一大片",
+      "swathe v. 包裹"
+    ],
+    "collocations": [
+      "a swathe of land 一大片土地",
+      "swathe in cloth 用布包裹"
+    ],
+    "word_root": "古英语 swæth（足迹；条带）",
+    "example_sentences": [
+      "A swathe of grass was damaged by the fire.",
+      "The nurse swathed the wound in clean gauze.",
+      "The valley was covered by a swathe of mist."
+    ],
+    "example_sentences_zh": [
+      "一大片草地被大火烧毁了。",
+      "护士用干净纱布包扎伤口。",
+      "山谷被一大片雾气笼罩。"
+    ],
+    "example_targets_zh": [
+      "一大片",
+      "包扎",
+      "一大片"
+    ],
+    "other_meanings": [
+      "v. 覆盖或包裹某物"
+    ],
+    "other_meanings_examples": [
+      "The hills were swathed in low clouds."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "biomass",
+    "front": "The plant converts agricultural waste into renewable **biomass** fuel.",
+    "back": "biomass n. 生物量；生物质",
+    "part_of_speech": "n.",
+    "definition_zh": "生物量；生物质",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/ˈbaɪəʊmæs/",
+    "oxford_definition": "the total mass of living matter in a particular area",
+    "oxford_definition_zh": "特定区域内生物体的总质量。",
+    "collins_definition": "organic matter used as a source of energy",
+    "collins_definition_zh": "作为能源使用的有机物质。",
+    "synonyms": [
+      "organic matter n. 有机物质"
+    ],
+    "antonyms": [
+      "fossil fuel n. 化石燃料"
+    ],
+    "near_synonyms": [
+      "biofuel n. 生物燃料"
+    ],
+    "confusable_words": [
+      "biodiversity n. 生物多样性",
+      "biome n. 生物群系"
+    ],
+    "collocations": [
+      "biomass energy 生物质能",
+      "biomass fuel 生物质燃料"
+    ],
+    "word_root": "bio-（生命）+ mass（质量）",
+    "example_sentences": [
+      "The plant burns biomass to generate electricity.",
+      "Forest biomass stores large amounts of carbon.",
+      "Farmers can turn crop waste into biomass."
+    ],
+    "example_sentences_zh": [
+      "这座工厂燃烧生物质发电。",
+      "森林生物量储存大量碳。",
+      "农民可以把农作物废料转化为生物质。"
+    ],
+    "example_targets_zh": [
+      "生物质",
+      "生物量",
+      "生物质"
+    ],
+    "other_meanings": [
+      "n. 一个生态系统中全部生物材料的总量"
+    ],
+    "other_meanings_examples": [
+      "The lake's biomass declined after pollution increased."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "viscerally",
+    "front": "The audience reacted **viscerally** to the film's final scene.",
+    "back": "viscerally adv. 发自内心地；本能地",
+    "part_of_speech": "adv.",
+    "definition_zh": "发自内心地；本能地",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/ˈvɪsərəli/",
+    "oxford_definition": "in a way that is based on deep physical or emotional feelings",
+    "oxford_definition_zh": "以基于深层身体或情感感受的方式。",
+    "collins_definition": "in a way that involves strong emotional reactions",
+    "collins_definition_zh": "以涉及强烈情感反应的方式。",
+    "synonyms": [
+      "instinctively adv. 本能地",
+      "emotionally adv. 情感上地"
+    ],
+    "antonyms": [
+      "rationally adv. 理性地"
+    ],
+    "near_synonyms": [
+      "intuitively adv. 凭直觉地"
+    ],
+    "confusable_words": [
+      "visceral adj. 发自内心的",
+      "visual adj. 视觉的"
+    ],
+    "collocations": [
+      "react viscerally 本能地反应",
+      "feel viscerally 发自内心地感受"
+    ],
+    "word_root": "viscer-（内脏；内心）+ -ally（以……方式）",
+    "example_sentences": [
+      "She viscerally opposed the proposal.",
+      "The speech viscerally affected many listeners.",
+      "He viscerally understood the character's fear."
+    ],
+    "example_sentences_zh": [
+      "她发自内心地反对这项提议。",
+      "这场演讲强烈触动了许多听众。",
+      "他本能地理解了这个角色的恐惧。"
+    ],
+    "example_targets_zh": [
+      "发自内心地",
+      "强烈触动",
+      "本能地"
+    ],
+    "other_meanings": [
+      "adv. 以身体感受而非理性分析的方式"
+    ],
+    "other_meanings_examples": [
+      "The dancer responded viscerally to the rhythm."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "seriously",
+    "front": "The committee is **seriously** considering a change to the policy.",
+    "back": "seriously adv. 严重地；认真地；严肃地",
+    "part_of_speech": "adv.",
+    "definition_zh": "严重地；认真地；严肃地",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˈsɪəriəsli/",
+    "oxford_definition": "in a serious way or manner",
+    "oxford_definition_zh": "以严肃、认真的方式。",
+    "collins_definition": "to a serious degree or in a serious manner",
+    "collins_definition_zh": "达到严重程度或以严肃方式。",
+    "synonyms": [
+      "earnestly adv. 认真地",
+      "gravely adv. 严重地"
+    ],
+    "antonyms": [
+      "lightly adv. 轻率地"
+    ],
+    "near_synonyms": [
+      "solemnly adv. 庄重地"
+    ],
+    "confusable_words": [
+      "serious adj. 严肃的",
+      "series n. 系列"
+    ],
+    "collocations": [
+      "take seriously 认真对待",
+      "seriously consider 认真考虑"
+    ],
+    "word_root": "seri-（严肃；沉重）+ -ly（副词后缀）",
+    "example_sentences": [
+      "The doctor took her symptoms seriously.",
+      "He was seriously injured in the accident.",
+      "Are you seriously suggesting that we cancel?"
+    ],
+    "example_sentences_zh": [
+      "医生认真对待她的症状。",
+      "他在事故中受了重伤。",
+      "你是认真建议我们取消吗？"
+    ],
+    "example_targets_zh": [
+      "认真对待",
+      "重伤",
+      "认真"
+    ],
+    "other_meanings": [
+      "adv. 用于强调某事确实如此或表示惊讶"
+    ],
+    "other_meanings_examples": [
+      "Seriously, you should check the figures again."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "otherwise",
+    "front": "You must submit the form today; **otherwise**, the application will be rejected.",
+    "back": "otherwise adv. 否则；在其他方面",
+    "part_of_speech": "adv.",
+    "definition_zh": "否则；在其他方面",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˈʌðəwaɪz/",
+    "oxford_definition": "in a different way or in all other respects",
+    "oxford_definition_zh": "以不同方式或在其他所有方面。",
+    "collins_definition": "used to state what would happen if something were not done",
+    "collins_definition_zh": "用于说明如果不做某事将会发生什么。",
+    "synonyms": [
+      "alternatively adv. 或者",
+      "differently adv. 不同地"
+    ],
+    "antonyms": [
+      "similarly adv. 相似地"
+    ],
+    "near_synonyms": [
+      "elsewhere adv. 在别处"
+    ],
+    "confusable_words": [
+      "other adj. 其他的",
+      "another adj. 另一个"
+    ],
+    "collocations": [
+      "or otherwise 或其他情况",
+      "otherwise known as 也称为"
+    ],
+    "word_root": "other（其他）+ wise（方式）",
+    "example_sentences": [
+      "Wear a coat; otherwise, you will get cold.",
+      "The plan is sound, but otherwise needs revision.",
+      "She is a teacher, otherwise known as an educator."
+    ],
+    "example_sentences_zh": [
+      "穿上外套，否则你会感冒。",
+      "这个计划总体合理，但其他方面需要修改。",
+      "她是一名教师，也就是教育工作者。"
+    ],
+    "example_targets_zh": [
+      "否则",
+      "其他方面",
+      "也就是"
+    ],
+    "other_meanings": [
+      "adv. 在其他方面；除此以外"
+    ],
+    "other_meanings_examples": [
+      "The room was small but otherwise comfortable."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "condition",
+    "front": "The contract is valid only on the **condition** that payment is made on time.",
+    "back": "condition n. 条件；状况；疾病；v. 使适应",
+    "part_of_speech": "n.; v.",
+    "definition_zh": "条件；状况；疾病；使适应",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/kənˈdɪʃn/",
+    "oxford_definition": "the state that something is in",
+    "oxford_definition_zh": "某物所处的状态。",
+    "collins_definition": "a situation that must exist before something else is possible",
+    "collins_definition_zh": "某事实现前必须存在的情况。",
+    "synonyms": [
+      "state n. 状态",
+      "requirement n. 要求"
+    ],
+    "antonyms": [
+      "unconditioned adj. 无条件的"
+    ],
+    "near_synonyms": [
+      "circumstance n. 情况"
+    ],
+    "confusable_words": [
+      "conditional adj. 有条件的",
+      "convention n. 惯例"
+    ],
+    "collocations": [
+      "on condition that 条件是",
+      "living conditions 生活条件"
+    ],
+    "word_root": "condit-（安排；状态）",
+    "example_sentences": [
+      "The car is in excellent condition.",
+      "Payment is required on condition that the work is complete.",
+      "Exercise can condition the body for competition."
+    ],
+    "example_sentences_zh": [
+      "这辆车状况极佳。",
+      "工作完成后才付款。",
+      "锻炼可以使身体适应比赛。"
+    ],
+    "example_targets_zh": [
+      "状况",
+      "条件",
+      "使适应"
+    ],
+    "other_meanings": [
+      "n. 疾病或健康问题"
+    ],
+    "other_meanings_examples": [
+      "The patient has a heart condition."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "cast",
+    "front": "The director **cast** a young actor in the leading role.",
+    "back": "cast v. 选派；投射；投掷；n. 演员阵容",
+    "part_of_speech": "v.; n.",
+    "definition_zh": "选派；投射；投掷；演员阵容",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/kɑːst/",
+    "oxford_definition": "to choose actors to play particular parts",
+    "oxford_definition_zh": "选择演员出演特定角色。",
+    "collins_definition": "to throw or send something in a particular direction",
+    "collins_definition_zh": "把某物投向特定方向。",
+    "synonyms": [
+      "throw v. 投掷",
+      "select v. 选择"
+    ],
+    "antonyms": [
+      "catch v. 接住"
+    ],
+    "near_synonyms": [
+      "assign v. 指派"
+    ],
+    "confusable_words": [
+      "caste n. 种姓",
+      "cost v. 花费"
+    ],
+    "collocations": [
+      "cast a role 选派角色",
+      "cast a shadow 投下阴影"
+    ],
+    "word_root": "cast-（投掷；放置）",
+    "example_sentences": [
+      "The director cast her as the lead.",
+      "The tree cast a long shadow.",
+      "He cast the net into the river."
+    ],
+    "example_sentences_zh": [
+      "导演选她担任主角。",
+      "树投下了长长的影子。",
+      "他把网撒进河里。"
+    ],
+    "example_targets_zh": [
+      "选派",
+      "投下",
+      "撒"
+    ],
+    "other_meanings": [
+      "n. 演员阵容；铸件；石膏固定物"
+    ],
+    "other_meanings_examples": [
+      "The film has an impressive cast."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "barely",
+    "front": "The village was **barely** visible through the heavy fog.",
+    "back": "barely adv. 几乎不；勉强；刚刚",
+    "part_of_speech": "adv.",
+    "definition_zh": "几乎不；勉强；刚刚",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˈbeəli/",
+    "oxford_definition": "in a way that is just possible but only with difficulty",
+    "oxford_definition_zh": "以勉强可能、但困难重重的方式。",
+    "collins_definition": "only just; hardly",
+    "collins_definition_zh": "仅仅；几乎不。",
+    "synonyms": [
+      "hardly adv. 几乎不",
+      "scarcely adv. 几乎不"
+    ],
+    "antonyms": [
+      "easily adv. 容易地",
+      "clearly adv. 清楚地"
+    ],
+    "near_synonyms": [
+      "just adv. 刚刚"
+    ],
+    "confusable_words": [
+      "bare adj. 裸露的",
+      "bear v. 忍受；承担"
+    ],
+    "collocations": [
+      "barely enough 勉强够",
+      "barely visible 几乎看不见"
+    ],
+    "word_root": "bare（裸露的；仅有的）+ -ly",
+    "example_sentences": [
+      "I could barely hear the speaker.",
+      "She barely passed the examination.",
+      "The plane had barely landed when it began to rain."
+    ],
+    "example_sentences_zh": [
+      "我几乎听不见演讲者的声音。",
+      "她勉强通过了考试。",
+      "飞机刚一着陆就开始下雨。"
+    ],
+    "example_targets_zh": [
+      "几乎听不见",
+      "勉强",
+      "刚一"
+    ],
+    "other_meanings": [
+      "adv. 刚刚发生某事就发生另一件事"
+    ],
+    "other_meanings_examples": [
+      "He had barely arrived when the meeting began."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "conference",
+    "front": "The researchers presented their findings at an international **conference**.",
+    "back": "conference n. 会议；研讨会",
+    "part_of_speech": "n.",
+    "definition_zh": "会议；研讨会",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˈkɒnfərəns/",
+    "oxford_definition": "a large meeting where people discuss a subject",
+    "oxford_definition_zh": "人们讨论某一主题的大型会议。",
+    "collins_definition": "a meeting at which formal discussions take place",
+    "collins_definition_zh": "进行正式讨论的会议。",
+    "synonyms": [
+      "meeting n. 会议",
+      "convention n. 大会"
+    ],
+    "antonyms": [
+      "solitude n. 独处"
+    ],
+    "near_synonyms": [
+      "symposium n. 研讨会"
+    ],
+    "confusable_words": [
+      "confer v. 商议",
+      "confront v. 面对"
+    ],
+    "collocations": [
+      "academic conference 学术会议",
+      "conference room 会议室"
+    ],
+    "word_root": "con-（共同）+ fer（带来）",
+    "example_sentences": [
+      "She attended a medical conference.",
+      "The conference focused on climate policy.",
+      "The two sides held a conference by video link."
+    ],
+    "example_sentences_zh": [
+      "她参加了一场医学会议。",
+      "会议聚焦于气候政策。",
+      "双方通过视频链接举行了会议。"
+    ],
+    "example_targets_zh": [
+      "会议",
+      "会议",
+      "会议"
+    ],
+    "other_meanings": [
+      "n. 正式讨论或协商"
+    ],
+    "other_meanings_examples": [
+      "The conference between the parties lasted two hours."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "horn",
+    "front": "The driver sounded the **horn** to warn the cyclist.",
+    "back": "horn n. 角；喇叭；号角",
+    "part_of_speech": "n.",
+    "definition_zh": "角；喇叭；号角",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/hɔːn/",
+    "oxford_definition": "a hard pointed object that grows on the head of some animals",
+    "oxford_definition_zh": "某些动物头上生长的坚硬尖状物。",
+    "collins_definition": "a device on a vehicle used to make a warning sound",
+    "collins_definition_zh": "车辆上用于发出警告声音的装置。",
+    "synonyms": [
+      "antler n. 鹿角",
+      "hooter n. 喇叭"
+    ],
+    "antonyms": [
+      "silence n. 寂静"
+    ],
+    "near_synonyms": [
+      "trumpet n. 喇叭；小号"
+    ],
+    "confusable_words": [
+      "horny adj. 角质的",
+      "hormone n. 激素"
+    ],
+    "collocations": [
+      "sound the horn 按喇叭",
+      "horn of an animal 动物的角"
+    ],
+    "word_root": "horn（角；号角）",
+    "example_sentences": [
+      "The goat has two curved horns.",
+      "A car horn sounded behind us.",
+      "The hunter blew a horn to signal the group."
+    ],
+    "example_sentences_zh": [
+      "这只山羊有两只弯角。",
+      "我们身后一辆汽车按响了喇叭。",
+      "猎人吹号角向队伍发出信号。"
+    ],
+    "example_targets_zh": [
+      "角",
+      "喇叭",
+      "号角"
+    ],
+    "other_meanings": [
+      "n. 乐器中的号角或喇叭"
+    ],
+    "other_meanings_examples": [
+      "The musician played a deep note on the horn."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "purse",
+    "front": "She reached into her **purse** for the train ticket.",
+    "back": "purse n. 钱包；手提包；v. 撅嘴；皱起",
+    "part_of_speech": "n.; v.",
+    "definition_zh": "钱包；手提包；撅嘴；皱起",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/pɜːs/",
+    "oxford_definition": "a small bag used especially by women to carry money",
+    "oxford_definition_zh": "尤其由女性使用、用来装钱的小包。",
+    "collins_definition": "to move your lips into a small tight shape",
+    "collins_definition_zh": "把嘴唇收拢成小而紧的形状。",
+    "synonyms": [
+      "wallet n. 钱包",
+      "tighten v. 收紧"
+    ],
+    "antonyms": [
+      "loosen v. 放松"
+    ],
+    "near_synonyms": [
+      "handbag n. 手提包"
+    ],
+    "confusable_words": [
+      "pursue v. 追求",
+      "purchase n. 购买"
+    ],
+    "collocations": [
+      "purse one's lips 撅起嘴唇",
+      "purse strings 钱袋；财权"
+    ],
+    "word_root": "purse（小袋；钱包）",
+    "example_sentences": [
+      "She left her purse on the train.",
+      "He pursed his lips in disapproval.",
+      "The charity controls the public purse."
+    ],
+    "example_sentences_zh": [
+      "她把手提包落在了火车上。",
+      "他不赞成地撅起了嘴。",
+      "该慈善机构管理公共资金。"
+    ],
+    "example_targets_zh": [
+      "手提包",
+      "撅起了嘴",
+      "资金"
+    ],
+    "other_meanings": [
+      "v. 收拢嘴唇以表示不满或思考"
+    ],
+    "other_meanings_examples": [
+      "She pursed her lips before answering."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "instance",
+    "front": "This is one **instance** of a much broader social problem.",
+    "back": "instance n. 例子；实例；情况",
+    "part_of_speech": "n.",
+    "definition_zh": "例子；实例；情况",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˈɪnstəns/",
+    "oxford_definition": "a particular example of a situation or event",
+    "oxford_definition_zh": "某种情况或事件的具体例子。",
+    "collins_definition": "an example of a particular kind of situation",
+    "collins_definition_zh": "某类情况的一个例子。",
+    "synonyms": [
+      "example n. 例子",
+      "case n. 情况；案例"
+    ],
+    "antonyms": [
+      "generalization n. 概括"
+    ],
+    "near_synonyms": [
+      "illustration n. 例证"
+    ],
+    "confusable_words": [
+      "instant adj. 立即的",
+      "instance v. 举例"
+    ],
+    "collocations": [
+      "for instance 例如",
+      "in this instance 在这个例子中"
+    ],
+    "word_root": "inst-（站立；存在）+ -ance",
+    "example_sentences": [
+      "For instance, prices rose sharply last year.",
+      "This instance shows why the rule matters.",
+      "The software handles each instance separately."
+    ],
+    "example_sentences_zh": [
+      "例如，去年价格大幅上涨。",
+      "这个例子说明了规则为何重要。",
+      "软件会分别处理每个实例。"
+    ],
+    "example_targets_zh": [
+      "例如",
+      "例子",
+      "实例"
+    ],
+    "other_meanings": [
+      "n. 情况或特定场合"
+    ],
+    "other_meanings_examples": [
+      "In this instance, the law does not apply."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "surveillance",
+    "front": "The airport expanded its video **surveillance** system.",
+    "back": "surveillance n. 监视；监控；监督",
+    "part_of_speech": "n.",
+    "definition_zh": "监视；监控；监督",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/səˈveɪləns/",
+    "oxford_definition": "the activity of carefully watching a person or place",
+    "oxford_definition_zh": "仔细监视某人或某地的活动。",
+    "collins_definition": "the careful watching of a person suspected of a crime",
+    "collins_definition_zh": "对涉嫌犯罪者进行的仔细监视。",
+    "synonyms": [
+      "monitoring n. 监测",
+      "observation n. 观察"
+    ],
+    "antonyms": [
+      "neglect n. 忽视"
+    ],
+    "near_synonyms": [
+      "oversight n. 监督"
+    ],
+    "confusable_words": [
+      "survey n. 调查",
+      "supervision n. 监督"
+    ],
+    "collocations": [
+      "video surveillance 视频监控",
+      "under surveillance 受到监视"
+    ],
+    "word_root": "sur-（在上面）+ veiller（观察）",
+    "example_sentences": [
+      "The building is under constant surveillance.",
+      "Surveillance cameras recorded the incident.",
+      "The law regulates electronic surveillance."
+    ],
+    "example_sentences_zh": [
+      "这座建筑一直受到监视。",
+      "监控摄像头记录了这起事件。",
+      "这项法律规范电子监控。"
+    ],
+    "example_targets_zh": [
+      "监视",
+      "监控摄像头",
+      "电子监控"
+    ],
+    "other_meanings": [
+      "n. 对活动或系统的持续监督"
+    ],
+    "other_meanings_examples": [
+      "The project requires regular surveillance of water quality."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "device",
+    "front": "The engineer designed a small **device** to measure air quality.",
+    "back": "device n. 设备；装置；策略",
+    "part_of_speech": "n.",
+    "definition_zh": "设备；装置；策略",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/dɪˈvaɪs/",
+    "oxford_definition": "an object or a piece of equipment designed for a particular purpose",
+    "oxford_definition_zh": "为特定目的设计的物体或设备。",
+    "collins_definition": "a piece of equipment or a mechanism designed to serve a special purpose",
+    "collins_definition_zh": "为特殊用途设计的设备或机械装置。",
+    "synonyms": [
+      "equipment n. 设备",
+      "instrument n. 仪器"
+    ],
+    "antonyms": [
+      "disorder n. 混乱"
+    ],
+    "near_synonyms": [
+      "gadget n. 小装置"
+    ],
+    "confusable_words": [
+      "devise v. 设计",
+      "advice n. 建议"
+    ],
+    "collocations": [
+      "electronic device 电子设备",
+      "safety device 安全装置"
+    ],
+    "word_root": "de-（离开）+ vice（看；方式）",
+    "example_sentences": [
+      "The device measures blood pressure.",
+      "Mobile devices have changed communication.",
+      "The clause is a legal device to limit liability."
+    ],
+    "example_sentences_zh": [
+      "这台设备测量血压。",
+      "移动设备改变了交流方式。",
+      "这条款是限制责任的法律策略。"
+    ],
+    "example_targets_zh": [
+      "设备",
+      "设备",
+      "策略"
+    ],
+    "other_meanings": [
+      "n. 写作或论证中使用的技巧"
+    ],
+    "other_meanings_examples": [
+      "The author uses irony as a literary device."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "chop",
+    "front": "He used a sharp knife to **chop** the vegetables.",
+    "back": "chop v. 砍；切碎；n. 排骨；一块肉",
+    "part_of_speech": "v.; n.",
+    "definition_zh": "砍；切碎；排骨；一块肉",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/tʃɒp/",
+    "oxford_definition": "to cut something into pieces with a knife",
+    "oxford_definition_zh": "用刀把某物切成小块。",
+    "collins_definition": "to cut something into pieces with a downward movement",
+    "collins_definition_zh": "用向下的动作把某物切成小块。",
+    "synonyms": [
+      "cut v. 切",
+      "hack v. 劈；砍"
+    ],
+    "antonyms": [
+      "join v. 连接"
+    ],
+    "near_synonyms": [
+      "slice v. 切片"
+    ],
+    "confusable_words": [
+      "chopstick n. 筷子",
+      "shop n. 商店"
+    ],
+    "collocations": [
+      "chop vegetables 切蔬菜",
+      "pork chop 猪排"
+    ],
+    "word_root": "chop（砍；切）",
+    "example_sentences": [
+      "Chop the onions into small pieces.",
+      "The workers chopped down the old tree.",
+      "He ordered a lamb chop for dinner."
+    ],
+    "example_sentences_zh": [
+      "把洋葱切成小块。",
+      "工人们砍倒了那棵老树。",
+      "他晚餐点了一份羊排。"
+    ],
+    "example_targets_zh": [
+      "切",
+      "砍倒",
+      "羊排"
+    ],
+    "other_meanings": [
+      "n. 排骨或一块带骨肉"
+    ],
+    "other_meanings_examples": [
+      "The restaurant serves grilled pork chops."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  }
+]

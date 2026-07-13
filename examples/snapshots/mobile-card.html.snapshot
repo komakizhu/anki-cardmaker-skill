@@ -1,0 +1,6 @@
+# Stable HTML/CSS contract for the mobile Anki card layout.
+@media (max-width: 600px)
+.mobile .anki-extension-block
+.mobile .anki-extension-block .anki-relation-items
+.anki-audio-button
+.anki-audio-control

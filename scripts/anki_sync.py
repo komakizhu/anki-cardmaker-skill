@@ -132,6 +132,7 @@ def build_style_block():
         '.anki-example-en, .anki-example-zh { display: inline; }'
         '.anki-example-zh { margin-left: 10px; color: var(--anki-fg); }'
         '.anki-example-zh strong { color: var(--anki-fg); font-weight: 700; }'
+        '.anki-example-source { display: block; margin-top: 2px; color: var(--anki-muted); font-size: 12px; line-height: 1.35; }'
         '.anki-other-meaning { margin-left: 8px; color: var(--anki-fg); font-weight: 700; }'
         '.anki-dictionary-word { font-size: 20px; line-height: 1.5; color: var(--anki-fg); font-weight: 400; }'
         '.anki-dictionary-headline { font-size: 20px; line-height: 1.5; color: var(--anki-fg); font-weight: 400; }'
@@ -877,6 +878,7 @@ def format_links_and_images(card, media_mapping, include_mathjax=True):
     word_affixes = (card.get("word_affixes", "") or "").strip()
     example_sentences = normalize_text_items(card.get("example_sentences"))
     example_sentences_zh = normalize_text_items(card.get("example_sentences_zh"))
+    example_sources = normalize_text_items(card.get("example_sources"))
     raw_example_targets_zh = card.get("example_targets_zh") or []
     example_targets_zh = [str(item).strip() for item in raw_example_targets_zh if str(item).strip()] if isinstance(raw_example_targets_zh, (list, tuple)) else []
     other_meanings = card.get("other_meanings")
@@ -1058,10 +1060,13 @@ def format_links_and_images(card, media_mapping, include_mathjax=True):
         if len(example_sentences) >= 3 and len(example_sentences_zh) >= 3 and len(example_targets_zh) >= 3:
             example_items = []
             for index, (english, chinese, chinese_target) in enumerate(zip(example_sentences[:3], example_sentences_zh[:3], example_targets_zh[:3]), 1):
+                source_html = ""
+                if index <= len(example_sources):
+                    source_html = f'<span class="anki-example-source">出处：{format_multiline_text(example_sources[index - 1])}</span>'
                 example_items.append(
                     f'<div class="anki-extension-item">{index}. '
                     f'<span class="anki-example-en">{bold_target_text(english, extract_dictionary_word(card))}</span>'
-                    f'<span class="anki-example-zh">{bold_target_text(chinese, chinese_target)}</span></div>'
+                    f'<span class="anki-example-zh">{bold_target_text(chinese, chinese_target)}</span>{source_html}</div>'
                 )
             return '<div class="anki-support-block anki-extension-block"><div class="anki-support-title">双语例句</div>' + "".join(example_items) + '</div>'
         return ""

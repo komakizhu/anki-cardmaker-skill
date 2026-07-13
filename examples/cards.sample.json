@@ -19,6 +19,7 @@
     "schema_version": "1.0",
     "type": "Cloze",
     "question_type": "cloze",
+    "input_shape": "passage_blank",
     "front": "Analyzing real exam readings, the researcher must {{c1::scrutinize::v. 仔细检查}} every sentence.",
     "back": "",
     "back_zh": "",

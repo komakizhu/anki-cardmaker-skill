@@ -17,6 +17,17 @@
           "type": "string",
           "enum": ["vocabulary_meaning", "cloze", "single_choice", "multiple_choice", "true_false", "short_answer", "词义题", "填空题", "单选题", "多选题", "判断题", "简答题"]
         },
+        "learning_stage": {
+          "type": "string",
+          "enum": ["中考英语", "高考英语", "CET-4", "CET-6", "TEM-4", "TEM-8", "IELTS", "TOEFL", "GRE", "GMAT", "BEC", "学术英语", "职场英语", "考研英语一", "考研英语二", "通用"]
+        },
+        "input_shape": {
+          "type": "string",
+          "enum": ["isolated_vocabulary_list", "passage_blank", "explicit_cloze_request", "definition_prompt", "concept_question"]
+        },
+        "explicit_cloze_request": {
+          "type": "boolean"
+        },
         "type": {
           "type": "string",
           "enum": ["QA", "Basic", "qa", "basic"]
@@ -115,6 +126,11 @@
           "type": "string",
           "description": "Chinese translation for the example sentence."
         },
+        "example_sources": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Source labels aligned one-to-one with example_sentences."
+        },
         "mnemonic_image_path": {
           "type": "string",
           "description": "Absolute path to a local image file."
@@ -158,6 +174,17 @@
         "question_type": {
           "type": "string",
           "enum": ["vocabulary_meaning", "cloze", "single_choice", "multiple_choice", "true_false", "short_answer", "词义题", "填空题", "单选题", "多选题", "判断题", "简答题"]
+        },
+        "learning_stage": {
+          "type": "string",
+          "enum": ["中考英语", "高考英语", "CET-4", "CET-6", "TEM-4", "TEM-8", "IELTS", "TOEFL", "GRE", "GMAT", "BEC", "学术英语", "职场英语", "考研英语一", "考研英语二", "通用"]
+        },
+        "input_shape": {
+          "type": "string",
+          "enum": ["isolated_vocabulary_list", "passage_blank", "explicit_cloze_request", "definition_prompt", "concept_question"]
+        },
+        "explicit_cloze_request": {
+          "type": "boolean"
         },
         "type": {
           "type": "string",
@@ -262,6 +289,11 @@
           "type": "string",
           "description": "Chinese translation for the example sentence."
         },
+        "example_sources": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Source labels aligned one-to-one with example_sentences."
+        },
         "mnemonic_image_path": {
           "type": "string",
           "description": "Absolute path to a local image file."
@@ -305,6 +337,17 @@
         "question_type": {
           "type": "string",
           "enum": ["vocabulary_meaning", "cloze", "single_choice", "multiple_choice", "true_false", "short_answer", "词义题", "填空题", "单选题", "多选题", "判断题", "简答题"]
+        },
+        "learning_stage": {
+          "type": "string",
+          "enum": ["中考英语", "高考英语", "CET-4", "CET-6", "TEM-4", "TEM-8", "IELTS", "TOEFL", "GRE", "GMAT", "BEC", "学术英语", "职场英语", "考研英语一", "考研英语二", "通用"]
+        },
+        "input_shape": {
+          "type": "string",
+          "enum": ["isolated_vocabulary_list", "passage_blank", "explicit_cloze_request", "definition_prompt", "concept_question"]
+        },
+        "explicit_cloze_request": {
+          "type": "boolean"
         },
         "type": {
           "type": "string",
@@ -402,6 +445,11 @@
         "example_sentence_zh": {
           "type": "string",
           "description": "Chinese translation for the example sentence."
+        },
+        "example_sources": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Source labels aligned one-to-one with example_sentences."
         },
         "mnemonic_image_path": {
           "type": "string",
