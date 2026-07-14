@@ -1,6 +1,6 @@
 ---
-name: anki-cardmaker
-description: Use when the user mentions 制卡、做卡、闪卡、卡片、Anki、anki、导入 Anki, or asks to turn screenshots, files, text, or notes into study cards. Route the request to the appropriate card-type sub-skill and require preview approval before importing.
+name: Anki制卡
+description: 用户说“制卡、做卡、闪卡、卡片、Anki、导入 Anki”或 “make cards、create flashcards、study cards、import to Anki” 时调用。负责询问题型、分流子 Skill，并在导入前要求用户确认。
 ---
 
 # Anki Intelligent Card Maker
@@ -15,7 +15,9 @@ Generate high-yield, memory-optimized Anki cards (Cloze, Choice, and QA) from an
 
 ## Trigger and Card-Type Intake
 
-Invoke this Skill when the user expresses card-making or Anki intent, including `制卡`、`做卡`、`闪卡`、`卡片`、`anki`、`Anki`、`导入 Anki`、`同步到 Anki`、`整理成卡片` or equivalent English phrases such as “make cards”, “flashcards”, or “import to Anki”. Do not require the user to say “Anki Skill”.
+Invoke this Skill when the user expresses card-making or Anki intent, including `制卡`、`做卡`、`闪卡`、`卡片`、`anki`、`Anki`、`导入 Anki`、`同步到 Anki`、`整理成卡片`、“make cards”, “create flashcards”, “make study cards”, “turn this into cards”, “flashcards”, “import to Anki”, or “sync to Anki”. Do not require the user to say “Anki Skill”.
+
+Chinese and English intent have equal priority. Normalize punctuation, capitalization, and common mixed expressions before routing; for example, `帮我 make vocabulary cards` and `把这批整理成 cloze cards` must be handled like their fully Chinese or fully English equivalents.
 
 If the user has not specified a card type, ask before generating cards:
 
@@ -223,14 +225,14 @@ Use `question_type` to make the intended learning interaction explicit. The lega
 
 | `question_type` | Chinese label | Anki `type` | Use for |
 | --- | --- | --- | --- |
-| `vocabulary_meaning` | 词义题 | `QA` | Meaning of a target word in a sentence or phrase |
-| `cloze` | 填空题 | `Cloze` | Recall a missing word, phrase, or fact in context |
-| `single_choice` | 单选题 | `Choice` | Exactly one correct option |
-| `multiple_choice` | 多选题 | `Choice` | More than one correct option |
-| `true_false` | 判断题 | `Choice` | Decide whether one statement is true or false |
-| `short_answer` | 简答题 | `QA` | Chinese or English free-response recall |
+| `vocabulary_meaning` | 词义题 / 单词题 / vocabulary meaning / word-definition | `QA` | Meaning of a target word in a sentence or phrase |
+| `cloze` | 填空题 / 完形填空 / cloze / fill-in-the-blank | `Cloze` | Recall a missing word, phrase, or fact in context |
+| `single_choice` | 单选题 / single-choice / single-answer | `Choice` | Exactly one correct option |
+| `multiple_choice` | 多选题 / multiple-choice / multiple-answer | `Choice` | More than one correct option |
+| `true_false` | 判断题 / 判断正误 / true-false / true-or-false | `Choice` | Decide whether one statement is true or false |
+| `short_answer` | 简答题 / 问答题 / short-answer / question-and-answer | `QA` | Chinese or English free-response recall |
 
-Accepted aliases include `词义题`, `填空题`, `单选题`, `多选题`, `判断题`, `简答题`, `单词题`, `meaning`, `definition`, `fill_blank`, `single-choice`, `multiple-choice`, and `true-false`. If `question_type` is omitted, it is inferred from the legacy `type` and card content.
+Accepted aliases include Chinese and English forms: `词义题`, `填空题`, `单选题`, `多选题`, `判断题`, `简答题`, `单词题`, `vocabulary meaning`, `word definition`, `meaning`, `definition`, `cloze`, `fill_blank`, `fill-in-the-blank`, `single-choice`, `multiple-choice`, `true-false`, and `short-answer`. If `question_type` is omitted, it is inferred from the legacy `type` and card content.
 
 ### Natural-Language Type Routing
 
@@ -238,12 +240,12 @@ When the user asks to organize or convert material, infer the requested `questio
 
 | User wording | Use |
 | --- | --- |
-| “整理成词义题”, “做成单词题”, “按词义考”, “考这个词在句中的意思” | `vocabulary_meaning` |
-| “整理成填空题”, “挖空”, “做 Cloze” | `cloze` |
-| “整理成单选题”, “只有一个正确答案” | `single_choice` |
-| “整理成多选题”, “有多个正确答案” | `multiple_choice` |
-| “整理成判断题”, “判断正误”, “对错题” | `true_false` |
-| “整理成简答题”, “问答题”, “让用户自己回答” | `short_answer` |
+| “整理成词义题”, “做成单词题”, “vocabulary meaning”, “make word-definition cards” | `vocabulary_meaning` |
+| “整理成填空题”, “挖空”, “做 Cloze”, “make cloze cards”, “fill in the blanks” | `cloze` |
+| “整理成单选题”, “只有一个正确答案”, “single-choice” | `single_choice` |
+| “整理成多选题”, “有多个正确答案”, “multiple-choice” | `multiple_choice` |
+| “整理成判断题”, “判断正误”, “对错题”, “true or false” | `true_false` |
+| “整理成简答题”, “问答题”, “让用户自己回答”, “short-answer” | `short_answer` |
 
 “单词题” means `vocabulary_meaning` when the target is a word used in a sentence; it does not mean a bare translation list. A vocabulary meaning card must preserve the sentence context and include the configured dictionary fields.
 

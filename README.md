@@ -4,7 +4,7 @@
 
 An Anki card-making Skill for Codex. It converts screenshots, vocabulary lists, text, Markdown, and PDFs into structured cards, shows a standalone HTML preview first, and syncs to Anki only after explicit approval.
 
-**Version:** `1.4.0`
+**Version:** `1.5.1`
 
 ## Features / 功能
 
@@ -12,6 +12,10 @@ An Anki card-making Skill for Codex. It converts screenshots, vocabulary lists, 
 - Natural-language routing for vocabulary meaning, cloze, single-choice, multiple-choice, true-false, and short-answer cards
 - 说“制卡”“做卡”“闪卡”“Anki”“导入 Anki”等也会触发本 Skill；未指定题型时先询问卡片类型
 - Card-making intent such as “制卡”, “flashcards”, “Anki”, or “import to Anki” triggers the Skill; ambiguous requests prompt for a card type first
+- 中英文和中英混合表达具有相同触发优先级，例如 `帮我 make vocabulary cards`、`make cloze cards`、`整理成单选题` 都能正常路由
+- Chinese, English, and mixed Chinese-English requests have equal routing priority
+- 支持斜杠入口：`/anki` 和 `/闪卡`
+- Slash entry points: `/anki` and `/闪卡`
 - 孤立英文单词表默认生成词义题，不会误判为 Cloze 或普通问答题
 - Isolated English word lists default to vocabulary meaning cards, not Cloze or generic Q&A cards
 - 英语词汇卡支持词典释义、词性、中文释义、等级、音标、单击播放音频
@@ -27,6 +31,21 @@ An Anki card-making Skill for Codex. It converts screenshots, vocabulary lists, 
 ## Type Routing / 题型路由
 
 以下表达会触发本 Skill：`制卡`、`做卡`、`闪卡`、`卡片`、`Anki`、`anki`、`导入 Anki`、`同步到 Anki`，以及 “make cards”, “flashcards”, “import to Anki”。
+
+输入 `/anki` 或 `/闪卡` 后，会先显示中英双语题型菜单：
+
+```text
+制卡 / make cards
+做卡 / create flashcards
+闪卡 / flashcards
+导入 Anki / import to Anki
+词义题 / vocabulary meaning
+填空题 / cloze / fill-in-the-blank
+单选题 / single-choice
+多选题 / multiple-choice
+判断题 / true-or-false
+简答题 / short-answer
+```
 
 如果没有指定题型，Skill 会先询问：词义题、填空题、单选题、多选题、判断题还是简答题；不会直接猜测并导入。
 
@@ -271,6 +290,8 @@ python3 .agents/skills/anki-cardmaker/scripts/sync_project_skill.py --check
 ├── examples/                       # examples and HTML snapshot contracts
 ├── subskills/                      # card-type routing profiles
 ├── skills/                         # publish copies of directly callable sub-skills
+├── skills/anki/                    # /anki launcher
+├── skills/闪卡/                    # /闪卡 launcher
 └── VERSION                         # published version
 ```
 

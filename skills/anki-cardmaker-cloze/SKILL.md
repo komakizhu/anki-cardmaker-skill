@@ -1,6 +1,6 @@
 ---
-name: anki-cardmaker-cloze
-description: Use when the user asks for Cloze, cloze deletion, fill-in-the-blank, 完形填空, or 填空题 cards.
+name: 填空题
+description: 用户要求“填空题、完形填空、挖空”或 “Cloze、cloze deletion、fill-in-the-blank、fill in the blanks”时调用。
 ---
 
 # Anki Cloze Cards

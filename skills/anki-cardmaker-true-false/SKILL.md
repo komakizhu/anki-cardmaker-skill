@@ -1,6 +1,6 @@
 ---
-name: anki-cardmaker-true-false
-description: Use when the user asks for true-false, judgment, 判断题, or 判断正误 cards.
+name: 判断题
+description: 用户要求“判断题、判断正误、对错题”或 “true-false、true-or-false、judgment”时调用。
 ---
 
 # Anki True-False Cards

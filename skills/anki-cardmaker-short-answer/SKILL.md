@@ -1,6 +1,6 @@
 ---
-name: anki-cardmaker-short-answer
-description: Use when the user asks for short-answer, Q&A, 简答题, or 问答题 cards.
+name: 简答题
+description: 用户要求“简答题、问答题”或 “short-answer、question-and-answer、Q&A”时调用。
 ---
 
 # Anki Short-Answer Cards

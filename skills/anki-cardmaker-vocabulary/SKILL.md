@@ -1,6 +1,6 @@
 ---
-name: anki-cardmaker-vocabulary
-description: Use when the user asks for vocabulary meaning cards, word cards, 单词题, 词义题, or an isolated English word list.
+name: 词义题
+description: 用户要求“词义题、单词题、词汇卡、单词释义”或 “vocabulary meaning、word-definition、vocabulary cards”时调用；也适用于独立英文单词表。
 ---
 
 # Anki Vocabulary Meaning Cards

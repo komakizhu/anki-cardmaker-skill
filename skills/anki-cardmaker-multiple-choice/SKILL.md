@@ -1,6 +1,6 @@
 ---
-name: anki-cardmaker-multiple-choice
-description: Use when the user asks for multiple-choice or 多选题 cards.
+name: 多选题
+description: 用户要求“多选题”或 “multiple-choice、multiple-answer”时调用。
 ---
 
 # Anki Multiple-Choice Cards

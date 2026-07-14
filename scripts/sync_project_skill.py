@@ -18,6 +18,8 @@ CALLABLE_SKILLS = (
     "anki-cardmaker-multiple-choice",
     "anki-cardmaker-true-false",
     "anki-cardmaker-short-answer",
+    "anki",
+    "闪卡",
 )
 
 

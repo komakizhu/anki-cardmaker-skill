@@ -1,6 +1,6 @@
 ---
-name: anki-cardmaker-single-choice
-description: Use when the user asks for single-choice or 单选题 cards.
+name: 单选题
+description: 用户要求“单选题”或 “single-choice、single-answer”时调用。
 ---
 
 # Anki Single-Choice Cards
