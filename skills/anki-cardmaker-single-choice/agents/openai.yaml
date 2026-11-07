@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anki 制卡 › 单选题（anki-cardmaker-single-choice）"
+  short_description: "单选题：提供中文说明、双语触发和规范化工作流程。 支持验证。"
+  default_prompt: "请用 $anki-cardmaker-single-choice 按单选题规则制作卡片。"

@@ -31,6 +31,8 @@
   {
     "schema_version": "1.0",
     "type": "Cloze",
+    "question_type": "cloze",
+    "input_shape": "passage_blank",
     "front": "The manager remained {{c1::resilient::adj. 坚韧的}} despite repeated setbacks.",
     "back": "",
     "explanation": "Resilient describes someone or something that recovers quickly after difficulty or change.",

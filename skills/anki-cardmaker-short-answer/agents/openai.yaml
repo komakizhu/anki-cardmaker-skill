@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anki 制卡 › 简答题（anki-cardmaker-short-answer）"
+  short_description: "简答题：提供中文说明、双语触发和规范化工作流程。 支持验证。"
+  default_prompt: "请用 $anki-cardmaker-short-answer 按简答题规则制作卡片。"

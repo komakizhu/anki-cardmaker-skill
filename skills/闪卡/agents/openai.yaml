@@ -1,0 +1,4 @@
+interface:
+  display_name: "闪卡入口（flashcards）"
+  short_description: "闪卡入口：提供中文说明、双语触发和规范化工作流程。"
+  default_prompt: "Use $闪卡入口 to apply this skill."

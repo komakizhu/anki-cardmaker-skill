@@ -6,7 +6,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from anki_sync import build_mathjax_block, extract_dictionary_word, format_links_and_images, generate_word_audio
+from anki_sync import build_mathjax_block, choice_session_id, extract_dictionary_word, format_links_and_images, generate_word_audio
 from card_validation import load_cards, normalize_card_type, normalize_tags, validate_cards
 
 
@@ -26,6 +26,32 @@ def render_preview(cards, media_mapping=None):
                 if value:
                     source_bits.append(f"{key}: {value}")
         source_text = " | ".join(source_bits) if source_bits else "No source metadata"
+
+        if card_type == "Choice":
+            preview_id = choice_session_id(card)
+            rows.append(
+                f"""
+            <section class="card choice-preview" data-choice-preview data-choice-id="{preview_id}">
+              <header class="card-header">
+                <div>
+                  <div class="eyebrow">Card {idx + 1} · {html.escape(card_type)}</div>
+                  <h2>{html.escape(str(card.get("front", ""))[:120])}</h2>
+                </div>
+                <div class="meta">
+                  <div><strong>Tags</strong>: {html.escape(tags)}</div>
+                  <div><strong>Source</strong>: {html.escape(source_text)}</div>
+                </div>
+              </header>
+              <div class="choice-preview-controls">
+                <button type="button" data-preview-flip>显示答案</button>
+                <button type="button" data-preview-reset>重做本页</button>
+              </div>
+              <div class="choice-preview-face choice-preview-face--front">{front_html}</div>
+              <div class="choice-preview-face choice-preview-face--back" hidden>{back_html}</div>
+            </section>
+            """
+            )
+            continue
 
         rows.append(
             f"""
@@ -164,6 +190,10 @@ def render_preview(cards, media_mapping=None):
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }}
+    .choice-preview-controls {{ display: flex; gap: 8px; margin: 0 0 14px; }}
+    .choice-preview-controls button {{ border: 1px solid var(--page-border); border-radius: 8px; padding: 8px 12px; background: var(--page-bg); color: var(--page-ink); font: inherit; cursor: pointer; }}
+    .choice-preview-controls button:focus-visible {{ outline: 3px solid #2563eb; outline-offset: 2px; }}
+    .choice-preview-face[hidden] {{ display: none !important; }}
     article h3 {{
       margin: 0 0 10px;
       font-size: 14px;
@@ -197,6 +227,50 @@ def render_preview(cards, media_mapping=None):
     </section>
     {''.join(rows)}
   </div>
+  <script>
+    (function() {{
+      function showAnswerFor(card) {{
+        if (!card) return;
+        card.querySelector(".choice-preview-face--front").hidden = true;
+        card.querySelector(".choice-preview-face--back").hidden = false;
+        window.dispatchEvent(new CustomEvent("anki-choice-preview-answer", {{
+          detail: {{ id: card.getAttribute("data-choice-id") }}
+        }}));
+        var button = card.querySelector("[data-preview-flip]");
+        if (button) button.textContent = "返回题目";
+      }}
+      function showQuestionFor(card) {{
+        if (!card) return;
+        card.querySelector(".choice-preview-face--back").hidden = true;
+        card.querySelector(".choice-preview-face--front").hidden = false;
+        window.dispatchEvent(new CustomEvent("anki-choice-preview-answer", {{
+          detail: {{ id: card.getAttribute("data-choice-id") }}
+        }}));
+        var button = card.querySelector("[data-preview-flip]");
+        if (button) button.textContent = "显示答案";
+      }}
+      window.showAnswer = function() {{
+        var activeId = window.__ankiActiveChoiceId;
+        var cards = document.querySelectorAll("[data-choice-preview]");
+        for (var i = 0; i < cards.length; i++) {{
+          if (cards[i].getAttribute("data-choice-id") === activeId) {{
+            showAnswerFor(cards[i]);
+            return;
+          }}
+        }}
+      }};
+      document.addEventListener("click", function(event) {{
+        var target = event.target;
+        var card = target && target.closest ? target.closest("[data-choice-preview]") : null;
+        if (!card) return;
+        if (target.closest("[data-preview-flip]")) {{
+          if (card.querySelector(".choice-preview-face--back").hidden) showAnswerFor(card);
+          else showQuestionFor(card);
+        }}
+        if (target.closest("[data-preview-reset]")) window.location.reload();
+      }});
+    }})();
+  </script>
 </body>
 </html>"""
 

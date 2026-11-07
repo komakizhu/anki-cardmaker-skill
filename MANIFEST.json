@@ -1,0 +1,33 @@
+{
+  "format_version": 1,
+  "name": "anki-cardmaker",
+  "main_files": [
+    "SKILL.md",
+    "VERSION",
+    "agents/openai.yaml"
+  ],
+  "main_directories": [
+    "scripts",
+    "schemas",
+    "examples",
+    "subskills"
+  ],
+  "callable_skills": [
+    "anki-cardmaker-vocabulary",
+    "anki-cardmaker-cloze",
+    "anki-cardmaker-single-choice",
+    "anki-cardmaker-multiple-choice",
+    "anki-cardmaker-true-false",
+    "anki-cardmaker-short-answer",
+    "anki",
+    "闪卡"
+  ],
+  "install_root": "~/.codex/skills",
+  "symlink_aliases": {
+    "Anki 制卡": "anki-cardmaker",
+    "Anki制卡": "Anki 制卡",
+    "Anki 入口": "anki",
+    "Anki入口": "Anki 入口",
+    "闪卡入口": "闪卡"
+  }
+}

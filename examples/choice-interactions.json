@@ -1,0 +1,26 @@
+[
+  {
+    "type": "Choice",
+    "question_type": "single_choice",
+    "front": "Which planet is known as the Red Planet?",
+    "options": ["Venus", "Mars", "Jupiter", "Mercury"],
+    "correct_answer": "B",
+    "explanation": "Iron minerals on Mars's surface oxidize and give it a reddish appearance."
+  },
+  {
+    "type": "Choice",
+    "question_type": "multiple_choice",
+    "front": "Which of these are primary colors of light?",
+    "options": ["Red", "Green", "Blue", "Yellow"],
+    "correct_answer": "A, B, C",
+    "explanation": "Red, green, and blue are the additive primary colors of light."
+  },
+  {
+    "type": "Choice",
+    "question_type": "true_false",
+    "front": "The Moon produces its own visible light.",
+    "options": ["正确", "错误"],
+    "correct_answer": "B",
+    "explanation": "The Moon reflects sunlight; it does not produce visible light of its own."
+  }
+]

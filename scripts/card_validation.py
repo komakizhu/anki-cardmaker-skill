@@ -50,10 +50,21 @@ QUESTION_TYPE_ALIASES = {
     "简答题": "short_answer",
 }
 VOCABULARY_TAGS = {"vocabulary", "english", "ielts", "polysemy", "熟词僻义", "词汇"}
-POS_PATTERN = re.compile(r"(?:^|\s)(?:n|v|adj|adv|prep|pron|conj|det|aux|modal|phr\. v)\.", re.IGNORECASE)
+POS_PATTERN = re.compile(r"(?:^|\s)(?:n|v|adj|adv|prep|pron|conj|det|aux|modal|phr\. v|phr)\.", re.IGNORECASE)
 CLOZE_PATTERN = re.compile(r"\{\{c\d+::([^{}:]+)(?::[^{}]*)?\}\}", re.IGNORECASE)
 ENGLISH_WORD_PATTERN = re.compile(r"^[A-Za-z][A-Za-z'-]*$")
 MEANING_QUESTION_PATTERN = re.compile(r"(?:definition|meaning)\s+of\s+['\"“‘][^'\"”’]+['\"”’]", re.IGNORECASE)
+ROUTING_SHAPES = {
+    "isolated_vocabulary_list",
+    "passage_blank",
+    "explicit_cloze_request",
+    "definition_prompt",
+    "concept_question",
+}
+LEARNING_STAGES = {"中考英语", "高考英语", "CET-4", "CET-6", "TEM-4", "TEM-8", "IELTS", "TOEFL", "GRE", "GMAT", "BEC", "学术英语", "职场英语", "考研英语一", "考研英语二", "通用"}
+SOURCE_STATUSES = {"verified", "generated", "needs_review"}
+SOURCE_YEAR_PATTERN = re.compile(r"\b(?:19|20)\d{2}\b")
+SOURCE_URL_PATTERN = re.compile(r"https?://\S+", re.IGNORECASE)
 
 
 def load_cards(path):
@@ -95,13 +106,20 @@ def infer_question_type(card):
         return explicit
 
     card_type = normalize_card_type(card.get("type"))
+    # A standalone English word is vocabulary by default, including legacy QA notes.
+    word = str(card.get("word", "") or "").strip()
+    front = str(card.get("front", "") or "").strip()
+    if word and ENGLISH_WORD_PATTERN.fullmatch(word):
+        return "vocabulary_meaning"
+    if card_type == "QA" and ENGLISH_WORD_PATTERN.fullmatch(front):
+        return "vocabulary_meaning"
     if card_type == "Cloze":
         return "cloze"
     if card_type == "Choice":
         answer = str(card.get("correct_answer", "") or "").strip()
         choices = re.findall(r"[A-Za-z]", answer)
         return "multiple_choice" if len(set(choices)) > 1 else "single_choice"
-    if MEANING_QUESTION_PATTERN.search(str(card.get("front", "") or "")):
+    if MEANING_QUESTION_PATTERN.search(front):
         return "vocabulary_meaning"
     return "short_answer"
 
@@ -154,6 +172,56 @@ def is_vocabulary_card(card):
         targets = extract_cloze_targets(front)
         return len(targets) == 1 and bool(ENGLISH_WORD_PATTERN.fullmatch(targets[0]))
     return bool(MEANING_QUESTION_PATTERN.search(front))
+
+
+def is_strict_vocabulary_import(card):
+    """Return true for isolated word-list cards that require the full contract."""
+    return is_vocabulary_card(card) and str(card.get("input_shape", "") or "").strip() == "isolated_vocabulary_list"
+
+
+def validate_source_status(card, prefix, example_sources):
+    """Validate provenance metadata without claiming that a source is semantically authentic."""
+    errors = []
+    status = card.get("source_status")
+    strict = is_strict_vocabulary_import(card)
+
+    if status is not None and (not isinstance(status, str) or status.strip() not in SOURCE_STATUSES):
+        errors.append(f"{prefix}: 'source_status' must be one of {', '.join(sorted(SOURCE_STATUSES))}")
+        return errors
+
+    if not strict:
+        return errors
+
+    if status is None:
+        errors.append(f"{prefix}: isolated vocabulary cards require 'source_status'")
+        return errors
+    if status == "needs_review":
+        errors.append(f"{prefix}: 'source_status=needs_review' must be resolved before preview or sync")
+        return errors
+    if not isinstance(example_sources, list) or not example_sources:
+        errors.append(f"{prefix}: isolated vocabulary cards require non-empty 'example_sources'")
+        return errors
+
+    if status == "generated":
+        invalid = [source for source in example_sources if not source.startswith("自拟·")]
+        if invalid:
+            errors.append(f"{prefix}: generated examples must use source labels beginning with '自拟·'")
+        stage = str(card.get("learning_stage", "") or "").strip()
+        if stage:
+            missing_stage = [source for source in example_sources if stage not in source]
+            if missing_stage:
+                errors.append(
+                    f"{prefix}: generated example sources must carry the selected learning stage '{stage}'"
+                )
+    elif status == "verified":
+        invalid = [source for source in example_sources if not (SOURCE_URL_PATTERN.search(source) or SOURCE_YEAR_PATTERN.search(source))]
+        if invalid:
+            errors.append(
+                f"{prefix}: verified example sources must include a URL or a four-digit year; "
+                "run verify_example_sources.py for URL reachability"
+            )
+
+    return errors
 
 
 def validate_relation_items(value, prefix, field_name):
@@ -220,6 +288,16 @@ def validate_card(card, index):
 
     card_type = normalize_card_type(card.get("type"))
     question_type = normalize_question_type(card.get("question_type"))
+    input_shape = str(card.get("input_shape", "") or "").strip()
+    explicit_cloze_request = card.get("explicit_cloze_request")
+    learning_stage = card.get("learning_stage")
+    if learning_stage is not None:
+        if not isinstance(learning_stage, str) or learning_stage.strip() not in LEARNING_STAGES:
+            errors.append(f"{prefix}: 'learning_stage' must be one of {', '.join(sorted(LEARNING_STAGES))}")
+    if input_shape and input_shape not in ROUTING_SHAPES:
+        errors.append(f"{prefix}: unsupported input_shape '{input_shape}'")
+    if explicit_cloze_request is not None and not isinstance(explicit_cloze_request, bool):
+        errors.append(f"{prefix}: 'explicit_cloze_request' must be boolean when present")
     if card_type not in SUPPORTED_TYPES:
         errors.append(f"{prefix}: unsupported type '{card.get('type')}'")
     if question_type and question_type not in SUPPORTED_QUESTION_TYPES:
@@ -237,6 +315,19 @@ def validate_card(card, index):
         errors.append(f"{prefix}: vocabulary_meaning requires card type 'QA'")
     if question_type == "short_answer" and card_type not in {"QA", "Basic"}:
         errors.append(f"{prefix}: short_answer requires card type 'QA' or 'Basic'")
+    if question_type == "cloze":
+        if input_shape not in {"passage_blank", "explicit_cloze_request"} and explicit_cloze_request is not True:
+            errors.append(
+                f"{prefix}: Cloze requires input_shape 'passage_blank' or explicit_cloze_request=true"
+            )
+        if input_shape == "isolated_vocabulary_list":
+            errors.append(f"{prefix}: isolated vocabulary lists must use question_type 'vocabulary_meaning', not Cloze")
+    if input_shape == "isolated_vocabulary_list" and question_type not in {"", "vocabulary_meaning"}:
+        errors.append(f"{prefix}: input_shape 'isolated_vocabulary_list' requires question_type 'vocabulary_meaning'")
+    if input_shape == "isolated_vocabulary_list" and (not isinstance(learning_stage, str) or not learning_stage.strip()):
+        errors.append(f"{prefix}: isolated vocabulary cards require 'learning_stage'")
+    if input_shape == "definition_prompt" and question_type not in {"", "vocabulary_meaning"}:
+        errors.append(f"{prefix}: input_shape 'definition_prompt' requires question_type 'vocabulary_meaning'")
 
     front = card.get("front")
     if not isinstance(front, str) or not front.strip():
@@ -362,6 +453,7 @@ def validate_card(card, index):
 
     example_sentences = card.get("example_sentences")
     example_sentences_zh = card.get("example_sentences_zh")
+    example_sources = card.get("example_sources")
     for field_name, value in (("example_sentences", example_sentences), ("example_sentences_zh", example_sentences_zh)):
         if value is not None:
             if not isinstance(value, list) or any(not isinstance(item, str) or not item.strip() for item in value):
@@ -384,6 +476,49 @@ def validate_card(card, index):
     if is_vocabulary_card(card) and isinstance(example_sentences, list) and isinstance(example_sentences_zh, list):
         if len(example_targets_zh or []) != len(example_sentences_zh):
             errors.append(f"{prefix}: vocabulary bilingual examples require one example_targets_zh per translation")
+    if example_sources is not None:
+        if not isinstance(example_sources, list) or any(not isinstance(item, str) or not item.strip() for item in example_sources):
+            errors.append(f"{prefix}: 'example_sources' must be a list of non-empty strings when present")
+        elif isinstance(example_sentences, list) and len(example_sources) != len(example_sentences):
+            errors.append(f"{prefix}: example_sources must align one-to-one with example_sentences")
+    errors.extend(validate_source_status(card, prefix, example_sources))
+
+    if is_strict_vocabulary_import(card):
+        required_text_fields = (
+            "oxford_definition",
+            "oxford_definition_zh",
+            "collins_definition",
+            "collins_definition_zh",
+        )
+        for field_name in required_text_fields:
+            value = card.get(field_name)
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f"{prefix}: isolated vocabulary cards require a non-empty '{field_name}'")
+
+        for field_name in (
+            "synonyms",
+            "antonyms",
+            "near_synonyms",
+            "confusable_words",
+            "collocations",
+        ):
+            if field_name not in card:
+                errors.append(f"{prefix}: isolated vocabulary cards require the '{field_name}' vocabulary-relations field")
+
+        if not any(isinstance(card.get(field_name), str) and card.get(field_name).strip() for field_name in ("word_root", "word_affixes")):
+            errors.append(f"{prefix}: isolated vocabulary cards require 'word_root' or 'word_affixes'")
+
+        if not isinstance(example_sentences, list) or len(example_sentences) < 3:
+            errors.append(f"{prefix}: isolated vocabulary cards require at least three 'example_sentences'")
+        if not isinstance(example_sentences_zh, list) or len(example_sentences_zh) < 3:
+            errors.append(f"{prefix}: isolated vocabulary cards require at least three 'example_sentences_zh'")
+        if not isinstance(example_targets_zh, list) or len(example_targets_zh) < 3:
+            errors.append(f"{prefix}: isolated vocabulary cards require at least three 'example_targets_zh'")
+
+        if not isinstance(raw_other_meanings, list) or not raw_other_meanings:
+            errors.append(f"{prefix}: isolated vocabulary cards require non-empty 'other_meanings'")
+        if not isinstance(other_meanings_examples, list) or not other_meanings_examples:
+            errors.append(f"{prefix}: isolated vocabulary cards require non-empty 'other_meanings_examples'")
 
     if card_type == "Cloze" and not extract_cloze_targets(front):
         errors.append(f"{prefix}: Cloze cards require at least one valid {{cN::...}} deletion")

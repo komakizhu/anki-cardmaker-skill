@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anki 制卡 › 填空题（anki-cardmaker-cloze）"
+  short_description: "填空题：提供中文说明、双语触发和规范化工作流程。 支持验证。"
+  default_prompt: "请用 $anki-cardmaker-cloze 按填空题规则制作卡片。"

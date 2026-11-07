@@ -18,6 +18,8 @@
   {
     "schema_version": "1.0",
     "type": "Cloze",
+    "question_type": "cloze",
+    "input_shape": "passage_blank",
     "front": "The committee decided to {{c1::scrutinize::v. 仔细审查}} the proposal before approval.",
     "back": "",
     "explanation": "scrutinize means to examine something very carefully and in detail.",

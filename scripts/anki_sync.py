@@ -14,9 +14,15 @@ import urllib.request
 
 from card_validation import infer_question_type, normalize_card_type, normalize_tags, validate_cards
 
-DEFAULT_ANKI_CONNECT_URLS = ("http://127.0.0.1:8765", "http://localhost:8765")
+DEFAULT_ANKI_CONNECT_URLS = ("http://127.0.0.1:8767", "http://localhost:8767")
 DEFAULT_CLOZE_EXTRA_FIELD = "Back Extra"
 DEFAULT_TAGS = ["anki-agent"]
+CHOICE_MODEL_NAME = "AnkiCardmaker Choice"
+CHOICE_MODEL_FIELDS = ("Front", "Back")
+CHOICE_MODEL_TEMPLATE_NAME = "Choice Card"
+CHOICE_MODEL_TEMPLATES = {
+    CHOICE_MODEL_TEMPLATE_NAME: {"Front": "{{Front}}", "Back": "{{Back}}"}
+}
 
 
 def request(action, anki_urls=DEFAULT_ANKI_CONNECT_URLS, retries=3, retry_delay=0.3, **params):
@@ -68,6 +74,390 @@ def ensure_deck_exists(deck_name, anki_urls):
         request("createDeck", anki_urls=anki_urls, deck=deck_name)
 
 
+def ensure_choice_model(anki_urls=DEFAULT_ANKI_CONNECT_URLS):
+    """Create the private Choice note model or refuse to alter an unknown one."""
+    model_names = request("modelNames", anki_urls=anki_urls)
+    if CHOICE_MODEL_NAME not in model_names:
+        request(
+            "createModel",
+            anki_urls=anki_urls,
+            modelName=CHOICE_MODEL_NAME,
+            inOrderFields=list(CHOICE_MODEL_FIELDS),
+            css=".card { font-family: sans-serif; font-size: 20px; text-align: left; }",
+            isCloze=False,
+            cardTemplates=[
+                {
+                    "Name": CHOICE_MODEL_TEMPLATE_NAME,
+                    "Front": "{{Front}}",
+                    "Back": "{{Back}}",
+                }
+            ],
+        )
+
+    fields = request("modelFieldNames", anki_urls=anki_urls, modelName=CHOICE_MODEL_NAME)
+    templates = request("modelTemplates", anki_urls=anki_urls, modelName=CHOICE_MODEL_NAME)
+    if fields != list(CHOICE_MODEL_FIELDS) or templates != CHOICE_MODEL_TEMPLATES:
+        print(
+            f"Error: Anki note model '{CHOICE_MODEL_NAME}' exists but does not match "
+            "the required Front/Back fields and isolated templates. It was not changed.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+
+def choice_answer_letters(card):
+    """Return valid option letters from common single- and multiple-answer forms."""
+    answer = str(card.get("correct_answer", "") or "").strip()
+    options = card.get("options", []) or []
+    normalized = answer.upper()
+
+    if re.fullmatch(r"[A-Z]+", normalized):
+        candidates = list(normalized)
+    elif re.fullmatch(r"[A-Z](?:\s*[,/&;、]\s*[A-Z]|\s+[A-Z])*", normalized):
+        candidates = re.findall(r"[A-Z]", normalized)
+    else:
+        candidates = []
+
+    if candidates:
+        letters = []
+        for letter in candidates:
+            if ord(letter) - 65 < len(options) and letter not in letters:
+                letters.append(letter)
+        if letters:
+            return letters
+
+    answer_key = re.sub(r"\s+", " ", answer).casefold()
+    for index, option in enumerate(options):
+        if re.sub(r"\s+", " ", str(option)).strip().casefold() == answer_key:
+            return [chr(65 + index)]
+    return []
+
+
+def choice_session_id(card):
+    identity = {
+        "question_type": infer_question_type(card),
+        "front": card.get("front", ""),
+        "options": card.get("options", []),
+        "correct_answer": card.get("correct_answer", ""),
+    }
+    payload = json.dumps(identity, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
+
+
+def choice_answer_display(card):
+    options = card.get("options", []) or []
+    letters = choice_answer_letters(card)
+    if letters:
+        return "; ".join(f"{letter}. {options[ord(letter) - 65]}" for letter in letters)
+    return resolve_choice_answer(card)
+
+
+def render_choice_surface(card, style_block, mathjax_block, face, support_html=""):
+    question_type = infer_question_type(card)
+    labels = {
+        "single_choice": "单选题",
+        "multiple_choice": "多选题",
+        "true_false": "判断题",
+    }
+    options = card.get("options", []) or []
+    correct_letters = choice_answer_letters(card)
+    correct_set = set(correct_letters)
+    session_id = choice_session_id(card)
+    is_back = face == "back"
+
+    option_parts = ['<div class="anki-choice-options" role="group">']
+    for index, option in enumerate(options):
+        letter = chr(65 + index)
+        correct_class = " anki-choice-option--correct" if is_back and letter in correct_set else ""
+        option_content = (
+            f'<span class="anki-choice-option__letter">{letter}.</span>'
+            f'<span class="anki-choice-option__text">{format_multiline_text(option)}</span>'
+        )
+        if is_back:
+            option_parts.append(
+                f'<div class="anki-choice-option{correct_class}" data-choice-letter="{letter}" '
+                'aria-selected="false">'
+                f'{option_content}</div>'
+            )
+        else:
+            option_parts.append(
+                f'<button type="button" class="anki-choice-option" data-choice-letter="{letter}" '
+                'aria-pressed="false">'
+                f'{option_content}</button>'
+            )
+    option_parts.append("</div>")
+    if not is_back and question_type == "multiple_choice":
+        option_parts.append(
+            '<button type="button" class="anki-choice-submit" disabled aria-disabled="true">提交答案</button>'
+        )
+
+    feedback_text = (
+        f'未作答。正确答案：{choice_answer_display(card)}'
+        if is_back
+        else ("请选择一个答案。" if question_type != "multiple_choice" else "请选择所有符合条件的选项，再提交。")
+    )
+    face_name = "back" if is_back else "front"
+    support = f'<div class="anki-support">{support_html}</div>' if is_back and support_html else ""
+    config = {
+        "id": session_id,
+        "key": f"ankiChoice:{session_id}",
+        "face": face_name,
+        "type": question_type,
+        "correct": correct_letters,
+        "correctAnswer": choice_answer_display(card),
+    }
+    config_json = json.dumps(config, ensure_ascii=True, separators=(",", ":"))
+    config_attribute = html.escape(config_json, quote=True)
+    root = (
+        f'{style_block}{mathjax_block}'
+        f'<div class="anki-card-container anki-choice-card" data-choice-id="{session_id}" '
+        f'data-choice-face="{face_name}" data-choice-type="{question_type}" '
+        f'data-choice-config="{config_attribute}">'
+        '<div class="anki-shell">'
+        f'<div class="anki-vocab-type">{labels.get(question_type, "选择题")}</div>'
+        f'<div class="anki-question">{format_multiline_text(card.get("front", ""))}</div>'
+        f'{"".join(option_parts)}'
+        f'<div class="anki-choice-feedback" aria-live="polite">{format_multiline_text(feedback_text)}</div>'
+        f'{support}'
+        '</div></div>'
+    )
+
+    script = '''<script>
+(function() {
+  var activeScript = document.currentScript;
+  var initialRoot = activeScript && activeScript.previousElementSibling;
+  var selector = ".anki-choice-card";
+
+  function readConfig(root) {
+    if (!root) return null;
+    try { return JSON.parse(root.getAttribute("data-choice-config") || ""); }
+    catch (error) { return null; }
+  }
+  function setText(node, value) {
+    if (node && node.textContent !== value) node.textContent = value;
+  }
+
+  var controller = window.__ankiChoiceController;
+  if (!controller) {
+    var memory = window.__ankiChoiceState || (window.__ankiChoiceState = {});
+
+    function contains(list, value) { return list.indexOf(value) !== -1; }
+    function readState(config) {
+      try {
+        var value = window.sessionStorage.getItem(config.key);
+        if (value) return JSON.parse(value);
+      } catch (error) {}
+      return memory[config.key] || null;
+    }
+    function writeState(config, value) {
+      memory[config.key] = value;
+      try { window.sessionStorage.setItem(config.key, JSON.stringify(value)); } catch (error) {}
+    }
+    function clearState(config) {
+      delete memory[config.key];
+      try { window.sessionStorage.removeItem(config.key); } catch (error) {}
+    }
+    function setClass(node, name, active) {
+      if (active && !node.classList.contains(name)) node.classList.add(name);
+      else if (!active && node.classList.contains(name)) node.classList.remove(name);
+    }
+    function updateOptions(root, config, selected, locked, showResult) {
+      var optionNodes = root.querySelectorAll("[data-choice-letter]");
+      var correct = config.correct || [];
+      for (var i = 0; i < optionNodes.length; i++) {
+        var node = optionNodes[i];
+        var letter = node.getAttribute("data-choice-letter");
+        var isSelected = contains(selected, letter);
+        var isCorrect = contains(correct, letter);
+        setClass(node, "anki-choice-option--selected", isSelected);
+        setClass(node, "anki-choice-option--correct", showResult && isCorrect);
+        setClass(node, "anki-choice-option--incorrect", showResult && isSelected && !isCorrect);
+        if (node.tagName.toLowerCase() === "button") {
+          if (node.disabled !== locked) node.disabled = locked;
+          var pressed = isSelected ? "true" : "false";
+          if (node.getAttribute("aria-pressed") !== pressed) node.setAttribute("aria-pressed", pressed);
+        } else {
+          var selectedValue = isSelected ? "true" : "false";
+          if (node.getAttribute("aria-selected") !== selectedValue) node.setAttribute("aria-selected", selectedValue);
+        }
+      }
+    }
+    function renderBack(root, config, state) {
+      var feedback = root.querySelector(".anki-choice-feedback");
+      if (!feedback) return;
+      var selected = state && Array.isArray(state.selected) ? state.selected : [];
+      updateOptions(root, config, selected, true, true);
+      if (!state) setText(feedback, "未作答。正确答案：" + config.correctAnswer);
+      else if (state.correct) setText(feedback, "回答正确。正确答案：" + config.correctAnswer);
+      else setText(feedback, "回答错误。你的选择：" + (selected.join("、") || "无") + "；正确答案：" + config.correctAnswer);
+    }
+    function refreshBacks(id) {
+      var roots = document.querySelectorAll(selector + '[data-choice-face="back"]');
+      for (var i = 0; i < roots.length; i++) {
+        var root = roots[i];
+        var config = readConfig(root);
+        if (config && config.id === id) renderBack(root, config, readState(config));
+      }
+    }
+    function announceAnswer(id) {
+      try {
+        window.dispatchEvent(new CustomEvent("anki-choice-preview-answer", { detail: { id: id } }));
+      } catch (error) {}
+    }
+    function addManualRevealHint(root) {
+      if (!document.documentElement.contains(root) || root.getAttribute("data-choice-face") !== "front") return;
+      var bounds = root.getBoundingClientRect();
+      if (!bounds.width || !bounds.height) return;
+      var feedback = root.querySelector(".anki-choice-feedback");
+      if (feedback && feedback.textContent.indexOf("按空格") === -1) {
+        setText(feedback, feedback.textContent + " 按空格或使用“显示答案”查看解析。");
+      }
+    }
+    function reveal(root, config, answer) {
+      if (root.__ankiChoiceLocked || !answer.length) return;
+      root.__ankiChoiceLocked = true;
+      root.__ankiChoiceSelection = answer.slice();
+      var correct = config.correct || [];
+      var isCorrect = answer.length === correct.length && answer.every(function(letter) { return contains(correct, letter); });
+      writeState(config, { selected: answer.slice(), correct: isCorrect });
+      updateOptions(root, config, answer, true, true);
+      var feedback = root.querySelector(".anki-choice-feedback");
+      if (feedback) setText(feedback, isCorrect
+        ? "回答正确。正确答案：" + config.correctAnswer
+        : "回答错误。你的选择：" + answer.join("、") + "；正确答案：" + config.correctAnswer);
+      window.__ankiActiveChoiceId = config.id;
+      announceAnswer(config.id);
+      window.setTimeout(function() {
+        var requested = false;
+        try {
+          if (typeof window.pycmd === "function") {
+            window.pycmd("ans");
+            requested = true;
+          } else if (typeof window.showAnswer === "function") {
+            window.showAnswer();
+            requested = true;
+          }
+        } catch (error) {}
+        if (!requested) addManualRevealHint(root);
+        else window.setTimeout(function() { addManualRevealHint(root); }, 900);
+      }, 450);
+    }
+    function resetFront(root, config) {
+      root.__ankiChoiceSelection = [];
+      root.__ankiChoiceLocked = false;
+      clearState(config);
+      var submit = root.querySelector(".anki-choice-submit");
+      if (submit) {
+        submit.disabled = true;
+        submit.setAttribute("aria-disabled", "true");
+      }
+      updateOptions(root, config, [], false, false);
+      var feedback = root.querySelector(".anki-choice-feedback");
+      if (feedback) setText(feedback, config.type === "multiple_choice"
+        ? "请选择所有符合条件的选项，再提交。"
+        : "请选择一个答案。");
+    }
+    function initialize(root, resetCurrentFront) {
+      var config = readConfig(root);
+      if (!config || !config.id || !config.key) return;
+      var stamp = JSON.stringify(config);
+      var changed = root.__ankiChoiceStamp !== stamp;
+      if (changed) root.__ankiChoiceStamp = stamp;
+      if (config.face === "front" && (changed || resetCurrentFront)) resetFront(root, config);
+      else if (config.face === "back") renderBack(root, config, readState(config));
+    }
+    function inspectNode(node) {
+      var element = node && (node.nodeType === 1 ? node : node.parentElement);
+      if (!element) return;
+      var parent = element.matches && element.matches(selector) ? element : (element.closest ? element.closest(selector) : null);
+      if (parent) initialize(parent, false);
+      if (element.querySelectorAll) {
+        var descendants = element.querySelectorAll(selector);
+        for (var i = 0; i < descendants.length; i++) initialize(descendants[i], false);
+      }
+    }
+    function scan(resetCurrentFront) {
+      var roots = document.querySelectorAll(selector);
+      for (var i = 0; i < roots.length; i++) initialize(roots[i], resetCurrentFront);
+    }
+    function handleClick(event) {
+      var target = event.target;
+      if (!target || !target.closest) return;
+      var option = target.closest("button[data-choice-letter]");
+      var submit = target.closest("button.anki-choice-submit");
+      if (!option && !submit) return;
+      if (event.detail === 0) return;
+      var root = (option || submit).closest(selector);
+      var config = readConfig(root);
+      if (!root || !config || config.face !== "front") return;
+      event.preventDefault();
+      event.stopPropagation();
+      if (root.__ankiChoiceLocked) return;
+      if (submit) {
+        var submitted = root.__ankiChoiceSelection || [];
+        if (submitted.length) reveal(root, config, submitted.slice());
+        return;
+      }
+      var letter = option.getAttribute("data-choice-letter");
+      if (config.type === "multiple_choice") {
+        var selected = root.__ankiChoiceSelection || [];
+        root.__ankiChoiceSelection = contains(selected, letter)
+          ? selected.filter(function(item) { return item !== letter; })
+          : selected.concat([letter]);
+        updateOptions(root, config, root.__ankiChoiceSelection, false, false);
+        var submitButton = root.querySelector(".anki-choice-submit");
+        var enabled = root.__ankiChoiceSelection.length > 0;
+        if (submitButton) {
+          submitButton.disabled = !enabled;
+          submitButton.setAttribute("aria-disabled", enabled ? "false" : "true");
+        }
+        var feedback = root.querySelector(".anki-choice-feedback");
+        if (feedback) setText(feedback, enabled
+          ? "已选择 " + root.__ankiChoiceSelection.join("、") + "。完成后提交答案。"
+          : "请选择所有符合条件的选项，再提交。");
+      } else reveal(root, config, [letter]);
+    }
+    var updateHook = function() { scan(true); };
+    controller = {
+      initialize: initialize,
+      refreshBacks: refreshBacks,
+      registerUpdateHook: function() {
+        if (window.onUpdateHook && typeof window.onUpdateHook.push === "function" && window.onUpdateHook.indexOf(updateHook) === -1) {
+          window.onUpdateHook.push(updateHook);
+        }
+      }
+    };
+    window.__ankiChoiceController = controller;
+    document.addEventListener("click", handleClick, false);
+    window.addEventListener("anki-choice-preview-answer", function(event) {
+      if (event.detail && event.detail.id) refreshBacks(event.detail.id);
+    }, false);
+    if (typeof MutationObserver === "function" && document.documentElement) {
+      var observer = new MutationObserver(function(records) {
+        for (var i = 0; i < records.length; i++) {
+          var record = records[i];
+          if (record.type === "attributes") inspectNode(record.target);
+          else for (var j = 0; j < record.addedNodes.length; j++) inspectNode(record.addedNodes[j]);
+        }
+      });
+      observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["data-choice-id", "data-choice-face", "data-choice-config"]
+      });
+    }
+  }
+
+  if (initialRoot && initialRoot.getAttribute("data-choice-id")) {
+    controller.initialize(initialRoot, initialRoot.getAttribute("data-choice-face") === "front");
+  }
+  controller.registerUpdateHook();
+})();
+</script>'''
+    return root + script
+
+
 def escape_text(value):
     return html.escape("" if value is None else str(value), quote=False)
 
@@ -110,6 +500,16 @@ def build_style_block():
         '.anki-options-list { list-style-type: none; padding-left: 0; margin: 18px 0 0; display: grid; gap: 10px; }'
         '.anki-options-list li { padding: 13px 15px; border-radius: 9px; border: 1px solid var(--anki-border); background: var(--anki-surface); color: var(--anki-fg); }'
         '.anki-options-list strong { color: var(--anki-fg); }'
+        '.anki-choice-options { display: grid; gap: 10px; margin-top: 18px; }'
+        '.anki-choice-option { display: flex; gap: 10px; align-items: flex-start; width: 100%; padding: 13px 15px; border: 1px solid var(--anki-border); border-radius: 9px; background: var(--anki-surface); color: var(--anki-fg); font: inherit; line-height: 1.5; text-align: left; cursor: pointer; }'
+        'button.anki-choice-option:focus-visible, .anki-choice-submit:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }'
+        '.anki-choice-option__letter { flex: 0 0 auto; font-weight: 700; }'
+        '.anki-choice-option--selected { border-color: var(--anki-accent); box-shadow: 0 0 0 1px var(--anki-accent) inset; }'
+        '.anki-choice-option--correct { border-color: #338454; background: #e8f5ec; color: #1b6339; font-weight: 700; }'
+        '.anki-choice-option--incorrect { border-color: #c43c3c; background: #fdeaea; color: #942525; font-weight: 700; }'
+        '.anki-choice-submit { align-self: flex-start; margin-top: 4px; padding: 10px 18px; border: 0; border-radius: 8px; background: var(--anki-accent); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }'
+        '.anki-choice-submit:disabled { opacity: .5; cursor: not-allowed; }'
+        '.anki-choice-feedback { min-height: 1.6em; color: var(--anki-muted); font-size: 15px; font-weight: 700; }'
         '.anki-answer { display: flex; flex-direction: column; gap: 8px; }'
         '.anki-answer-title { width: 100%; text-align: left; align-self: flex-start; font-size: 15px; line-height: 1.4; font-weight: 700; color: var(--anki-accent); }'
         '.anki-answer-main { font-size: 20px; line-height: 1.55; color: var(--anki-fg); font-weight: 600; padding: 16px 18px; background: var(--anki-surface); border-left: 3px solid var(--anki-accent); border-radius: 8px; }'
@@ -132,6 +532,7 @@ def build_style_block():
         '.anki-example-en, .anki-example-zh { display: inline; }'
         '.anki-example-zh { margin-left: 10px; color: var(--anki-fg); }'
         '.anki-example-zh strong { color: var(--anki-fg); font-weight: 700; }'
+        '.anki-example-source { display: block; margin-top: 2px; color: var(--anki-muted); font-size: 12px; line-height: 1.35; }'
         '.anki-other-meaning { margin-left: 8px; color: var(--anki-fg); font-weight: 700; }'
         '.anki-dictionary-word { font-size: 20px; line-height: 1.5; color: var(--anki-fg); font-weight: 400; }'
         '.anki-dictionary-headline { font-size: 20px; line-height: 1.5; color: var(--anki-fg); font-weight: 400; }'
@@ -157,6 +558,10 @@ def build_style_block():
         '  .anki-card-container { max-width: 100%; margin: 0; padding: 16px 14px; border-radius: 10px; }'
         '  .anki-shell { gap: 12px; }'
         '  .anki-question { font-size: 18px; line-height: 1.42; padding-bottom: 14px; }'
+        '  .anki-choice-options { gap: 8px; margin-top: 13px; }'
+        '  .anki-choice-option { gap: 8px; padding: 10px 11px; font-size: 15px; }'
+        '  .anki-choice-submit { padding: 9px 14px; font-size: 14px; }'
+        '  .anki-choice-feedback { font-size: 13px; }'
         '  .anki-vocab-type { font-size: 14px; }'
         '  .anki-vocab-sentence { padding: 12px 0 14px; font-size: 19px; line-height: 1.42; }'
         '  .anki-answer { gap: 5px; }'
@@ -877,6 +1282,7 @@ def format_links_and_images(card, media_mapping, include_mathjax=True):
     word_affixes = (card.get("word_affixes", "") or "").strip()
     example_sentences = normalize_text_items(card.get("example_sentences"))
     example_sentences_zh = normalize_text_items(card.get("example_sentences_zh"))
+    example_sources = normalize_text_items(card.get("example_sources"))
     raw_example_targets_zh = card.get("example_targets_zh") or []
     example_targets_zh = [str(item).strip() for item in raw_example_targets_zh if str(item).strip()] if isinstance(raw_example_targets_zh, (list, tuple)) else []
     other_meanings = card.get("other_meanings")
@@ -928,15 +1334,7 @@ def format_links_and_images(card, media_mapping, include_mathjax=True):
             return f'<div class="anki-answer"><div class="anki-answer-title">Answer</div><div class="anki-answer-main">{headline}</div></div>'
         answer_title = "答案" if chinese_qa else ("Correct answer" if card_type == "Choice" else "Answer")
         if card_type == "Choice":
-            raw_answer = card.get("correct_answer", "")
-            answer_text = resolve_choice_answer(card)
-            option_text = ""
-            if isinstance(raw_answer, str) and len(raw_answer) == 1 and raw_answer.upper() in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
-                idx = ord(raw_answer.upper()) - 65
-                options = card.get("options", []) or []
-                if 0 <= idx < len(options):
-                    option_text = options[idx]
-                    answer_text = f"{raw_answer.upper()}. {option_text}"
+            answer_text = choice_answer_display(card)
             answer_content = format_multiline_text(answer_text)
             if should_show_secondary(answer_text, back_zh):
                 answer_content += f'<span class="anki-answer-zh">{format_multiline_text(back_zh)}</span>'
@@ -1058,10 +1456,13 @@ def format_links_and_images(card, media_mapping, include_mathjax=True):
         if len(example_sentences) >= 3 and len(example_sentences_zh) >= 3 and len(example_targets_zh) >= 3:
             example_items = []
             for index, (english, chinese, chinese_target) in enumerate(zip(example_sentences[:3], example_sentences_zh[:3], example_targets_zh[:3]), 1):
+                source_html = ""
+                if index <= len(example_sources):
+                    source_html = f'<span class="anki-example-source">出处：{format_multiline_text(example_sources[index - 1])}</span>'
                 example_items.append(
                     f'<div class="anki-extension-item">{index}. '
                     f'<span class="anki-example-en">{bold_target_text(english, extract_dictionary_word(card))}</span>'
-                    f'<span class="anki-example-zh">{bold_target_text(chinese, chinese_target)}</span></div>'
+                    f'<span class="anki-example-zh">{bold_target_text(chinese, chinese_target)}</span>{source_html}</div>'
                 )
             return '<div class="anki-support-block anki-extension-block"><div class="anki-support-title">双语例句</div>' + "".join(example_items) + '</div>'
         return ""
@@ -1081,6 +1482,18 @@ def format_links_and_images(card, media_mapping, include_mathjax=True):
             return "".join(other_parts)
         return ""
 
+    if card_type == "Choice":
+        front_html = render_choice_surface(card, style_block, mathjax_block, "front")
+        support_html = "".join(
+            (
+                build_explanation_html(),
+                build_memory_html(),
+                build_relation_html(),
+            )
+        )
+        back_html = render_choice_surface(card, style_block, mathjax_block, "back", support_html)
+        return front_html, back_html
+
     def build_auto_html():
         # Automatic helper data remains available to callers, but is intentionally
         # omitted from the card face to keep the study surface focused.
@@ -1097,20 +1510,7 @@ def format_links_and_images(card, media_mapping, include_mathjax=True):
         prompt_parts.append(f'<div class="anki-vocab-sentence">{bold_target_text(vocab_sentence, extract_dictionary_word(card))}</div>')
     else:
         prompt_parts.append(f'<div class="anki-vocab-type">{question_type_label(card)}</div>')
-        if card_type == "Choice":
-            prompt_parts.append(f'<div class="anki-question">{format_multiline_text(prompt_text)}</div>')
-            options = card.get("options", [])
-            if options:
-                option_list = ['<ul class="anki-options-list">']
-                for idx, opt in enumerate(options):
-                    prefix = chr(65 + idx)
-                    option_list.append(
-                        f'<li><strong>{prefix}.</strong> {format_multiline_text(opt)}</li>'
-                    )
-                option_list.append("</ul>")
-                prompt_parts.append("".join(option_list))
-        else:
-            prompt_parts.append(f'<div class="anki-question">{format_multiline_text(prompt_text)}</div>')
+        prompt_parts.append(f'<div class="anki-question">{format_multiline_text(prompt_text)}</div>')
     prompt_parts.append('</div></div>')
 
     answer_parts = [
@@ -1181,6 +1581,12 @@ def sync_cards(
                 "Text": front_formatted,
                 cloze_extra_field: back_formatted,
             }
+        elif card_type == "Choice":
+            model_name = CHOICE_MODEL_NAME
+            fields = {
+                "Front": front_formatted,
+                "Back": back_formatted,
+            }
         else:
             model_name = "Basic"
             fields = {
@@ -1212,6 +1618,8 @@ def sync_cards(
         return
 
     print(f"\nSyncing {len(notes_payload)} cards to deck '{target_deck}'...")
+    if any(normalize_card_type(card.get("type", "QA")) == "Choice" for card in cards):
+        ensure_choice_model(anki_urls)
     ensure_deck_exists(target_deck, anki_urls)
 
     results = request("addNotes", anki_urls=anki_urls, notes=notes_payload)

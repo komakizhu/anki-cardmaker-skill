@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anki 入口（anki）"
+  short_description: "Anki 入口：提供中文说明、双语触发和规范化工作流程。"
+  default_prompt: "Use $Anki入口 to apply this skill."
