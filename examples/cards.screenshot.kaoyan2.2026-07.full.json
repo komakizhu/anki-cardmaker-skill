@@ -1,0 +1,1249 @@
+[
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "defy",
+    "front": "The results **defy** a simple explanation based on market trends.",
+    "back": "defy v. 违抗；蔑视；使难以解释",
+    "part_of_speech": "v.",
+    "definition_zh": "违抗；蔑视；使难以解释",
+    "word_level": "考研英语二",
+    "phonetic": "/dɪˈfaɪ/",
+    "oxford_definition": "to refuse to obey or show respect for somebody",
+    "oxford_definition_zh": "拒绝服从或表示尊重。",
+    "collins_definition": "to resist or refuse to obey",
+    "collins_definition_zh": "抵抗或拒绝服从。",
+    "synonyms": [
+      "resist v. 抵抗",
+      "challenge v. 挑战"
+    ],
+    "antonyms": [
+      "obey v. 服从"
+    ],
+    "near_synonyms": [
+      "violate v. 违反"
+    ],
+    "confusable_words": [
+      "deify v. 奉为神",
+      "define v. 定义"
+    ],
+    "collocations": [
+      "defy expectations 出乎预期",
+      "defy explanation 难以解释"
+    ],
+    "word_root": "de-（离开）+ fy（做）",
+    "example_sentences": [
+      "The findings defy conventional wisdom.",
+      "She defied the order and continued the project.",
+      "The pattern defies easy explanation."
+    ],
+    "example_sentences_zh": [
+      "这些发现与传统看法不符。",
+      "她违抗命令，继续了项目。",
+      "这种模式难以简单解释。"
+    ],
+    "example_targets_zh": [
+      "不符",
+      "违抗",
+      "难以解释"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. 蔑视危险或困难"
+    ],
+    "other_meanings_examples": [
+      "The climber defied the danger of the storm."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "telescope",
+    "front": "The new instrument allows scientists to **telescope** distant events in greater detail.",
+    "back": "telescope n. 望远镜；v. 缩短；压缩",
+    "part_of_speech": "n.; v.",
+    "definition_zh": "望远镜；缩短；压缩",
+    "word_level": "考研英语二",
+    "phonetic": "/ˈtelɪskəʊp/",
+    "oxford_definition": "an instrument used to make distant objects appear nearer and larger",
+    "oxford_definition_zh": "使远处物体看起来更近更大的仪器。",
+    "collins_definition": "to reduce the time or space occupied by something",
+    "collins_definition_zh": "缩短某事所占用的时间或空间。",
+    "synonyms": [
+      "shorten v. 缩短",
+      "observe v. 观察"
+    ],
+    "antonyms": [
+      "extend v. 延长"
+    ],
+    "near_synonyms": [
+      "compress v. 压缩"
+    ],
+    "confusable_words": [
+      "microscope n. 显微镜",
+      "telegraph n. 电报"
+    ],
+    "collocations": [
+      "space telescope 太空望远镜",
+      "telescope the schedule 压缩日程"
+    ],
+    "word_root": "tele-（远）+ scope（看）",
+    "example_sentences": [
+      "The telescope revealed a distant galaxy.",
+      "The company telescoped the review process.",
+      "Astronomers use telescopes to observe planets."
+    ],
+    "example_sentences_zh": [
+      "望远镜显示出一个遥远的星系。",
+      "公司压缩了审查流程。",
+      "天文学家用望远镜观察行星。"
+    ],
+    "example_targets_zh": [
+      "望远镜",
+      "压缩",
+      "望远镜"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. 把多个阶段或事件压缩到更短时间内"
+    ],
+    "other_meanings_examples": [
+      "The documentary telescopes ten years of research into one hour."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "deploy",
+    "front": "The firm plans to **deploy** new software across all regional offices.",
+    "back": "deploy v. 部署；调动；有效利用",
+    "part_of_speech": "v.",
+    "definition_zh": "部署；调动；有效利用",
+    "word_level": "考研英语二",
+    "phonetic": "/dɪˈplɔɪ/",
+    "oxford_definition": "to move soldiers or weapons into a position where they can be used",
+    "oxford_definition_zh": "把士兵或武器调到可使用的位置。",
+    "collins_definition": "to use something effectively or arrange it for a purpose",
+    "collins_definition_zh": "有效使用某物或为某目的安排某物。",
+    "synonyms": [
+      "position v. 部署",
+      "use v. 使用"
+    ],
+    "antonyms": [
+      "withdraw v. 撤回"
+    ],
+    "near_synonyms": [
+      "implement v. 实施"
+    ],
+    "confusable_words": [
+      "develop v. 发展",
+      "display v. 展示"
+    ],
+    "collocations": [
+      "deploy technology 部署技术",
+      "deploy resources 调配资源"
+    ],
+    "word_root": "de-（向下；完全）+ ploy（展开）",
+    "example_sentences": [
+      "The company deployed a new payment system.",
+      "The agency deployed staff to the affected areas.",
+      "Managers must deploy resources carefully."
+    ],
+    "example_sentences_zh": [
+      "公司部署了新的支付系统。",
+      "该机构向受影响地区调派了工作人员。",
+      "管理者必须谨慎调配资源。"
+    ],
+    "example_targets_zh": [
+      "部署",
+      "调派",
+      "调配"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. 使某策略或资源发挥作用"
+    ],
+    "other_meanings_examples": [
+      "The campaign deployed social media to reach younger voters."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "meditation",
+    "front": "Regular **meditation** can help employees manage workplace stress.",
+    "back": "meditation n. 冥想；沉思；思考",
+    "part_of_speech": "n.",
+    "definition_zh": "冥想；沉思；思考",
+    "word_level": "考研英语二",
+    "phonetic": "/ˌmedɪˈteɪʃn/",
+    "oxford_definition": "the practice of spending time in silence to improve attention or relaxation",
+    "oxford_definition_zh": "通过静默提高注意力或放松身心的练习。",
+    "collins_definition": "serious thought or study of something",
+    "collins_definition_zh": "对某事的认真思考或研究。",
+    "synonyms": [
+      "reflection n. 反思",
+      "contemplation n. 沉思"
+    ],
+    "antonyms": [
+      "distraction n. 分心"
+    ],
+    "near_synonyms": [
+      "consideration n. 考虑"
+    ],
+    "confusable_words": [
+      "medication n. 药物治疗",
+      "medieval adj. 中世纪的"
+    ],
+    "collocations": [
+      "daily meditation 每日冥想",
+      "meditation practice 冥想练习"
+    ],
+    "word_root": "medit-（思考）+ -ation（名词后缀）",
+    "example_sentences": [
+      "Meditation may reduce anxiety.",
+      "The retreat offers guided meditation.",
+      "He spent the evening in meditation on the decision."
+    ],
+    "example_sentences_zh": [
+      "冥想可能减轻焦虑。",
+      "静修活动提供引导式冥想。",
+      "他整晚都在思考这个决定。"
+    ],
+    "example_targets_zh": [
+      "冥想",
+      "冥想",
+      "思考"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "n. 对宗教或哲学问题的深思"
+    ],
+    "other_meanings_examples": [
+      "The essay is a meditation on memory and identity."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "synthetic",
+    "front": "The company developed a **synthetic** material that is lighter than steel.",
+    "back": "synthetic adj. 人造的；合成的；虚假的",
+    "part_of_speech": "adj.",
+    "definition_zh": "人造的；合成的；虚假的",
+    "word_level": "考研英语二",
+    "phonetic": "/sɪnˈθetɪk/",
+    "oxford_definition": "made by combining chemical substances rather than produced naturally",
+    "oxford_definition_zh": "通过化学物质结合制成而非自然产生的。",
+    "collins_definition": "made by chemical processes rather than occurring naturally",
+    "collins_definition_zh": "通过化学过程制造而非自然形成的。",
+    "synonyms": [
+      "artificial adj. 人造的",
+      "man-made adj. 人工制造的"
+    ],
+    "antonyms": [
+      "natural adj. 自然的",
+      "genuine adj. 真正的"
+    ],
+    "near_synonyms": [
+      "fabricated adj. 人为制造的"
+    ],
+    "confusable_words": [
+      "sympathetic adj. 同情的",
+      "syntactic adj. 句法的"
+    ],
+    "collocations": [
+      "synthetic material 合成材料",
+      "synthetic data 合成数据"
+    ],
+    "word_root": "syn-（共同）+ thet（放置）",
+    "example_sentences": [
+      "Synthetic fibers are widely used in clothing.",
+      "The model was trained on synthetic data.",
+      "The report offered a synthetic view of the evidence."
+    ],
+    "example_sentences_zh": [
+      "合成纤维广泛用于服装。",
+      "该模型使用合成数据训练。",
+      "这份报告综合呈现了证据。"
+    ],
+    "example_targets_zh": [
+      "合成",
+      "合成",
+      "综合"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "adj. 由多个部分综合而成的"
+    ],
+    "other_meanings_examples": [
+      "The course provides a synthetic account of modern economics."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "compulsive",
+    "front": "His **compulsive** checking of emails reduced his productivity.",
+    "back": "compulsive adj. 强迫性的；无法抑制的",
+    "part_of_speech": "adj.",
+    "definition_zh": "强迫性的；无法抑制的",
+    "word_level": "考研英语二",
+    "phonetic": "/kəmˈpʌlsɪv/",
+    "oxford_definition": "caused by an irresistible desire to do or have something",
+    "oxford_definition_zh": "由无法抗拒的欲望导致的。",
+    "collins_definition": "caused by an irresistible urge to behave in a particular way",
+    "collins_definition_zh": "由无法抗拒的冲动导致以某种方式行事的。",
+    "synonyms": [
+      "irresistible adj. 无法抗拒的",
+      "obsessive adj. 痴迷的"
+    ],
+    "antonyms": [
+      "voluntary adj. 自愿的"
+    ],
+    "near_synonyms": [
+      "habitual adj. 习惯性的"
+    ],
+    "confusable_words": [
+      "comprehensive adj. 全面的",
+      "compassionate adj. 有同情心的"
+    ],
+    "collocations": [
+      "compulsive behavior 强迫性行为",
+      "compulsive buyer 强迫性购物者"
+    ],
+    "word_root": "com-（共同）+ puls（推动）",
+    "example_sentences": [
+      "Compulsive buying can create serious debt.",
+      "The device encourages compulsive use.",
+      "She has a compulsive need to organize everything."
+    ],
+    "example_sentences_zh": [
+      "强迫性购物可能造成严重债务。",
+      "这款设备会诱发无法抑制的使用行为。",
+      "她有把一切都整理好的强迫性需求。"
+    ],
+    "example_targets_zh": [
+      "强迫性购物",
+      "无法抑制",
+      "强迫性需求"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "adj. 由心理冲动驱动而难以控制的"
+    ],
+    "other_meanings_examples": [
+      "Compulsive gambling may damage family relationships."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "compensation",
+    "front": "Workers received compensation for injuries sustained at work.",
+    "back": "compensation n. 补偿；赔偿；薪酬",
+    "part_of_speech": "n.",
+    "definition_zh": "补偿；赔偿；薪酬",
+    "word_level": "考研英语二",
+    "phonetic": "/ˌkɒmpenˈseɪʃn/",
+    "oxford_definition": "something, especially money, given to compensate for loss or injury",
+    "oxford_definition_zh": "为弥补损失或伤害而给予的东西，尤其是金钱。",
+    "collins_definition": "money paid to someone because they have suffered loss or injury",
+    "collins_definition_zh": "因遭受损失或伤害而支付给某人的钱。",
+    "synonyms": [
+      "reimbursement n. 偿还",
+      "damages n. 损害赔偿金"
+    ],
+    "antonyms": [
+      "penalty n. 惩罚金"
+    ],
+    "near_synonyms": [
+      "reward n. 奖励"
+    ],
+    "confusable_words": [
+      "comprehension n. 理解",
+      "composition n. 构成"
+    ],
+    "collocations": [
+      "financial compensation 经济赔偿",
+      "compensation package 薪酬福利方案"
+    ],
+    "word_root": "com-（共同）+ pens（称量；支付）",
+    "example_sentences": [
+      "The airline offered compensation for the delay.",
+      "Her salary includes performance compensation.",
+      "No compensation can fully replace a lost life."
+    ],
+    "example_sentences_zh": [
+      "航空公司为延误提供了赔偿。",
+      "她的薪酬包括绩效奖金。",
+      "任何赔偿都无法完全弥补失去的生命。"
+    ],
+    "example_targets_zh": [
+      "赔偿",
+      "薪酬",
+      "赔偿"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "n. 对缺陷或不足的弥补"
+    ],
+    "other_meanings_examples": [
+      "The new feature is compensation for the system's limited storage."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "dedicate",
+    "front": "The researcher **dedicated** her career to improving public health.",
+    "back": "dedicate v. 奉献；致力于；题献",
+    "part_of_speech": "v.",
+    "definition_zh": "奉献；致力于；题献",
+    "word_level": "考研英语二",
+    "phonetic": "/ˈdedɪkeɪt/",
+    "oxford_definition": "to give a lot of your time and effort to a particular activity",
+    "oxford_definition_zh": "把大量时间和精力投入某项活动。",
+    "collins_definition": "to devote yourself or your time to a particular activity",
+    "collins_definition_zh": "把自己或时间投入某项活动。",
+    "synonyms": [
+      "devote v. 奉献",
+      "commit v. 致力于"
+    ],
+    "antonyms": [
+      "neglect v. 忽视"
+    ],
+    "near_synonyms": [
+      "assign v. 分配"
+    ],
+    "confusable_words": [
+      "dedication n. 奉献",
+      "delicate adj. 脆弱的"
+    ],
+    "collocations": [
+      "dedicate oneself to 致力于",
+      "dedicate a book to 把书题献给"
+    ],
+    "word_root": "de-（完全）+ dic（说；宣告）",
+    "example_sentences": [
+      "She dedicated herself to community service.",
+      "The scientist dedicated years to the study.",
+      "He dedicated the book to his parents."
+    ],
+    "example_sentences_zh": [
+      "她致力于社区服务。",
+      "这位科学家多年致力于这项研究。",
+      "他把这本书题献给父母。"
+    ],
+    "example_targets_zh": [
+      "致力于",
+      "致力于",
+      "题献"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. 在作品或仪式中正式献给某人或某事"
+    ],
+    "other_meanings_examples": [
+      "The memorial was dedicated to the victims."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "stem",
+    "front": "The policy aims to **stem** the rise in healthcare costs.",
+    "back": "stem v. 遏制；阻止；n. 茎；根源",
+    "part_of_speech": "v.; n.",
+    "definition_zh": "遏制；阻止；茎；根源",
+    "word_level": "考研英语二",
+    "phonetic": "/stem/",
+    "oxford_definition": "to stop or reduce the growth of something",
+    "oxford_definition_zh": "阻止或减少某事物的增长。",
+    "collins_definition": "to stop something undesirable from spreading or increasing",
+    "collins_definition_zh": "阻止不利事物扩散或增加。",
+    "synonyms": [
+      "contain v. 控制",
+      "restrain v. 抑制"
+    ],
+    "antonyms": [
+      "promote v. 促进",
+      "accelerate v. 加速"
+    ],
+    "near_synonyms": [
+      "curb v. 抑制"
+    ],
+    "confusable_words": [
+      "stem from phr. 起源于",
+      "steam n. 蒸汽"
+    ],
+    "collocations": [
+      "stem the tide 遏制趋势",
+      "stem growth 抑制增长"
+    ],
+    "word_root": "stem（茎；阻止）",
+    "example_sentences": [
+      "The reforms were designed to stem corruption.",
+      "The plant has a thick central stem.",
+      "Most complaints stem from poor communication."
+    ],
+    "example_sentences_zh": [
+      "改革旨在遏制腐败。",
+      "这株植物有粗壮的主茎。",
+      "大多数投诉源于沟通不良。"
+    ],
+    "example_targets_zh": [
+      "遏制",
+      "茎",
+      "源于"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. stem from 表示起源于"
+    ],
+    "other_meanings_examples": [
+      "The conflict stems from a misunderstanding."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "spur",
+    "front": "The tax incentive may **spur** investment in renewable energy.",
+    "back": "spur v. 刺激；促进；n. 激励；马刺",
+    "part_of_speech": "v.; n.",
+    "definition_zh": "刺激；促进；激励；马刺",
+    "word_level": "考研英语二",
+    "phonetic": "/spɜː(r)/",
+    "oxford_definition": "to encourage somebody to do something",
+    "oxford_definition_zh": "鼓励某人做某事。",
+    "collins_definition": "to encourage someone to do something more quickly or enthusiastically",
+    "collins_definition_zh": "鼓励某人更快或更积极地做某事。",
+    "synonyms": [
+      "encourage v. 鼓励",
+      "stimulate v. 刺激"
+    ],
+    "antonyms": [
+      "discourage v. 阻碍"
+    ],
+    "near_synonyms": [
+      "prompt v. 促使"
+    ],
+    "confusable_words": [
+      "spurn v. 鄙弃",
+      "spur-of-the-moment adj. 临时起意的"
+    ],
+    "collocations": [
+      "spur growth 刺激增长",
+      "on the spur of the moment 一时冲动"
+    ],
+    "word_root": "spur（马刺；刺激）",
+    "example_sentences": [
+      "Lower taxes could spur economic growth.",
+      "The award spurred her to work harder.",
+      "He acted on the spur of the moment."
+    ],
+    "example_sentences_zh": [
+      "减税可能刺激经济增长。",
+      "这个奖项促使她更加努力。",
+      "他一时冲动采取了行动。"
+    ],
+    "example_targets_zh": [
+      "刺激",
+      "促使",
+      "一时冲动"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "n. 促使行动的动机或刺激因素"
+    ],
+    "other_meanings_examples": [
+      "The crisis provided a spur to reform."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "hybrid",
+    "front": "The company introduced a **hybrid** model combining office and remote work.",
+    "back": "hybrid n. 混合物；杂交品种；adj. 混合的",
+    "part_of_speech": "n.; adj.",
+    "definition_zh": "混合物；杂交品种；混合的",
+    "word_level": "考研英语二",
+    "phonetic": "/ˈhaɪbrɪd/",
+    "oxford_definition": "a plant or animal produced from two different species",
+    "oxford_definition_zh": "由两个不同物种产生的植物或动物。",
+    "collins_definition": "a thing made by combining two different elements",
+    "collins_definition_zh": "由两种不同元素结合而成的事物。",
+    "synonyms": [
+      "combination n. 结合",
+      "mixed adj. 混合的"
+    ],
+    "antonyms": [
+      "pure adj. 纯的",
+      "homogeneous adj. 同质的"
+    ],
+    "near_synonyms": [
+      "blend n. 混合物"
+    ],
+    "confusable_words": [
+      "hyphen n. 连字符",
+      "hydrid adj. 非标准拼写"
+    ],
+    "collocations": [
+      "hybrid model 混合模式",
+      "hybrid vehicle 混合动力车"
+    ],
+    "word_root": "hybrida（混合；杂种）",
+    "example_sentences": [
+      "The hybrid vehicle uses both fuel and electricity.",
+      "The school adopted a hybrid learning model.",
+      "The plant is a hybrid of two varieties."
+    ],
+    "example_sentences_zh": [
+      "这辆混合动力车同时使用燃料和电力。",
+      "学校采用了混合式学习模式。",
+      "这种植物是两个品种的杂交品种。"
+    ],
+    "example_targets_zh": [
+      "混合动力车",
+      "混合式",
+      "杂交品种"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "adj. 结合两种不同方法、系统或特征的"
+    ],
+    "other_meanings_examples": [
+      "The hybrid approach balances efficiency with flexibility."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "paralysis",
+    "front": "Political **paralysis** delayed the economic reforms.",
+    "back": "paralysis n. 瘫痪；停滞；无能为力",
+    "part_of_speech": "n.",
+    "definition_zh": "瘫痪；停滞；无能为力",
+    "word_level": "考研英语二",
+    "phonetic": "/pəˈræləsɪs/",
+    "oxford_definition": "a medical condition in which a person is unable to move part or all of the body",
+    "oxford_definition_zh": "身体部分或全部无法活动的医学状况。",
+    "collins_definition": "a state in which a person or organization is unable to act",
+    "collins_definition_zh": "个人或组织无法采取行动的状态。",
+    "synonyms": [
+      "inactivity n. 不活动",
+      "inaction n. 不作为"
+    ],
+    "antonyms": [
+      "mobility n. 活动能力",
+      "action n. 行动"
+    ],
+    "near_synonyms": [
+      "stagnation n. 停滞"
+    ],
+    "confusable_words": [
+      "analysis n. 分析",
+      "paralytic adj. 瘫痪的"
+    ],
+    "collocations": [
+      "political paralysis 政治瘫痪",
+      "decision-making paralysis 决策瘫痪"
+    ],
+    "word_root": "para-（旁；异常）+ lys（松开）",
+    "example_sentences": [
+      "The crisis caused administrative paralysis.",
+      "The disease left him with partial paralysis.",
+      "Fear can lead to paralysis in decision-making."
+    ],
+    "example_sentences_zh": [
+      "危机导致行政瘫痪。",
+      "这种疾病使他部分瘫痪。",
+      "恐惧可能导致决策瘫痪。"
+    ],
+    "example_targets_zh": [
+      "瘫痪",
+      "瘫痪",
+      "决策瘫痪"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "n. 因恐惧或犹豫而无法行动"
+    ],
+    "other_meanings_examples": [
+      "A lack of information produced paralysis among investors."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "segment",
+    "front": "The company targets a younger **segment** of the market.",
+    "back": "segment n. 部分；群体；市场细分；v. 分割",
+    "part_of_speech": "n.; v.",
+    "definition_zh": "部分；群体；市场细分；分割",
+    "word_level": "考研英语二",
+    "phonetic": "/ˈseɡmənt/",
+    "oxford_definition": "a part of something that is separate from the rest",
+    "oxford_definition_zh": "与其余部分分开的某一部分。",
+    "collins_definition": "one of the parts into which something can be divided",
+    "collins_definition_zh": "某物可以被分成的部分之一。",
+    "synonyms": [
+      "section n. 部分",
+      "divide v. 分割"
+    ],
+    "antonyms": [
+      "whole n. 整体"
+    ],
+    "near_synonyms": [
+      "portion n. 部分"
+    ],
+    "confusable_words": [
+      "sequent adj. 连续的",
+      "semester n. 学期"
+    ],
+    "collocations": [
+      "market segment 市场细分",
+      "segment of society 社会群体"
+    ],
+    "word_root": "segment（切割；部分）",
+    "example_sentences": [
+      "The report examines a growing market segment.",
+      "The road passes through a rural segment of the region.",
+      "The audience was segmented by age."
+    ],
+    "example_sentences_zh": [
+      "报告研究了一个不断增长的市场细分。",
+      "这条路经过该地区的农村部分。",
+      "受众按年龄进行了细分。"
+    ],
+    "example_targets_zh": [
+      "市场细分",
+      "部分",
+      "细分"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "n. 语音或文字中的一段"
+    ],
+    "other_meanings_examples": [
+      "The final segment of the report summarizes the findings."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "supervise",
+    "front": "A senior manager will **supervise** the implementation of the plan.",
+    "back": "supervise v. 监督；管理；指导",
+    "part_of_speech": "v.",
+    "definition_zh": "监督；管理；指导",
+    "word_level": "考研英语二",
+    "phonetic": "/ˈsuːpəvaɪz/",
+    "oxford_definition": "to be in charge of somebody or something and make sure that work is done correctly",
+    "oxford_definition_zh": "负责某人或某事并确保工作正确完成。",
+    "collins_definition": "to watch over an activity or a person to make sure that everything is done properly",
+    "collins_definition_zh": "监督活动或人员以确保一切正确完成。",
+    "synonyms": [
+      "oversee v. 监督",
+      "manage v. 管理"
+    ],
+    "antonyms": [
+      "neglect v. 忽视"
+    ],
+    "near_synonyms": [
+      "monitor v. 监测"
+    ],
+    "confusable_words": [
+      "supervisor n. 主管",
+      "supervisee n. 被监督者"
+    ],
+    "collocations": [
+      "supervise a project 监督项目",
+      "closely supervise 密切监督"
+    ],
+    "word_root": "super-（在上面）+ vis（看）",
+    "example_sentences": [
+      "She supervises a team of engineers.",
+      "The inspector supervised the construction work.",
+      "Students worked under the supervision of a professor."
+    ],
+    "example_sentences_zh": [
+      "她管理一个工程师团队。",
+      "检查员监督了施工工作。",
+      "学生在教授指导下工作。"
+    ],
+    "example_targets_zh": [
+      "管理",
+      "监督",
+      "指导"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. 对学习、培训或研究进行指导"
+    ],
+    "other_meanings_examples": [
+      "The professor supervises several graduate students."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "withstand",
+    "front": "The building was designed to **withstand** severe storms.",
+    "back": "withstand v. 承受；抵挡；经受住",
+    "part_of_speech": "v.",
+    "definition_zh": "承受；抵挡；经受住",
+    "word_level": "考研英语二",
+    "phonetic": "/wɪðˈstænd/",
+    "oxford_definition": "to be strong enough not to be harmed or damaged by something",
+    "oxford_definition_zh": "足够坚固，不会被某事伤害或损坏。",
+    "collins_definition": "to resist and remain undamaged by something",
+    "collins_definition_zh": "抵抗某事并保持不受损。",
+    "synonyms": [
+      "endure v. 忍受",
+      "resist v. 抵挡"
+    ],
+    "antonyms": [
+      "succumb v. 屈服"
+    ],
+    "near_synonyms": [
+      "tolerate v. 容忍"
+    ],
+    "confusable_words": [
+      "understand v. 理解",
+      "withhold v. 扣留"
+    ],
+    "collocations": [
+      "withstand pressure 承受压力",
+      "withstand criticism 经受批评"
+    ],
+    "word_root": "with-（对抗）+ stand（站立）",
+    "example_sentences": [
+      "The bridge can withstand strong winds.",
+      "The policy withstood criticism from experts.",
+      "These materials withstand high temperatures."
+    ],
+    "example_sentences_zh": [
+      "这座桥能抵挡强风。",
+      "这项政策经受住了专家的批评。",
+      "这些材料耐高温。"
+    ],
+    "example_targets_zh": [
+      "抵挡",
+      "经受住",
+      "耐"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. 经受住长期困难或压力"
+    ],
+    "other_meanings_examples": [
+      "The small business withstood several years of economic uncertainty."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "troupe",
+    "front": "The theatre invited a touring dance **troupe** to perform.",
+    "back": "troupe n. 剧团；演出团体",
+    "part_of_speech": "n.",
+    "definition_zh": "剧团；演出团体",
+    "word_level": "考研英语二",
+    "phonetic": "/truːp/",
+    "oxford_definition": "a group of actors, singers or dancers who work together",
+    "oxford_definition_zh": "一起工作的演员、歌手或舞者团体。",
+    "collins_definition": "a group of actors, singers or dancers who perform together",
+    "collins_definition_zh": "共同演出的演员、歌手或舞者团体。",
+    "synonyms": [
+      "company n. 剧团",
+      "ensemble n. 演出团体"
+    ],
+    "antonyms": [
+      "audience n. 观众"
+    ],
+    "near_synonyms": [
+      "cast n. 演员阵容"
+    ],
+    "confusable_words": [
+      "troop n. 部队",
+      "group n. 群体"
+    ],
+    "collocations": [
+      "theatre troupe 剧团",
+      "touring troupe 巡演团"
+    ],
+    "word_root": "troupe（剧团；群体）",
+    "example_sentences": [
+      "The troupe performed in five cities.",
+      "A young troupe revived the traditional play.",
+      "The circus troupe attracted families."
+    ],
+    "example_sentences_zh": [
+      "这个剧团在五座城市演出。",
+      "一个年轻剧团重新演出了这部传统戏剧。",
+      "马戏团吸引了许多家庭。"
+    ],
+    "example_targets_zh": [
+      "剧团",
+      "剧团",
+      "马戏团"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "n. 一起从事表演或巡演的一群人"
+    ],
+    "other_meanings_examples": [
+      "The comedy troupe produces a new show each year."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "thrive",
+    "front": "Small businesses can **thrive** when local communities support them.",
+    "back": "thrive v. 繁荣；茁壮成长；兴旺",
+    "part_of_speech": "v.",
+    "definition_zh": "繁荣；茁壮成长；兴旺",
+    "word_level": "考研英语二",
+    "phonetic": "/θraɪv/",
+    "oxford_definition": "to become and continue to be successful, strong and healthy",
+    "oxford_definition_zh": "变得并持续保持成功、强大和健康。",
+    "collins_definition": "to grow or develop well and successfully",
+    "collins_definition_zh": "良好且成功地成长或发展。",
+    "synonyms": [
+      "flourish v. 繁荣",
+      "prosper v. 兴旺"
+    ],
+    "antonyms": [
+      "decline v. 衰退",
+      "wither v. 枯萎"
+    ],
+    "near_synonyms": [
+      "develop v. 发展"
+    ],
+    "confusable_words": [
+      "strive v. 努力",
+      "drive v. 驾驶；推动"
+    ],
+    "collocations": [
+      "thrive on pressure 在压力下成长",
+      "businesses thrive 企业繁荣"
+    ],
+    "word_root": "thrive（兴旺；茁壮成长）",
+    "example_sentences": [
+      "Plants thrive in warm, humid conditions.",
+      "The local economy began to thrive.",
+      "Some people thrive on creative challenges."
+    ],
+    "example_sentences_zh": [
+      "植物在温暖潮湿的环境中茁壮成长。",
+      "当地经济开始繁荣。",
+      "有些人在创造性挑战中成长。"
+    ],
+    "example_targets_zh": [
+      "茁壮成长",
+      "繁荣",
+      "成长"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. 在某种环境或条件下表现得特别好"
+    ],
+    "other_meanings_examples": [
+      "The organization thrives on cooperation between departments."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "learning_stage": "考研英语二",
+    "word": "enlist",
+    "front": "The campaign aims to **enlist** public support for recycling.",
+    "back": "enlist v. 谋求支持；征募；参加",
+    "part_of_speech": "v.",
+    "definition_zh": "谋求支持；征募；参加",
+    "word_level": "考研英语二",
+    "phonetic": "/ɪnˈlɪst/",
+    "oxford_definition": "to ask for and get someone's help or support",
+    "oxford_definition_zh": "请求并获得某人的帮助或支持。",
+    "collins_definition": "to persuade someone to help or support you",
+    "collins_definition_zh": "说服某人帮助或支持你。",
+    "synonyms": [
+      "recruit v. 招募",
+      "secure v. 获得"
+    ],
+    "antonyms": [
+      "discourage v. 劝阻"
+    ],
+    "near_synonyms": [
+      "engage v. 使参与"
+    ],
+    "confusable_words": [
+      "list n. 清单",
+      "entail v. 需要；牵涉"
+    ],
+    "collocations": [
+      "enlist support 谋求支持",
+      "enlist in the army 入伍"
+    ],
+    "word_root": "en-（使进入）+ list（名单）",
+    "example_sentences": [
+      "The charity enlisted volunteers for the project.",
+      "The leader enlisted public support for the reform.",
+      "He enlisted in the army after graduation."
+    ],
+    "example_sentences_zh": [
+      "慈善机构为项目招募了志愿者。",
+      "领导人争取公众支持这项改革。",
+      "他毕业后入伍。"
+    ],
+    "example_targets_zh": [
+      "招募",
+      "争取",
+      "入伍"
+    ],
+    "example_sources": [
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句",
+      "自拟·考研英语二阶段匹配例句"
+    ],
+    "other_meanings": [
+      "v. 使某人参与某项行动或事业"
+    ],
+    "other_meanings_examples": [
+      "The organization enlisted local businesses in its campaign."
+    ],
+    "tags": [
+      "vocabulary",
+      "考研英语二",
+      "screenshot-2026-07"
+    ],
+    "source_status": "generated"
+  }
+]

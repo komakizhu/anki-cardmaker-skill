@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anki 制卡 › 词义题（anki-cardmaker-vocabulary）"
+  short_description: "词义题：提供中文说明、双语触发和规范化工作流程。 支持验证。"
+  default_prompt: "请用 $anki-cardmaker-vocabulary 按词义题规则制作卡片。"

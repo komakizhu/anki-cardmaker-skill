@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anki 制卡 › 多选题（anki-cardmaker-multiple-choice）"
+  short_description: "多选题：提供中文说明、双语触发和规范化工作流程。 支持验证。"
+  default_prompt: "请用 $anki-cardmaker-multiple-choice 按多选题规则制作卡片。"

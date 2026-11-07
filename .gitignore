@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+preview.html
+cards.json
+

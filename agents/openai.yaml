@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anki 制卡（anki-cardmaker）"
+  short_description: "Anki 制卡：提供中文说明、双语触发和规范化工作流程。"
+  default_prompt: "Use $Anki制卡 to apply this skill."

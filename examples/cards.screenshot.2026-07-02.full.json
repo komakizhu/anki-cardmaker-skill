@@ -1,0 +1,1234 @@
+[
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "institution",
+    "front": "The university is a respected **institution** with a long history.",
+    "back": "institution n. 机构；制度；习俗",
+    "part_of_speech": "n.",
+    "definition_zh": "机构；制度；习俗",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˌɪnstɪˈtjuːʃn/",
+    "oxford_definition": "an organization founded for a religious, educational, professional or social purpose",
+    "oxford_definition_zh": "为宗教、教育、职业或社会目的而建立的组织。",
+    "collins_definition": "an important organization or establishment",
+    "collins_definition_zh": "重要的组织或机构。",
+    "synonyms": [
+      "organization n. 组织",
+      "establishment n. 机构"
+    ],
+    "antonyms": [
+      "individual n. 个人"
+    ],
+    "near_synonyms": [
+      "institute n. 学院；机构"
+    ],
+    "confusable_words": [
+      "institutional adj. 机构的",
+      "intuition n. 直觉"
+    ],
+    "collocations": [
+      "financial institution 金融机构",
+      "public institution 公共机构"
+    ],
+    "word_root": "institut-（建立；设立）",
+    "example_sentences": [
+      "The hospital is a major local institution.",
+      "Marriage is a social institution.",
+      "The institution provides scholarships to students."
+    ],
+    "example_sentences_zh": [
+      "这家医院是当地的重要机构。",
+      "婚姻是一种社会制度。",
+      "该机构为学生提供奖学金。"
+    ],
+    "example_targets_zh": [
+      "机构",
+      "制度",
+      "机构"
+    ],
+    "other_meanings": [
+      "n. 机构或制度本身的建立"
+    ],
+    "other_meanings_examples": [
+      "The institution of the new policy caused debate."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "lest",
+    "front": "She spoke quietly **lest** she disturb the sleeping child.",
+    "back": "lest conj. 以免；唯恐",
+    "part_of_speech": "conj.",
+    "definition_zh": "以免；唯恐",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/lest/",
+    "oxford_definition": "in order to prevent something from happening",
+    "oxford_definition_zh": "为了防止某事发生。",
+    "collins_definition": "for fear that something might happen",
+    "collins_definition_zh": "唯恐某事发生。",
+    "synonyms": [
+      "for fear that conj. 唯恐",
+      "so that...not conj. 以免"
+    ],
+    "antonyms": [
+      "so that conj. 以便"
+    ],
+    "near_synonyms": [
+      "otherwise adv. 否则"
+    ],
+    "confusable_words": [
+      "least adj. 最少的",
+      "last adj. 最后的"
+    ],
+    "collocations": [
+      "lest...should 以免……",
+      "lest we forget 以免我们忘记"
+    ],
+    "word_root": "lest（古英语：以免）",
+    "example_sentences": [
+      "Take an umbrella lest it rain.",
+      "He wrote down the address lest he should forget it.",
+      "They left early lest they miss the train."
+    ],
+    "example_sentences_zh": [
+      "带把伞，以免下雨。",
+      "他记下地址，以免忘记。",
+      "他们早早出发，以免错过火车。"
+    ],
+    "example_targets_zh": [
+      "以免",
+      "以免",
+      "以免"
+    ],
+    "other_meanings": [
+      "conj. 与 should 连用表示对不希望情况的担忧"
+    ],
+    "other_meanings_examples": [
+      "She checked the lock twice lest someone should enter."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "logical",
+    "front": "Her argument is clear and **logical**.",
+    "back": "logical adj. 合乎逻辑的；合理的",
+    "part_of_speech": "adj.",
+    "definition_zh": "合乎逻辑的；合理的",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˈlɒdʒɪkl/",
+    "oxford_definition": "seeming natural, reasonable and sensible",
+    "oxford_definition_zh": "看起来自然、合理且明智的。",
+    "collins_definition": "following the rules of logic in a clear and sensible way",
+    "collins_definition_zh": "以清晰、合理的方式遵循逻辑规则的。",
+    "synonyms": [
+      "rational adj. 理性的",
+      "reasonable adj. 合理的"
+    ],
+    "antonyms": [
+      "illogical adj. 不合逻辑的"
+    ],
+    "near_synonyms": [
+      "coherent adj. 连贯的"
+    ],
+    "confusable_words": [
+      "logic n. 逻辑",
+      "logistic adj. 后勤的"
+    ],
+    "collocations": [
+      "logical conclusion 合乎逻辑的结论",
+      "logical reasoning 逻辑推理"
+    ],
+    "word_root": "log-（思想；言语）+ -ical（形容词后缀）",
+    "example_sentences": [
+      "There must be a logical explanation.",
+      "The steps follow a logical order.",
+      "He made a logical decision based on the evidence."
+    ],
+    "example_sentences_zh": [
+      "一定有一个合理的解释。",
+      "这些步骤遵循合乎逻辑的顺序。",
+      "他根据证据作出了合理决定。"
+    ],
+    "example_targets_zh": [
+      "合理",
+      "合乎逻辑",
+      "合理"
+    ],
+    "other_meanings": [
+      "adj. 由逻辑学构成或与逻辑学有关的"
+    ],
+    "other_meanings_examples": [
+      "The course introduces students to logical systems."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "prescription",
+    "front": "The doctor gave her a **prescription** for antibiotics.",
+    "back": "prescription n. 处方；建议；规定",
+    "part_of_speech": "n.",
+    "definition_zh": "处方；建议；规定",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/prɪˈskrɪpʃn/",
+    "oxford_definition": "an official piece of paper on which a doctor writes the medicine a patient needs",
+    "oxford_definition_zh": "医生写明病人所需药物的正式文件。",
+    "collins_definition": "a written instruction from a doctor for medicine",
+    "collins_definition_zh": "医生开具的药物书面指示。",
+    "synonyms": [
+      "medication order n. 用药处方",
+      "recommendation n. 建议"
+    ],
+    "antonyms": [
+      "prohibition n. 禁止"
+    ],
+    "near_synonyms": [
+      "remedy n. 药物；疗法"
+    ],
+    "confusable_words": [
+      "proscription n. 禁止",
+      "description n. 描述"
+    ],
+    "collocations": [
+      "fill a prescription 配药",
+      "prescription drug 处方药"
+    ],
+    "word_root": "pre-（预先）+ script（写）",
+    "example_sentences": [
+      "The pharmacist filled the prescription.",
+      "Exercise is often prescribed as part of treatment.",
+      "The report offers a prescription for economic reform."
+    ],
+    "example_sentences_zh": [
+      "药剂师按处方配了药。",
+      "运动常被作为治疗的一部分而开出。",
+      "报告为经济改革提出了方案。"
+    ],
+    "example_targets_zh": [
+      "处方",
+      "开出",
+      "方案"
+    ],
+    "other_meanings": [
+      "n. 解决问题的建议或方案"
+    ],
+    "other_meanings_examples": [
+      "The proposal is a prescription for reducing waste."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "protocol",
+    "front": "All researchers must follow the safety **protocol**.",
+    "back": "protocol n. 规程；协议；礼仪",
+    "part_of_speech": "n.",
+    "definition_zh": "规程；协议；礼仪",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/ˈprəʊtəkɒl/",
+    "oxford_definition": "a system of rules about the correct way to act in an official situation",
+    "oxford_definition_zh": "关于正式场合正确行为方式的一套规则。",
+    "collins_definition": "a set of rules for conducting a scientific experiment or procedure",
+    "collins_definition_zh": "进行科学实验或程序的一套规则。",
+    "synonyms": [
+      "procedure n. 程序",
+      "agreement n. 协议"
+    ],
+    "antonyms": [
+      "improvisation n. 即兴"
+    ],
+    "near_synonyms": [
+      "guideline n. 指导方针"
+    ],
+    "confusable_words": [
+      "prologue n. 序言",
+      "proportion n. 比例"
+    ],
+    "collocations": [
+      "safety protocol 安全规程",
+      "diplomatic protocol 外交礼仪"
+    ],
+    "word_root": "proto-（第一）+ col（胶；规则）",
+    "example_sentences": [
+      "The laboratory has a strict safety protocol.",
+      "The two computers communicate through a network protocol.",
+      "The guests were briefed on diplomatic protocol."
+    ],
+    "example_sentences_zh": [
+      "实验室有严格的安全规程。",
+      "两台电脑通过网络协议通信。",
+      "工作人员向客人介绍了外交礼仪。"
+    ],
+    "example_targets_zh": [
+      "安全规程",
+      "协议",
+      "礼仪"
+    ],
+    "other_meanings": [
+      "n. 外交或正式场合的礼仪规范"
+    ],
+    "other_meanings_examples": [
+      "The ambassador followed protocol during the ceremony."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "vengeance",
+    "front": "He vowed to seek **vengeance** for the betrayal.",
+    "back": "vengeance n. 复仇；报复",
+    "part_of_speech": "n.",
+    "definition_zh": "复仇；报复",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/ˈvendʒəns/",
+    "oxford_definition": "something violent that someone does to punish someone who has harmed them",
+    "oxford_definition_zh": "为惩罚伤害自己的人而采取的暴力行动。",
+    "collins_definition": "punishment inflicted in return for a wrong",
+    "collins_definition_zh": "为某种错误而施加的报复性惩罚。",
+    "synonyms": [
+      "revenge n. 复仇",
+      "retribution n. 报应"
+    ],
+    "antonyms": [
+      "forgiveness n. 宽恕"
+    ],
+    "near_synonyms": [
+      "retaliation n. 报复"
+    ],
+    "confusable_words": [
+      "vengeful adj. 复仇的",
+      "venial adj. 可原谅的"
+    ],
+    "collocations": [
+      "seek vengeance 寻求复仇",
+      "take vengeance 进行报复"
+    ],
+    "word_root": "venge-（报复）+ -ance（名词后缀）",
+    "example_sentences": [
+      "The novel follows a hero seeking vengeance.",
+      "Vengeance only prolonged the conflict.",
+      "She rejected violence and chose not to pursue vengeance."
+    ],
+    "example_sentences_zh": [
+      "这部小说讲述了一个寻求复仇的英雄。",
+      "复仇只会延长冲突。",
+      "她拒绝暴力，选择不再报复。"
+    ],
+    "example_targets_zh": [
+      "复仇",
+      "复仇",
+      "报复"
+    ],
+    "other_meanings": [
+      "n. 对所受伤害进行惩罚的强烈愿望"
+    ],
+    "other_meanings_examples": [
+      "His desire for vengeance blinded him to the consequences."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "mock",
+    "front": "The students **mocked** his accent, which was unfair.",
+    "back": "mock v. 嘲笑；模仿；adj. 模拟的",
+    "part_of_speech": "v.; adj.",
+    "definition_zh": "嘲笑；模仿；模拟的",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/mɒk/",
+    "oxford_definition": "to laugh at someone or something in an unkind way",
+    "oxford_definition_zh": "以不友善的方式嘲笑某人或某物。",
+    "collins_definition": "to imitate someone in a way that shows you dislike them",
+    "collins_definition_zh": "以表示不喜欢的方式模仿某人。",
+    "synonyms": [
+      "ridicule v. 嘲弄",
+      "imitate v. 模仿"
+    ],
+    "antonyms": [
+      "respect v. 尊重"
+    ],
+    "near_synonyms": [
+      "tease v. 戏弄"
+    ],
+    "confusable_words": [
+      "mockery n. 嘲笑",
+      "muck n. 淤泥"
+    ],
+    "collocations": [
+      "mock an accent 嘲笑口音",
+      "mock exam 模拟考试"
+    ],
+    "word_root": "mock（模仿；嘲弄）",
+    "example_sentences": [
+      "It is cruel to mock someone's appearance.",
+      "The team held a mock trial.",
+      "He mocked the politician's mannerisms."
+    ],
+    "example_sentences_zh": [
+      "嘲笑别人的外表是残忍的。",
+      "团队举行了一场模拟审判。",
+      "他模仿那位政治家的习惯动作。"
+    ],
+    "example_targets_zh": [
+      "嘲笑",
+      "模拟",
+      "模仿"
+    ],
+    "other_meanings": [
+      "adj. 模拟的；仿制的，不是真实的"
+    ],
+    "other_meanings_examples": [
+      "The students completed a mock interview before the real one."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "ambition",
+    "front": "Her **ambition** is to become a leading scientist.",
+    "back": "ambition n. 抱负；野心；雄心",
+    "part_of_speech": "n.",
+    "definition_zh": "抱负；野心；雄心",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/æmˈbɪʃn/",
+    "oxford_definition": "the desire to be successful, rich or powerful",
+    "oxford_definition_zh": "取得成功、财富或权力的愿望。",
+    "collins_definition": "a strong desire to achieve something",
+    "collins_definition_zh": "实现某事的强烈愿望。",
+    "synonyms": [
+      "aspiration n. 抱负",
+      "goal n. 目标"
+    ],
+    "antonyms": [
+      "apathy n. 冷漠",
+      "inactivity n. 不作为"
+    ],
+    "near_synonyms": [
+      "determination n. 决心"
+    ],
+    "confusable_words": [
+      "ambitious adj. 有抱负的",
+      "ammunition n. 弹药"
+    ],
+    "collocations": [
+      "political ambition 政治抱负",
+      "achieve an ambition 实现抱负"
+    ],
+    "word_root": "ambit-（周围；范围）",
+    "example_sentences": [
+      "Her ambition is to study medicine.",
+      "The project reflects his ambition to improve public transport.",
+      "Uncontrolled ambition can damage relationships."
+    ],
+    "example_sentences_zh": [
+      "她的抱负是学习医学。",
+      "这个项目体现了他改善公共交通的雄心。",
+      "不受控制的野心可能损害人际关系。"
+    ],
+    "example_targets_zh": [
+      "抱负",
+      "雄心",
+      "野心"
+    ],
+    "other_meanings": [
+      "n. 对权力、地位或成就的强烈追求"
+    ],
+    "other_meanings_examples": [
+      "His political ambition led him to run for office."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "stain",
+    "front": "The coffee left a dark **stain** on the shirt.",
+    "back": "stain n. 污渍；污点；v. 弄脏；玷污",
+    "part_of_speech": "n.; v.",
+    "definition_zh": "污渍；污点；弄脏；玷污",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/steɪn/",
+    "oxford_definition": "a dirty mark that is difficult to remove",
+    "oxford_definition_zh": "难以去除的污迹。",
+    "collins_definition": "to spoil the good opinion people have of someone or something",
+    "collins_definition_zh": "损害人们对某人或某物的良好看法。",
+    "synonyms": [
+      "mark n. 痕迹",
+      "tarnish v. 玷污"
+    ],
+    "antonyms": [
+      "clean v. 清洁",
+      "purify v. 净化"
+    ],
+    "near_synonyms": [
+      "blemish n. 瑕疵"
+    ],
+    "confusable_words": [
+      "stair n. 楼梯",
+      "strain n. 压力；拉伤"
+    ],
+    "collocations": [
+      "remove a stain 去除污渍",
+      "stain one's reputation 玷污名声"
+    ],
+    "word_root": "stain（染色；污点）",
+    "example_sentences": [
+      "The cleaner removed the wine stain.",
+      "The scandal stained the company's reputation.",
+      "The wood was stained a dark brown."
+    ],
+    "example_sentences_zh": [
+      "清洁剂去除了红酒污渍。",
+      "丑闻玷污了公司的声誉。",
+      "木头被染成深棕色。"
+    ],
+    "example_targets_zh": [
+      "污渍",
+      "玷污",
+      "染成"
+    ],
+    "other_meanings": [
+      "n. 损害名誉的行为或经历"
+    ],
+    "other_meanings_examples": [
+      "The accusation left a permanent stain on his career."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "slack",
+    "front": "The rope was **slack** and needed to be tightened.",
+    "back": "slack adj. 松弛的；懈怠的；n. 松弛；空闲；v. 放松",
+    "part_of_speech": "adj.; n.; v.",
+    "definition_zh": "松弛的；懈怠的；松弛；空闲；放松",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/slæk/",
+    "oxford_definition": "not stretched tight; not busy or active",
+    "oxford_definition_zh": "没有绷紧的；不忙碌或不活跃的。",
+    "collins_definition": "a period when there is less work or activity",
+    "collins_definition_zh": "工作或活动较少的一段时间。",
+    "synonyms": [
+      "loose adj. 松的",
+      "inactive adj. 不活跃的"
+    ],
+    "antonyms": [
+      "tight adj. 紧的",
+      "diligent adj. 勤勉的"
+    ],
+    "near_synonyms": [
+      "lax adj. 松懈的"
+    ],
+    "confusable_words": [
+      "slake v. 解渴",
+      "stack n. 堆"
+    ],
+    "collocations": [
+      "slack rope 松弛的绳子",
+      "pick up the slack 补位"
+    ],
+    "word_root": "slack（松弛；疏忽）",
+    "example_sentences": [
+      "The cable became slack in the heat.",
+      "The manager criticized the team's slack attitude.",
+      "Business is usually slack in January."
+    ],
+    "example_sentences_zh": [
+      "电缆在高温下变松了。",
+      "经理批评团队懈怠的态度。",
+      "一月份生意通常比较清淡。"
+    ],
+    "example_targets_zh": [
+      "变松",
+      "懈怠",
+      "清淡"
+    ],
+    "other_meanings": [
+      "n. 工作减少的空闲时期"
+    ],
+    "other_meanings_examples": [
+      "During the slack season, the workers repaired the equipment."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "glue",
+    "front": "Shared goals can **glue** a team together.",
+    "back": "glue n. 胶水；凝聚力；v. 粘合；使团结",
+    "part_of_speech": "n.; v.",
+    "definition_zh": "胶水；凝聚力；粘合；使团结",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ɡluː/",
+    "oxford_definition": "a substance used for joining things together",
+    "oxford_definition_zh": "用于把物体粘在一起的物质。",
+    "collins_definition": "something that unites people or things",
+    "collins_definition_zh": "把人或事物联合在一起的东西。",
+    "synonyms": [
+      "adhesive n. 黏合剂",
+      "unite v. 使团结"
+    ],
+    "antonyms": [
+      "separate v. 分开"
+    ],
+    "near_synonyms": [
+      "bond n. 纽带"
+    ],
+    "confusable_words": [
+      "gloom n. 忧郁",
+      "glow v. 发光"
+    ],
+    "collocations": [
+      "glue together 粘合；团结",
+      "social glue 社会凝聚力"
+    ],
+    "word_root": "glue（胶；粘合）",
+    "example_sentences": [
+      "Use glue to repair the broken model.",
+      "Trust is the glue that holds a friendship together.",
+      "The policy helped glue the coalition together."
+    ],
+    "example_sentences_zh": [
+      "用胶水修好损坏的模型。",
+      "信任是维系友谊的凝聚力。",
+      "这项政策帮助团结了联盟。"
+    ],
+    "example_targets_zh": [
+      "胶水",
+      "凝聚力",
+      "团结"
+    ],
+    "other_meanings": [
+      "n. 使团体保持团结的因素"
+    ],
+    "other_meanings_examples": [
+      "Humor was the glue of their long friendship."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "resent",
+    "front": "She began to **resent** the extra work assigned to her.",
+    "back": "resent v. 怨恨；对……感到不满",
+    "part_of_speech": "v.",
+    "definition_zh": "怨恨；对……感到不满",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/rɪˈzent/",
+    "oxford_definition": "to feel angry about something, especially because you have been treated unfairly",
+    "oxford_definition_zh": "因受到不公平对待而对某事感到愤怒。",
+    "collins_definition": "to feel bitter or angry about something",
+    "collins_definition_zh": "对某事感到怨恨或愤怒。",
+    "synonyms": [
+      "begrudge v. 不满；吝惜",
+      "dislike v. 不喜欢"
+    ],
+    "antonyms": [
+      "accept v. 接受",
+      "forgive v. 原谅"
+    ],
+    "near_synonyms": [
+      "bitter adj. 愤愤不平的"
+    ],
+    "confusable_words": [
+      "resentment n. 怨恨",
+      "recent adj. 最近的"
+    ],
+    "collocations": [
+      "resent being treated 被不公平对待而不满",
+      "resent authority 怨恨权威"
+    ],
+    "word_root": "re-（再）+ sent（感受）",
+    "example_sentences": [
+      "He resented being excluded from the meeting.",
+      "Employees may resent sudden changes in pay.",
+      "She resented the implication that she was careless."
+    ],
+    "example_sentences_zh": [
+      "他因被排除在会议之外而不满。",
+      "员工可能会对薪酬突然变化感到不满。",
+      "她不满别人暗示她粗心。"
+    ],
+    "example_targets_zh": [
+      "不满",
+      "不满",
+      "不满"
+    ],
+    "other_meanings": [
+      "v. 对某人的行为或处境长期怀有怨恨"
+    ],
+    "other_meanings_examples": [
+      "He still resents his brother's success."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "generator",
+    "front": "The hospital uses a backup **generator** during power cuts.",
+    "back": "generator n. 发电机；产生者",
+    "part_of_speech": "n.",
+    "definition_zh": "发电机；产生者",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˈdʒenəreɪtə(r)/",
+    "oxford_definition": "a machine that produces electricity",
+    "oxford_definition_zh": "产生电力的机器。",
+    "collins_definition": "a device that converts mechanical energy into electrical energy",
+    "collins_definition_zh": "把机械能转化为电能的设备。",
+    "synonyms": [
+      "engine n. 发动机",
+      "producer n. 产生者"
+    ],
+    "antonyms": [
+      "consumer n. 消费者"
+    ],
+    "near_synonyms": [
+      "power unit n. 电源装置"
+    ],
+    "confusable_words": [
+      "generate v. 产生",
+      "generator n. 发电机"
+    ],
+    "collocations": [
+      "backup generator 备用发电机",
+      "electricity generator 发电机"
+    ],
+    "word_root": "gener-（产生）+ -ator（表示工具或人）",
+    "example_sentences": [
+      "The generator supplied power to the building.",
+      "Wind turbines are electricity generators.",
+      "The report is a useful generator of new ideas."
+    ],
+    "example_sentences_zh": [
+      "发电机为大楼供电。",
+      "风力涡轮机是发电设备。",
+      "这份报告是产生新想法的有用来源。"
+    ],
+    "example_targets_zh": [
+      "供电",
+      "发电设备",
+      "产生"
+    ],
+    "other_meanings": [
+      "n. 产生某种事物的人或事物"
+    ],
+    "other_meanings_examples": [
+      "The university is a major generator of research."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "detect",
+    "front": "The test can **detect** early signs of the disease.",
+    "back": "detect v. 发现；查明；检测",
+    "part_of_speech": "v.",
+    "definition_zh": "发现；查明；检测",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/dɪˈtekt/",
+    "oxford_definition": "to notice something, especially something that is not easy to see or hear",
+    "oxford_definition_zh": "注意到某事，尤其是不易看见或听见的事物。",
+    "collins_definition": "to discover or notice something",
+    "collins_definition_zh": "发现或注意到某事。",
+    "synonyms": [
+      "discover v. 发现",
+      "identify v. 识别"
+    ],
+    "antonyms": [
+      "miss v. 未发现",
+      "overlook v. 忽略"
+    ],
+    "near_synonyms": [
+      "observe v. 观察"
+    ],
+    "confusable_words": [
+      "detector n. 探测器",
+      "defect n. 缺陷"
+    ],
+    "collocations": [
+      "detect a problem 发现问题",
+      "detect changes 检测变化"
+    ],
+    "word_root": "de-（向下；完全）+ tect（覆盖）",
+    "example_sentences": [
+      "The sensor detects movement.",
+      "Doctors detected the disease early.",
+      "She detected a note of irritation in his voice."
+    ],
+    "example_sentences_zh": [
+      "传感器检测到移动。",
+      "医生早期发现了这种疾病。",
+      "她察觉到他语气中带有一丝恼怒。"
+    ],
+    "example_targets_zh": [
+      "检测",
+      "发现",
+      "察觉"
+    ],
+    "other_meanings": [
+      "v. 察觉隐藏的感觉或语气"
+    ],
+    "other_meanings_examples": [
+      "I detected some uncertainty in her answer."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "underestimate",
+    "front": "Do not **underestimate** the difficulty of the task.",
+    "back": "underestimate v. 低估；对……估计不足",
+    "part_of_speech": "v.",
+    "definition_zh": "低估；对……估计不足",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˌʌndərˈestɪmeɪt/",
+    "oxford_definition": "to think that something is less important, difficult or serious than it really is",
+    "oxford_definition_zh": "认为某事没有实际那么重要、困难或严重。",
+    "collins_definition": "to make too low an estimate of the value or amount of something",
+    "collins_definition_zh": "对某物的价值或数量作出过低估计。",
+    "synonyms": [
+      "undervalue v. 低估价值",
+      "misjudge v. 判断错误"
+    ],
+    "antonyms": [
+      "overestimate v. 高估"
+    ],
+    "near_synonyms": [
+      "minimize v. 轻视"
+    ],
+    "confusable_words": [
+      "estimate v. 估计",
+      "understate v. 轻描淡写"
+    ],
+    "collocations": [
+      "underestimate the risk 低估风险",
+      "underestimate one's ability 低估某人的能力"
+    ],
+    "word_root": "under-（不足）+ estimate（估计）",
+    "example_sentences": [
+      "We underestimated the cost of the project.",
+      "Never underestimate the value of local knowledge.",
+      "The team was underestimated by its opponents."
+    ],
+    "example_sentences_zh": [
+      "我们低估了项目成本。",
+      "永远不要低估本地知识的价值。",
+      "这支队伍被对手低估了。"
+    ],
+    "example_targets_zh": [
+      "低估",
+      "低估",
+      "低估"
+    ],
+    "other_meanings": [
+      "v. 对数量、程度或能力作过低判断"
+    ],
+    "other_meanings_examples": [
+      "The survey underestimated the number of affected families."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "urban",
+    "front": "The project aims to improve **urban** transport.",
+    "back": "urban adj. 城市的；都市的",
+    "part_of_speech": "adj.",
+    "definition_zh": "城市的；都市的",
+    "word_level": "CET-4 / IELTS",
+    "phonetic": "/ˈɜːbən/",
+    "oxford_definition": "connected with a town or city",
+    "oxford_definition_zh": "与城镇或城市有关的。",
+    "collins_definition": "belonging to or relating to a city",
+    "collins_definition_zh": "属于或与城市有关的。",
+    "synonyms": [
+      "metropolitan adj. 大都市的",
+      "municipal adj. 市政的"
+    ],
+    "antonyms": [
+      "rural adj. 农村的",
+      "nonurban adj. 非城市的"
+    ],
+    "near_synonyms": [
+      "city-based adj. 以城市为基础的"
+    ],
+    "confusable_words": [
+      "suburban adj. 郊区的",
+      "urbane adj. 文雅的"
+    ],
+    "collocations": [
+      "urban area 城市地区",
+      "urban planning 城市规划"
+    ],
+    "word_root": "urb-（城市）+ -an（形容词后缀）",
+    "example_sentences": [
+      "Urban populations are growing rapidly.",
+      "The city faces serious urban pollution.",
+      "Urban planning must include affordable housing."
+    ],
+    "example_sentences_zh": [
+      "城市人口正在迅速增长。",
+      "这座城市面临严重的城市污染。",
+      "城市规划必须包括可负担住房。"
+    ],
+    "example_targets_zh": [
+      "城市",
+      "城市",
+      "城市规划"
+    ],
+    "other_meanings": [
+      "adj. 具有城市生活或文化特征的"
+    ],
+    "other_meanings_examples": [
+      "The festival combines urban music with traditional instruments."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "amendment",
+    "front": "The committee proposed an **amendment** to the law.",
+    "back": "amendment n. 修正案；修改；改进",
+    "part_of_speech": "n.",
+    "definition_zh": "修正案；修改；改进",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/əˈmendmənt/",
+    "oxford_definition": "a small change or improvement to a document, law or plan",
+    "oxford_definition_zh": "对文件、法律或计划所作的小幅改变或改进。",
+    "collins_definition": "a change made to a piece of legislation or a document",
+    "collins_definition_zh": "对法律或文件作出的改变。",
+    "synonyms": [
+      "modification n. 修改",
+      "revision n. 修订"
+    ],
+    "antonyms": [
+      "repeal n. 废除",
+      "preservation n. 保持原样"
+    ],
+    "near_synonyms": [
+      "alteration n. 改动"
+    ],
+    "confusable_words": [
+      "amend v. 修改",
+      "emend v. 校订"
+    ],
+    "collocations": [
+      "constitutional amendment 宪法修正案",
+      "propose an amendment 提出修正案"
+    ],
+    "word_root": "amend（修正）+ -ment（名词后缀）",
+    "example_sentences": [
+      "The amendment passed after a long debate.",
+      "She submitted an amendment to the report.",
+      "The agreement requires a written amendment."
+    ],
+    "example_sentences_zh": [
+      "修正案经过长时间辩论后获得通过。",
+      "她向报告提交了一项修改。",
+      "协议修改必须采用书面形式。"
+    ],
+    "example_targets_zh": [
+      "修正案",
+      "修改",
+      "修改"
+    ],
+    "other_meanings": [
+      "n. 对法律或正式文件的正式修改"
+    ],
+    "other_meanings_examples": [
+      "The first amendment protects freedom of speech."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "type": "QA",
+    "question_type": "vocabulary_meaning",
+    "input_shape": "isolated_vocabulary_list",
+    "word": "needy",
+    "front": "The charity provides meals for **needy** families.",
+    "back": "needy adj. 贫困的；贫困者需要帮助的；缺爱的",
+    "part_of_speech": "adj.",
+    "definition_zh": "贫困的；需要帮助的；缺爱的",
+    "word_level": "CET-6 / IELTS",
+    "phonetic": "/ˈniːdi/",
+    "oxford_definition": "lacking the basic things necessary for life",
+    "oxford_definition_zh": "缺乏生活所需基本物品的。",
+    "collins_definition": "poor and in need of help",
+    "collins_definition_zh": "贫困且需要帮助的。",
+    "synonyms": [
+      "poor adj. 贫困的",
+      "deprived adj. 贫困的"
+    ],
+    "antonyms": [
+      "wealthy adj. 富裕的",
+      "self-sufficient adj. 自给自足的"
+    ],
+    "near_synonyms": [
+      "disadvantaged adj. 处于不利地位的"
+    ],
+    "confusable_words": [
+      "need v. 需要",
+      "necessary adj. 必要的"
+    ],
+    "collocations": [
+      "needy families 贫困家庭",
+      "help the needy 帮助贫困者"
+    ],
+    "word_root": "need（需要）+ -y（具有……的）",
+    "example_sentences": [
+      "The program supports needy children.",
+      "Donations are distributed to needy communities.",
+      "He became emotionally needy after the loss."
+    ],
+    "example_sentences_zh": [
+      "该项目帮助贫困儿童。",
+      "捐款被分发给贫困社区。",
+      "失去亲人后，他变得情感上很依赖。"
+    ],
+    "example_targets_zh": [
+      "贫困",
+      "贫困",
+      "情感上很依赖"
+    ],
+    "other_meanings": [
+      "adj. 过度需要关注、安慰或感情的"
+    ],
+    "other_meanings_examples": [
+      "A needy partner may constantly seek reassurance."
+    ],
+    "tags": [
+      "vocabulary",
+      "screenshot-2026-07-02"
+    ],
+    "learning_stage": "通用",
+    "source_status": "generated",
+    "example_sources": [
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句",
+      "自拟·通用阶段匹配例句"
+    ]
+  }
+]
