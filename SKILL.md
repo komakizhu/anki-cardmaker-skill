@@ -73,16 +73,15 @@ Store the selected stage as `learning_stage` in the card bundle and on each voca
 
 The selected stage must control five generation dimensions: vocabulary difficulty, sentence length, grammar complexity, context/exam scene, and high-frequency collocations. It changes example construction, not the core dictionary meaning. Keep the word's sense accurate and do not force an artificial exam context.
 
-## Project Debug and Publish Workflow
+## Project Structure and Installation
 
-During development, `.agents/skills/anki-cardmaker/` is the single source of truth. The repository root (`SKILL.md`, `scripts/`, `schemas/`, `examples/`, and `VERSION`) is the publish mirror only.
+The repository root is the single source of truth and the publish-ready main Skill package. `skills/` contains the independently callable entry point and card-type Skills; `MANIFEST.json` lists the packaged content.
 
-- Make Skill changes in `.agents/skills/anki-cardmaker/`.
-- Before validation or publishing, run `python3 scripts/sync_project_skill.py` from the project root.
-- Before committing, run `python3 scripts/sync_project_skill.py --check`; a non-zero result means the publish tree is stale.
+- Run `python3 scripts/sync_project_skill.py --check` to validate required package files and directories.
+- Run `python3 scripts/sync_project_skill.py --check-installed` to compare the project with `~/.codex/skills` and verify existing Chinese symlink aliases without writing.
+- Run `python3 scripts/sync_project_skill.py --install` only after the user explicitly asks to update the installed Skills. Do not edit the installed copy directly.
 - For vocabulary cards with `source_status: "verified"`, run `python3 scripts/verify_example_sources.py --file <cards.json>` after validation. This checks URL reachability and metadata shape only; it does not prove that a sentence came from the cited source.
-- Do not hand-edit the root mirror after synchronization. If a root change is needed, apply it to the project source first and sync again.
-- `.agents/` and Python cache files are local development artifacts and are excluded from the publish commit.
+- Keep generated previews and Python caches out of the package source.
 
 ## Core Patterns
 
@@ -127,8 +126,10 @@ Extra:
 ```
 
 ### 3. Objective Multiple Choice
-Format multiple-choice questions cleanly. The front should present the question and choices, and the back should present the correct key along with an explanation.
+Format choice questions with the same question and options on both sides. Single-choice and true/false options submit on the first click, lock, show the selected error in red and the correct option in green, then reveal the back. Multiple-choice options can be selected and cleared until the learner submits the complete set.
 - Option prefix: `A.`, `B.`, `C.`, `D.`
+- The back keeps the question and options in one card surface, then shows the answer, explanation, and mnemonic.
+- Use buttons for mouse and touch input. Do not add global keyboard handlers; Anki retains Space for flipping and `1`–`4` for grading.
 - Clean HTML output for Anki compatibility.
 
 ### 4. Mnemonic Hook Generation
@@ -285,9 +286,13 @@ For `true_false`, generate exactly two options, normally `正确` and `错误`, 
 ```
 
 ### 12. Automatic UI Logic
-- Show the front as the only question space.
-- Show the back as the only support space: answer, explanation, and mnemonic.
-- Keep the back visually minimal with no decorative badges, source breadcrumbs, or helper panels.
+- Choice cards show the question and all options on both sides in one unified surface. A direct Space flip shows `未作答` and the correct answer.
+- Single-choice and true/false lock after one click. Multiple-choice allows changing selections until submission, then locks.
+- After submission, show textual red/green feedback for about 450 ms and request Anki's native answer reveal. If that bridge is unavailable, keep the feedback and tell the learner to use Space or Anki's show-answer control.
+- Initialize the Choice renderer idempotently and support Anki's reused, dynamically updated review page; never use `document.write` or rely on a one-time page load.
+- Handle pointer clicks on Choice buttons only; do not capture keyboard events. Space and answer-side `1`–`4` remain controlled by Anki.
+- For other card types, keep the front focused on the question and the back focused on its answer and support content.
+- Keep non-choice card faces visually minimal with no decorative badges, source breadcrumbs, or helper panels.
 - Render Chinese follow-up lines as plain text without a `中文：` prefix.
 - For cloze cards, keep the card content focused on the cloze and the answer; do not add extra visual chrome.
 
@@ -378,7 +383,7 @@ Generate cards in the following JSON format:
    ```bash
    python3 scripts/anki_sync.py --file cards.json --deck "MyDeckName"
    ```
-   *Note: Ensure the local Anki app is open and running with AnkiConnect active. Cloze notes use the standard `Back Extra` field by default, but the field name can be overridden with `--cloze-extra-field` if the user uses a custom Cloze note type.*
+   *Note: Ensure the local Anki app is open and running with AnkiConnect active on `127.0.0.1:8767`. Choice cards use the private `AnkiCardmaker Choice` note model with separate `{{Front}}` and `{{Back}}` templates; the model is created only after the user approves import. Existing models with that name are checked and never overwritten. QA cards continue to use Basic, and Cloze notes use the standard `Back Extra` field by default.*
 
 To choose a deck, pass `--deck "My Deck"`. A JSON bundle can also set the deck once for the whole import:
 
@@ -399,6 +404,7 @@ The command-line `--deck` value takes precedence over the bundle's `deck`; if ne
 - `examples/cards.sample.json`: minimal sample payload for smoke testing.
 - `scripts/validate_cards.py`: preflight validation without touching Anki.
 - `scripts/test_regression.py`: dependency-free regression suite for routing, validation, stage propagation, source alignment, audio HTML, and mobile HTML/CSS contracts.
+- `examples/choice-interactions.json`: representative single-choice, multiple-choice, and true/false cards for interaction checks.
 - `scripts/verify_example_sources.py`: URL reachability check for verified vocabulary-example sources.
 - `scripts/preview_cards.py`: static HTML preview generator for front/back inspection.
 - `scripts/card_validation.py`: shared validation and normalization logic used by every entry point.
